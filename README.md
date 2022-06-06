@@ -226,9 +226,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside `.vscode` folder, create `launch.json` file with the following configuration:
     ```json
     {
-      // Use IntelliSense to learn about possible attributes.
-      // Hover to view descriptions of existing attributes.
-      // Learn more: https://go.microsoft.com/fwlink/?linkid=830387
       "version": "0.2.0",
       "configurations": [
         {
@@ -245,9 +242,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside `.vscode` folder, create `settings.json` file with the following configuration:
     ```json
     {
-      // Use IntelliSense to learn about possible attributes.
-      // Hover to view descriptions of existing attributes.
-      // Learn more: https://code.visualstudio.com/docs/getstarted/settings
       "explorer.sortOrder": "type",
       "files.eol": "\n",
       "search.exclude": {
