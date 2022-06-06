@@ -474,7 +474,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 17. Create and initialize util folder
   - Create **src/util** folder
-  - Move **reportWebVitals.ts** file to the **util** folder:
+  - Move **reportWebVitals.ts** file to that folder:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
   - Rename **reportWebVitals.ts** to **report-web-vitals.ts**:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
