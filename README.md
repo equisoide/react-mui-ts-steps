@@ -1,6 +1,6 @@
 # Creating a React-MUI-TypeScript Template
 
-The purpose of this tutorial is to document the step by step on how to create a [React-MUI-TypeScript Template](https://github.com/equisoide/react-mui-ts-template), so that it will serve as a reference guide for myself and other users.
+The purpose of this tutorial is to document the step by step on how to create a [React-MUI-TypeScript Template](https://github.com/equisoide/react-mui-ts-template), so that it will serve as a reference guide for myself and for other users.
 
 ## 1. Install required libraries
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
@@ -44,7 +44,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
 ## 3. Add [.editorconfig](https://editorconfig.org/)
-  - Create `.editorconfig` file at the app's root level
+  - Create **.editorconfig** file at the app's root level
   - Add the following configuration:
     ```d
     root = true
@@ -57,7 +57,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     insert_final_newline = true
     trim_trailing_whitespace = true
     ```
-  - Save twice (the 2nd save is to apply coding style to the `.editorconfig` file)
+  - Save twice (the 2nd save is to apply coding style to the **.editorconfig** file)
 
 ## 4. Configure [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
   - Add **description** after **version**:
@@ -87,8 +87,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "vscode"
     ],
     ```
-  - Move `devDependencies` after `dependencies`
-  - Replace `scripts` section with the following:
+  - Move **devDependencies** after **dependencies**
+  - Replace **scripts** section with the following:
     ```json
     "scripts": {
       "build": "env-cmd -f ./.env/.env.production react-scripts build",
@@ -107,8 +107,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "test": "env-cmd -f ./.env/.env.test react-scripts test --env=jsdom --coverage --watchAll=false"
     },
     ```
-  - Remove `eslintConfig` section
-  - Add [jest](https://jestjs.io/docs/configuration) section after `scripts`:
+  - Remove **eslintConfig** section
+  - Add [jest](https://jestjs.io/docs/configuration) section after **scripts**:
     ```json
     "jest": {
       "collectCoverageFrom": [
@@ -130,18 +130,18 @@ The purpose of this tutorial is to document the step by step on how to create a 
     > `"incremental": false,`
   - Put **lib** section on a single line:
     > `"lib": ["dom", "dom.iterable", "esnext"],`
-  - Sort `compilerOptions` items by selecting all of them and pressing `F9` (SortLines plugin)
-  - Remove trailing comma from the last item of `compilerOptions`
+  - Sort **compilerOptions** items by selecting all of them and pressing `F9` (SortLines plugin)
+  - Remove trailing comma from the last item of **compilerOptions**
   - Save
 
 ## 6. Configure [.eslintrc](https://eslint.org/docs/user-guide/configuring/)
-  - Rename `.eslintrc.js` to `.eslintrc`
+  - Rename **.eslintrc.js** to **.eslintrc**
   - Remove `module.exports = ` (The file is now a **JSON** document)
   - Remove semicolon at the end of the file
-  - Replace all `single quotes` by `double quotes`
-  - Enclose all property names in `double quotes`
+  - Replace all **single quotes** by **double quotes**
+  - Enclose all property names in **double quotes**
   - Add `"jest": true` to the `"env"` object
-  - Replace `extends` array with the following:
+  - Replace **extends** array with the following:
     ```json
     "extends": [
       "eslint:recommended",
@@ -152,7 +152,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "plugin:storybook/recommended"
     ],
     ```
-  - Replace `plugins` array with the following:
+  - Replace **plugins** array with the following:
     ```json
     "plugins": [
       "react",
@@ -160,7 +160,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "@typescript-eslint"
     ],
     ```
-  - Replace `rules` section with the following:
+  - Replace **rules** object with the following:
     ```json
     "rules": {
       "@typescript-eslint/no-empty-function": "off",
@@ -183,7 +183,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "react/react-in-jsx-scope": "off"
     },
     ```
-  - Add `settings` section after `rules`:
+  - Add **settings** object after **rules**:
     ```json
     "settings": {
       "import/resolver": {
@@ -196,7 +196,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 7. Add [.eslintignore](https://eslint.org/docs/user-guide/configuring/ignoring-code#the-eslintignore-file)
-  - Create `.eslintignore` file at the app's root level
+  - Create **.eslintignore** file at the app's root level
   - Add the following configuration:
     ```
     build/
@@ -207,7 +207,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 8. Add [.stylelintrc](https://stylelint.io/user-guide/configure)
-  - Create `.stylelintrc` file at the app's root level
+  - Create **.stylelintrc** file at the app's root level
   - Add the following configuration:
     ```json
     {
@@ -222,8 +222,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 9. Add [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings)
-  - Create `.vscode` folder at the app's root level
-  - Inside `.vscode` folder, create `launch.json` file with the following configuration:
+  - Create **.vscode** folder at the app's root level
+  - Inside **.vscode** folder, create **launch.json** file with the following configuration:
     ```json
     {
       "version": "0.2.0",
@@ -239,7 +239,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     }
     ```
   - Save
-  - Inside `.vscode` folder, create `settings.json` file with the following configuration:
+  - Inside **.vscode** folder, create **settings.json** file with the following configuration:
     ```json
     {
       "explorer.sortOrder": "type",
@@ -268,23 +268,23 @@ The purpose of this tutorial is to document the step by step on how to create a 
    - Save
 
 ## 11. Add [Environment Files](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
-  - Create `.env` folder at the app's root level
-  - Inside `.env` folder, create the following files:
-    - `.env.development`
+  - Create **.env** folder at the app's root level
+  - Inside **.env** folder, create the following files:
+    - **.env.development**
       - Initialize file with `REACT_APP_ENV=development`
-    - `.env.local`
+    - **.env.local**
       - Initialize file with `REACT_APP_ENV=local`
-    - `.env.production`
+    - **.env.production**
       - Initialize file with `REACT_APP_ENV=production`
-    - `.env.qa`
+    - **.env.qa**
       - Initialize file with `REACT_APP_ENV=qa`
-    - `.env.staging`
+    - **.env.staging**
       - Initialize file with `REACT_APP_ENV=staging`
-    - `.env.test`
+    - **.env.test**
       - Initialize file with `REACT_APP_ENV=test`
 
 ## 12. Add [LICENSE](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
-  - Create `LICENSE` file at the app's root level
+  - Create **LICENSE** file at the app's root level
   - Add the following terms:
     ```
     MIT License
@@ -313,7 +313,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 13. Update [README.md](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
-  - Replace `README.md` with the following content:
+  - Replace **README.md** with the following content:
     ````markdown
     # React, MUI and TypeScript Template
 
@@ -436,14 +436,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 14. Delete unnecessary src files
   - Go to **src** folder and delete the following files:
-    - `App.css`
-    - `App.test.tsx`
-    - `App.tsx`
-    - `index.css`
-    - `logo.svg`
+    - **App.css**
+    - **App.test.tsx**
+    - **App.tsx**
+    - **index.css**
+    - **logo.svg**
 
 ## 15. Customize [StoryBook](https://storybook.js.org)
-  - Open **.storybook/main.js** file and [disable telemetry](https://storybook.js.org/docs/react/configure/telemetry)
+  - Open **.storybook/main.js** file and [disable telemetry](https://storybook.js.org/docs/react/configure/telemetry):
     ```js
     "core": {
       "disableTelemetry": true
@@ -451,15 +451,15 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
   - Go to **src/stories** folder and delete the following files:
-    - `button.css`
-    - `Button.stories.tsx`
-    - `Button.tsx`
-    - `header.css`
-    - `Header.stories.tsx`
-    - `Header.tsx`
-    - `page.css`
-    - `Page.stories.tsx`
-    - `Page.tsx`
+    - **button.css**
+    - **Button.stories.tsx**
+    - **Button.tsx**
+    - **header.css**
+    - **Header.stories.tsx**
+    - **Header.tsx**
+    - **page.css**
+    - **Page.stories.tsx**
+    - **Page.tsx**
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
   - Open file **introduction.stories.mdx** and replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
