@@ -442,7 +442,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `index.css`
     - `logo.svg`
 
-## 15. Organize src/stories folder
+## 15. Customize [StoryBook](https://storybook.js.org)
+  - Open **.storybook/main.js** file and [disable telemetry](https://storybook.js.org/docs/react/configure/telemetry)
+    ```js
+    "core": {
+      "disableTelemetry": true
+    }
+    ```
+  - Save
   - Go to **src/stories** folder and delete the following files:
     - `button.css`
     - `Button.stories.tsx`
@@ -454,8 +461,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `Page.stories.tsx`
     - `Page.tsx`
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
-  - Open file `introduction.stories.mdx` and replace **stories/Introduction.stories.mdx** by **stories/introduction.stories.mdx**
-
+  - Open file **introduction.stories.mdx** and replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
+  - Save
+  
 ## 16. Add [Roboto Font](https://mui.com/material-ui/react-typography/#general)
   - Go to **public/index.html** and add the following reference before the `<title>`:
     ```html
