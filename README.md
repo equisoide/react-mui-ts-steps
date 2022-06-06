@@ -43,7 +43,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
   - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
-## 3. Add [.editorconfig](https://editorconfig.org/)
+## 3. Add [.editorconfig](https://editorconfig.org)
   - Create **.editorconfig** file at the app's root level
   - Add the following configuration:
     ```d
@@ -134,7 +134,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Remove trailing comma from the last item of **compilerOptions**
   - Save
 
-## 6. Configure [.eslintrc](https://eslint.org/docs/user-guide/configuring/)
+## 6. Configure [.eslintrc](https://eslint.org/docs/user-guide/configuring)
   - Rename **.eslintrc.js** to **.eslintrc**
   - Remove `module.exports = ` (The file is now a **JSON** document)
   - Remove semicolon at the end of the file
@@ -259,13 +259,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 10. Configure [.gitignore](https://git-scm.com/docs/gitignore)
-   - Remove `.env.local`
-   - Remove `.env.development.local`
-   - Remove `.env.test.local`
-   - Remove `.env.production.local`
-   - Add `/storybook-static` after `/build`
-   - Add `# log` comment before `npm-debug.log*`
-   - Save
+  - Remove `.env.local`
+  - Remove `.env.development.local`
+  - Remove `.env.test.local`
+  - Remove `.env.production.local`
+  - Add `/storybook-static` after `/build`
+  - Add `# log` comment before `npm-debug.log*`
+  - Save
 
 ## 11. Add [Environment Files](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
   - Create **.env** folder at the app's root level
@@ -473,7 +473,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 17. Other steps
-  
   - Rename `App.tsx` to `app.tsx`
     ```js
     function App() {
@@ -491,7 +490,3 @@ The purpose of this tutorial is to document the step by step on how to create a 
       margin: 0;
     }
     ```
-  
-2. Install MUI
-  - <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
