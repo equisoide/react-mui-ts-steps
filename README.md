@@ -444,11 +444,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 15. Organize src/stories folder
   - Go to **src/stories** folder and delete the following files:
-    - *button.css*, *Button.stories.tsx*, *Button.tsx*
-    - *header.css*, *Header.stories.tsx*, *Header.tsx*
-    - *page.css*, *Page.stories.tsx*, *Page.tsx*
-  - Rename `Introduction.stories.mdx` to `introduction.stories.mdx`
-  - Open file `introduction.stories.mdx` and replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
+    - `button.css`
+    - `Button.stories.tsx`
+    - `Button.tsx`
+    - `header.css`
+    - `Header.stories.tsx`
+    - `Header.tsx`
+    - `page.css`
+    - `Page.stories.tsx`
+    - `Page.tsx`
+  - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
+  - Open file `introduction.stories.mdx` and replace **stories/Introduction.stories.mdx** by **stories/introduction.stories.mdx**
 
 ## 16. Add Roboto Font
   - Go to **public/index.html** and add the following reference before the `<title>`:
