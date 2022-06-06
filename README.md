@@ -1,4 +1,4 @@
-# Creating the `react-mui-ts-template` Step by Step
+# Creating the React-MUI-TypeScript template (Step by Step)
 
 The purpose of this tutorial is to document step by step how I created the [react-mui-ts-template](https://github.com/equisoide/react-mui-ts-template), so that it will serve as a reference guide for myself and other users.
 
