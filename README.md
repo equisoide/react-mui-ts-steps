@@ -434,7 +434,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````
   - Save
 
-## 14. Delete unnecessary src files
+## 14. Add [Roboto Font](https://mui.com/material-ui/react-typography/#general)
+  - Go to **public/index.html** and add the following reference before the `<title>`:
+    ```html
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    ```
+  - Save
+
+## 15. Delete unnecessary src files
   - Go to **src** folder and delete the following files:
     - **App.css**
     - **App.test.tsx**
@@ -442,7 +449,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **index.css**
     - **logo.svg**
 
-## 15. Customize [StoryBook](https://storybook.js.org)
+## 16. Customize [StoryBook](https://storybook.js.org)
   - Open **.storybook/main.js** file and [disable telemetry](https://storybook.js.org/docs/react/configure/telemetry):
     ```js
     "core": {
@@ -463,18 +470,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
   - Open file **introduction.stories.mdx** and replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
-  
-## 16. Add [Roboto Font](https://mui.com/material-ui/react-typography/#general)
-  - Go to **public/index.html** and add the following reference before the `<title>`:
-    ```html
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    ```
-  - Save
 
 ## 17. Other steps
   
-
-
   - Rename `App.tsx` to `app.tsx`
     ```js
     function App() {
