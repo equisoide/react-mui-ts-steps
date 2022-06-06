@@ -434,8 +434,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````
   - Save
 
-## 14. Organize src folder
-  - Go to `src` folder and delete the following files:
+## 14. Delete unnecessary files
+  - Go to **src** folder and delete the following files:
     - `App.css`
     - `App.test.tsx`
     - `App.tsx`
