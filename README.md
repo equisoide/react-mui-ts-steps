@@ -315,7 +315,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 ## 13. Update [README.md](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
   - Replace `README.md` with the following content:
     ````markdown
-    # React, MUI and TypeScript template
+    # React, MUI and TypeScript Template
 
     This template is intended to help you start a new `React SPA` project from scratch with a comprehensive folder structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information on how to perform common tasks.
 
