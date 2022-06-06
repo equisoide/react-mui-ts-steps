@@ -486,6 +486,18 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
+## 18. Create and initialize styles folder
+  - Create **src/styles** folder
+  - In that folder create **site.css** file with the following initialization:
+    ```css
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    ```
+  - Save
+
 ## 18. Other steps
   - Rename `App.tsx` to `app.tsx`
     ```js
