@@ -23,15 +23,15 @@ The purpose of this tutorial is to document the step by step on how to create a 
       - To check syntax, find problems, and enforce code style
       - JavaScript modules (import/export)
       - React
-      - Does your project use TypeScript? › `Yes`
-      - Where does your code run? › `Browser`
-      - Use a popular style guide › `Airbnb`
-      - What format do you want your config file to be in? › `JavaScript`
-      - Would you like to install them now? › `Yes`
-      - Which package manager do you want to use? › `npm`
+      - Does your project use TypeScript? › **Yes**
+      - Where does your code run? › **Browser**
+      - Use a popular style guide › **Airbnb**
+      - What format do you want your config file to be in? › **JavaScript**
+      - Would you like to install them now? › **Yes**
+      - Which package manager do you want to use? › **npm**
   - [Storybook](https://storybook.js.org/docs/react/get-started/install):
     - `npx storybook init`
-      - Do you want to run the eslintPlugin migration on your project? › `y`
+      - Do you want to run the eslintPlugin migration on your project? › **y**
 
 ## 2. Install VS Code useful extensions
   - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
