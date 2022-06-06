@@ -443,7 +443,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `logo.svg`
 
 ## 15. Organize src/stories folder
-  - Go to `src/stories` folder and delete the following files:
+  - Go to **src/stories** folder and delete the following files:
     - *button.css*, *Button.stories.tsx*, *Button.tsx*
     - *header.css*, *Header.stories.tsx*, *Header.tsx*
     - *page.css*, *Page.stories.tsx*, *Page.tsx*
