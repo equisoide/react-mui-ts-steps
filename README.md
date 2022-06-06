@@ -472,7 +472,21 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
-## 17. Other steps
+## 17. Create and initialize util folder
+  - Create **src/util** folder
+  - Move **reportWebVitals.ts** file to the **util** folder:
+    > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
+  - Rename **reportWebVitals.ts** to **report-web-vitals.ts**:
+    > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
+  - Refactor the file to fix linter issues:
+    ```js
+    import('web-vitals').then(({
+      getCLS, getFID, getFCP, getLCP, getTTFB
+    }) => {
+    ```
+  - Save
+
+## 18. Other steps
   - Rename `App.tsx` to `app.tsx`
     ```js
     function App() {
