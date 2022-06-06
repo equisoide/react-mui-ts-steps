@@ -456,7 +456,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
   - Open file `introduction.stories.mdx` and replace **stories/Introduction.stories.mdx** by **stories/introduction.stories.mdx**
 
-## 16. Add Roboto Font
+## 16. Add [Roboto Font](https://mui.com/material-ui/react-typography/#general)
   - Go to **public/index.html** and add the following reference before the `<title>`:
     ```html
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
