@@ -31,7 +31,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
       - Which package manager do you want to use? › `npm`
   - [Storybook](https://storybook.js.org/docs/react/get-started/install):
     - `npx storybook init`
-      - Need to install the following packages: storybook, Ok to proceed? › `y` 
       - Do you want to run the eslintPlugin migration on your project? › `y`
 
 ## 2. Install VS Code useful extensions
