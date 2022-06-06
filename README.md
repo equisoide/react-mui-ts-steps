@@ -435,7 +435,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 14. Add [Roboto Font](https://mui.com/material-ui/react-typography/#general)
-  - Go to **public/index.html** and add the following reference before the `<title>`:
+  - Go to the **public/index.html** file and add the following reference before the `<title>`:
     ```html
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     ```
