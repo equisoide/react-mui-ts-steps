@@ -46,7 +46,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 ## 3. Add [.editorconfig](https://editorconfig.org/)
   - Create `.editorconfig` file at the app's root level
   - Add the following configuration:
-    ```
+    ```d
     root = true
 
     [*]
