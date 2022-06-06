@@ -317,7 +317,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````markdown
     # React, MUI and TypeScript template
 
-    This template is intended to help you start a new `React SPA` project from scratch with a comprehensive folder structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev). Below you will find some information on how to perform common tasks.
+    This template is intended to help you start a new `React SPA` project from scratch with a comprehensive folder structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information on how to perform common tasks.
 
     ## Core Libraries
     - [React 18.1.0](https://reactjs.org) with `React Scripts 5.0.1`
