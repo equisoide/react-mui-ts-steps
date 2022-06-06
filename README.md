@@ -468,7 +468,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **Page.stories.tsx**
     - **Page.tsx**
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
-  - Open file **introduction.stories.mdx**:
+  - Open **introduction.stories.mdx** file:
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
