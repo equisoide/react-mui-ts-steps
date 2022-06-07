@@ -447,7 +447,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 15. Delete unnecessary files
+## 15. Delete unnecessary root files
   - Go to **src** folder and delete the following files:
     - **App.css**
     - **App.test.tsx**
