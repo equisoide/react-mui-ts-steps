@@ -513,19 +513,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 19. Configure [i18ext](https://react.i18next.com)
   - Create **src/lang** folder
-  - In **src/lang** folder, create **resources.en.json** file with the following content:
+  - Inside **src/lang** folder, create **resources.en.json** file with the following content:
     ```json
     {
       "hello-world": "Hello World!"
     }
   - Save
-  - In **src/lang** folder, create **resources.es.json** file with the following content:
+  - Inside **src/lang** folder, create **resources.es.json** file with the following content:
     ```json
     {
       "hello-world": "Hola World!"
     }
   - Save
-  - In **src/lang** folder, create **index.ts** file with the following code:
+  - Inside **src/lang** folder, create **index.ts** file with the following code:
     ```js
     // react-i18next is a powerful internationalization framework for
     // React / React Native which is based on i18next.
