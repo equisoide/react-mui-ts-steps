@@ -478,13 +478,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
-## 17. Create and initialize util folder
+## 17. Customize [Web Vitals](https://web.dev/vitals)
   - Create **src/util** folder
   - Move **reportWebVitals.ts** file to that folder:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
   - Rename **reportWebVitals.ts** to **report-web-vitals.ts**:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
-  - Add the following comments at the top of **report-web-vitals.ts**
+  - Add the following comments at the top of the file:
     ```js
     // Web Vitals is an initiative by Google to provide unified guidance
     // for quality signals that are essential to delivering a great user
@@ -519,13 +519,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "hello-world": "Hello World!"
     }
   - Save
-  - Also create **resources.es.json** file with the following content:
+  - Create **resources.es.json** file with the following content:
     ```json
     {
       "hello-world": "Hola World!"
     }
   - Save
-  - Finally, create **index.ts** file with the following code:
+  - Create **index.ts** file with the following code:
     ```js
     // react-i18next is a powerful internationalization framework for
     // React / React Native which is based on i18next.
