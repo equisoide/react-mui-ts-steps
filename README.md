@@ -132,6 +132,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     > `"lib": ["dom", "dom.iterable", "esnext"],`
   - Sort **compilerOptions** items by selecting all of them and pressing `F9` (SortLines plugin)
   - Remove trailing comma from the last item of **compilerOptions**
+  - Replace **include** array with the following:
+    > `"include": ["src/**/*"]`
   - Save
 
 ## 6. Configure [.eslintrc](https://eslint.org/docs/user-guide/configuring)
