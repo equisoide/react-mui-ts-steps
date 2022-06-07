@@ -455,30 +455,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **index.css**
     - **logo.svg**
 
-## 16. Customize [StoryBook](https://storybook.js.org)
-  - Open **.storybook/main.js** file and [disable telemetry](https://storybook.js.org/docs/react/configure/telemetry):
-    ```js
-    "core": {
-      "disableTelemetry": true
-    }
-    ```
-  - Save
-  - Go to **src/stories** folder and delete the following files:
-    - **button.css**
-    - **Button.stories.tsx**
-    - **Button.tsx**
-    - **header.css**
-    - **Header.stories.tsx**
-    - **Header.tsx**
-    - **page.css**
-    - **Page.stories.tsx**
-    - **Page.tsx**
-  - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
-  - Open **introduction.stories.mdx** file:
-    - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
-  - Save
-
-## 17. Customize [Web Vitals](https://web.dev/vitals)
+## 16. Customize [Web Vitals](https://web.dev/vitals)
   - Create **src/util** folder
   - Move **reportWebVitals.ts** file to that folder:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
@@ -499,7 +476,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 18. Create and initialize styles folder
+## 17. Create and initialize styles folder
   - Create **src/styles** folder
   - In that folder create **site.css** file with the following styles:
     ```css
@@ -511,7 +488,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 19. Configure [i18ext](https://react.i18next.com)
+## 18. Configure [i18ext](https://react.i18next.com)
   - Create **src/lang** folder
   - Inside **src/lang** folder, create **resources.en.json** file with the following content:
     ```json
@@ -562,6 +539,51 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     export default initI18n;
     ```
+  - Save
+
+## 19. Configure [StoryBook](https://storybook.js.org)
+  - Open **.storybook/main.js** file:
+  - Add the following comments at the top of the file:
+    ```js
+    // This file controls the Storybook server's behavior.
+    // You must restart Storybook’s process when you change it.
+    // Learn more: https://storybook.js.org/docs/react/configure/overview
+    ```
+  - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
+    ```js
+    "core": {
+      "disableTelemetry": true
+    }
+    ```
+  - Save
+  - Open **.storybook/preview.js** file:
+  - Add the following code at the top of the file:
+    ```js
+    // Use preview.js for global code that applies to all stories.
+    // Learn more: https://storybook.js.org/docs/react/configure/overview
+    import initI18n from '../src/lang';
+    import '@fontsource/roboto/300.css';
+    import '@fontsource/roboto/400.css';
+    import '@fontsource/roboto/500.css';
+    import '@fontsource/roboto/700.css';
+    import '../src/styles/site.css';
+
+    initI18n();
+    ```
+  - Save
+  - Go to **src/stories** folder and delete the following files:
+    - **button.css**
+    - **Button.stories.tsx**
+    - **Button.tsx**
+    - **header.css**
+    - **Header.stories.tsx**
+    - **Header.tsx**
+    - **page.css**
+    - **Page.stories.tsx**
+    - **Page.tsx**
+  - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
+  - Open **introduction.stories.mdx** file:
+    - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
 ## 20. Configure [setupTests.ts](https://github.com/testing-library/jest-dom)
