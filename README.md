@@ -434,7 +434,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````
   - Save
 
-## 14. Add [Font Icons](https://mui.com/material-ui/icons/#font-icons)
+## 14. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
   - Go to the **public/index.html** file and add the following reference before the `<title>`:
     ```html
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -512,7 +512,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "hello-world": "Hola World!",
     }
   - Save
-  - Finally, create **index.ts** file with the following code
+  - Finally, create **index.ts** file with the following code:
     ```js
     // react-i18next is a powerful internationalization framework for
     // React / React Native which is based on i18next.
@@ -550,22 +550,3 @@ The purpose of this tutorial is to document the step by step on how to create a 
     export default initI18n;
     ```
   - Save
-
-## 20. Other steps
-  - Rename `App.tsx` to `app.tsx`
-    ```js
-    function App() {
-      return (
-        <div>Hello World!</div>
-      );
-    }
-
-    export default App;
-    ```
-  - Rename `reportWebVitals.ts` to `util/report-web-vitals.ts`
-  - Create `styles/site.css`
-    ```css
-    body {
-      margin: 0;
-    }
-    ```
