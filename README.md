@@ -511,7 +511,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 19. Create and initialize lang folder
+## 19. Configure [i18ext](https://react.i18next.com)
   - Create **src/lang** folder
   - In that folder create **resources.en.json** file with the following content:
     ```json
