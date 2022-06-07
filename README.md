@@ -563,3 +563,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
     export default initI18n;
     ```
   - Save
+
+## 20. Configure setupTests.ts
+  - Open **src/setupTests.ts** file
+  - Add the following initialization
+    ```js
+    import '@testing-library/jest-dom';
+    import initI18n from './lang';
+
+    initI18n();
+    ```
+  - Save
