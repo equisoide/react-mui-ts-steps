@@ -88,7 +88,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ],
     ```
   - Move **devDependencies** after **dependencies**
-  - Replace **scripts** section with the following:
+  - Replace **scripts** object with the following:
     ```json
     "scripts": {
       "build": "env-cmd -f ./.env/.env.production react-scripts build",
@@ -107,8 +107,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "test": "env-cmd -f ./.env/.env.test react-scripts test --env=jsdom --coverage --watchAll=false"
     },
     ```
-  - Remove **eslintConfig** section
-  - Add [jest](https://jestjs.io/docs/configuration) section after **scripts**:
+  - Remove **eslintConfig** object
+  - Add [jest](https://jestjs.io/docs/configuration) object after **scripts**:
     ```json
     "jest": {
       "collectCoverageFrom": [
@@ -128,7 +128,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     > `"target": "es6",`
   - Disable **TypeScript** [incremental](https://www.typescriptlang.org/tsconfig#incremental) compilation (I had experienced cache issues with it):
     > `"incremental": false,`
-  - Put **lib** section on a single line:
+  - Put **lib** on a single line:
     > `"lib": ["dom", "dom.iterable", "esnext"],`
   - Sort **compilerOptions** items by selecting all of them and pressing `F9` (SortLines plugin)
   - Remove trailing comma from the last item of **compilerOptions**
@@ -488,7 +488,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 18. Create and initialize styles folder
   - Create **src/styles** folder
-  - In that folder create **site.css** file with the following initialization:
+  - In that folder create **site.css** file with the following styles:
     ```css
     * {
       box-sizing: border-box;
@@ -498,7 +498,60 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 18. Other steps
+## 19. Create and initialize lang folder
+  - Create **src/lang** folder
+  - In that folder create **resources.en.json** file with the following content:
+    ```json
+    {
+      "hello-world": "Hello World!",
+    }
+  - Save
+  - Also create **resources.es.json** file with the following content:
+    ```json
+    {
+      "hello-world": "Hola World!",
+    }
+  - Save
+  - Finally, create **index.ts** file with the following code
+    ```js
+    // react-i18next is a powerful internationalization framework for
+    // React / React Native which is based on i18next.
+    // Learn more: https://react.i18next.com
+    import LanguageDetector from 'i18next-browser-languagedetector';
+    import i18n from 'i18next';
+    import { initReactI18next } from 'react-i18next';
+    import resourcesEn from './resources.en.json';
+    import resourcesEs from './resources.es.json';
+
+    const initI18n = () => {
+      i18n
+        .use(LanguageDetector)
+        .use(initReactI18next)
+        .init({
+          resources: {
+            en: {
+              translations: { ...resourcesEn }
+            },
+            es: {
+              translations: { ...resourcesEs }
+            }
+          },
+          fallbackLng: 'en',
+          debug: false,
+          ns: ['translations'],
+          defaultNS: 'translations',
+          keySeparator: false,
+          interpolation: {
+            escapeValue: false
+          }
+        });
+    };
+
+    export default initI18n;
+    ```
+  - Save
+
+## 20. Other steps
   - Rename `App.tsx` to `app.tsx`
     ```js
     function App() {
