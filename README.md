@@ -226,6 +226,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside **.vscode** folder, create **launch.json** file with the following configuration:
     ```json
     {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // Learn more: https://go.microsoft.com/fwlink/?linkid=830387
       "version": "0.2.0",
       "configurations": [
         {
@@ -242,6 +245,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside **.vscode** folder, create **settings.json** file with the following configuration:
     ```json
     {
+      // Use IntelliSense to learn about possible attributes.
+      // Hover to view descriptions of existing attributes.
+      // Learn more: https://code.visualstudio.com/docs/getstarted/settings
       "explorer.sortOrder": "type",
       "files.eol": "\n",
       "search.exclude": {
@@ -478,6 +484,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
   - Rename **reportWebVitals.ts** to **report-web-vitals.ts**:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
+  - Add the following comments at the top of **report-web-vitals.ts**
+    ```js
+    // Web Vitals is an initiative by Google to provide unified guidance
+    // for quality signals that are essential to delivering a great user
+    // experience on the web.
+    // Learn more: https://web.dev/vitals
+    ```
   - Refactor the file to fix linter issues:
     ```js
     import('web-vitals').then(({
