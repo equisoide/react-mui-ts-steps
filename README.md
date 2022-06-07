@@ -503,13 +503,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - In that folder create **resources.en.json** file with the following content:
     ```json
     {
-      "hello-world": "Hello World!",
+      "hello-world": "Hello World!"
     }
   - Save
   - Also create **resources.es.json** file with the following content:
     ```json
     {
-      "hello-world": "Hola World!",
+      "hello-world": "Hola World!"
     }
   - Save
   - Finally, create **index.ts** file with the following code:
