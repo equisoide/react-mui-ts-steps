@@ -522,7 +522,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside **src/lang** folder, create **resources.es.json** file with the following content:
     ```json
     {
-      "hello-world": "Hola World!"
+      "hello-world": "¡Hola Mundo!"
     }
   - Save
   - Inside **src/lang** folder, create **index.ts** file with the following code:
