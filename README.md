@@ -1,6 +1,6 @@
 # Creating a React-MUI-TypeScript Template
 
-The purpose of this tutorial is to document the step by step on how to create a [React-MUI-TypeScript Template](https://github.com/equisoide/react-mui-ts-template) from scratch, so that it will serve as a reference guide for myself and to others.
+The purpose of this tutorial is to document the step by step on how to create a [React-MUI-TypeScript Template](https://github.com/equisoide/react-mui-ts-template) from scratch, so that it will serve as a reference guide for myself and for others.
 
 ## 1. Install required libraries
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
