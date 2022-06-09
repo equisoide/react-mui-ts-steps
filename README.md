@@ -91,20 +91,24 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Replace **scripts** object with the following:
     ```json
     "scripts": {
-      "build": "env-cmd -f ./.env/.env.production react-scripts build",
-      "build:b": "build-storybook -s public",
-      "build:d": "env-cmd -f ./.env/.env.development react-scripts build",
-      "build:l": "env-cmd -f ./.env/.env.local react-scripts build",
-      "build:q": "env-cmd -f ./.env/.env.qa react-scripts build",
-      "build:s": "env-cmd -f ./.env/.env.staging react-scripts build",
+      "build": "env-cmd --no-override -f ./.env-override/.env.production react-scripts build",
+      "build:d": "env-cmd --no-override -f ./.env-override/.env.development react-scripts build",
+      "build:l": "env-cmd --no-override -f ./.env-override/.env.local react-scripts build",
+      "build:q": "env-cmd --no-override -f ./.env-override/.env.qa react-scripts build",
+      "build:s": "env-cmd --no-override -f ./.env-override/.env.staging react-scripts build",
       "eject": "react-scripts eject",
       "init": "npm ci --loglevel=error --no-audit --no-fund",
       "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
       "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
       "lint:s": "./node_modules/.bin/stylelint \"src/**/*.css\"",
-      "sbook": "start-storybook -p 3001 -s public",
-      "start": "env-cmd -f ./.env/.env.local react-scripts start",
-      "test": "env-cmd -f ./.env/.env.test react-scripts test --env=jsdom --coverage --watchAll=false"
+      "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
+      "sbook:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
+      "sbook:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
+      "sbook:p": "env-cmd --no-override -f ./.env-override/.env.production build-storybook -s public -o ./out/storybook/production",
+      "sbook:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
+      "sbook:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
+      "start": "env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+      "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
     },
     ```
   - Remove **eslintConfig** object
