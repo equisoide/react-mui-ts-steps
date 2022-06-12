@@ -401,7 +401,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     ## Core Libraries
     - [React 18.1.0](https://reactjs.org) with `React Scripts 5.0.1`
-    - [MUI 5.8.2](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Font Icons`
+    - [MUI 5.8.2](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Google Font Icons`
     - [TypeScript 4.7.2](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
     - [I18next 21.8.5](https://react.i18next.com) for internationalization
 
@@ -448,44 +448,63 @@ The purpose of this tutorial is to document the step by step on how to create a 
     5. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
     ## Available Scripts
-    | Command           | Description                                                 | Evironment      |
-    | :---              | :---                                                        | :---            |
-    | `npm run init`    | Installs all packages for the 1st time (`Clean Install`)    | N/A             |
-    | `npm run lint`    | Analyses `JavaSript`/`TypeScript` code for potential errors | N/A             |
-    | `npm run lint:f`  | Try to fix `JavaSript`/`TypeScript` errors                  | N/A             |
-    | `npm run lint:s`  | Analyses `CSS` files for potential errors                   | N/A             |
-    | `npm test`        | Launches the test runner                                    | env.test        |
-    | `npm run build`   | Builds the app for `production` to the `build` folder       | env.production  |
-    | `npm run build:b` | Builds `Storybook` as a Static Web Application              | N/A             |
-    | `npm run build:d` | Builds the app for `development` to the `build` folder      | env.development |
-    | `npm run build:l` | Builds the app for `local` to the `build` folder            | env.local       |
-    | `npm run build:q` | Builds the app for `qa` to the `build` folder               | env.qa          |
-    | `npm run build:s` | Builds the app for `staging` to the `build` folder          | env.staging     |
-    | `npm start`       | Runs the app in http://localhost:3000                       | env.local       |
-    | `npm run sbook`   | Runs `Storybook` in http://localhost:3001                   | N/A             |
+    | Command           | Description                                      | Evironment File  |
+    | :---              | :---                                             | :---             |
+    | `npm run init`    | Installs all dependencies for the first time     | N/A              |
+    | `npm run lint`    | Analyses `JavaSript`/`TypeScript` code           | N/A              |
+    | `npm run lint:f`  | Try to fix `JavaSript`/`TypeScript` errors       | N/A              |
+    | `npm run lint:s`  | Analyses `CSS` files for potential errors        | N/A              |
+    | `npm test`        | Executes Unit Tests outputting to `out/coverage` | .env.test        |
+    | `npm start`       | Runs the App in http://localhost:3000            | .env.local       |
+    | `npm run build`   | Builds the App to `out/build/production`         | .env.production  |
+    | `npm run build:d` | Builds the App to `out/build/development`        | .env.development |
+    | `npm run build:l` | Builds the App to `out/build/local`              | .env.local       |
+    | `npm run build:q` | Builds the App to `out/build/qa`                 | .env.qa          |
+    | `npm run build:s` | Builds the App to `out/build/staging`            | .env.staging     |
+    | `npm run sbook`   | Runs Storybook in http://localhost:3001          | .env.local       |
+    | `npm run sbook:d` | Builds Storybook to `out/storybook/development`  | .env.development |
+    | `npm run sbook:l` | Builds Storybook to `out/storybook/local`        | .env.local       |
+    | `npm run sbook:p` | Builds Storybook to `out/storybook/production`   | .env.production  |
+    | `npm run sbook:q` | Builds Storybook to `out/storybook/qa`           | .env.qa          |
+    | `npm run sbook:s` | Builds Storybook to `out/storybook/staging`      | .env.staging     |
 
     ## Working guidelines
-    - Never delete and re-generate `package-lock.json` file from scratch, it will break the App and Storybook! Let `npm` update that file every time you install a new dependency
+    - Never delete and re-generate the `package-lock.json` file from scratch, it will break the App and Storybook! Let `npm` update that file every time you install a new dependency
     - Create reusable components inside `src/components` folder. Define each component in its own folder with the following structure:
       ```js
         + src/components/MyComponent  // Component name in PascalCase
           - index.stories.tsx         // Storybook documentation
           - index.test.tsx            // Jest testing file
           - index.tsx                 // Component definition
-          - styles.css                // Component styles
       ```
     - Prefer [Function Components](https://www.robinwieruch.de/react-function-component/) over `Class components` they offer almost the same: `state` and `lifecycle methods`, with the plus they are more lightway, have a sophisticated `API` and require less code. With the introduction of `React Hooks` it's possible to write your entire application with just functions as `React components`:
         ```js
-        import 'styles.css';
+        import { Box, BoxProps } from '@mui/material';
+        import { useTranslation } from 'react-i18next';
 
-        function MyComponent() {
+        export interface MyComponentProps {
+          box?: BoxProps
+        }
+
+        function MyComponent({ box } : MyComponentProps) {
+          const { t } = useTranslation();
+          const boxProps = { ...MyComponent.defaultProps.box, ...box } as BoxProps;
           return (
-            <b>{t('hello_world')}</b> // Use i18n for text rendering
+            <Box {...boxProps}>
+              {t('hello-world')}
+            </Box>
           );
         }
 
-        export default MyComponent;   // Prefer default export
+        MyComponent.defaultProps = {
+          box: {
+            sx: { background: 'blue' },
+          },
+        };
+
+        export default MyComponent;
         ```
+    - In general use [Trailing Commas](https://blog.logrocket.com/best-practices-using-trailing-commas-javascript), many coding styles now recommend using them all the time because they make it easier to add new parameters to your functions or copy/paste properties in arrays and objects and also helps with producing cleaner diff output
     - Add your own environment variables to the `env/.env.local` file, this file should not be commited
     - Before running or building this application always run linters and unit tests
     - Linter is configured to accept valid ending of lines as `LF` (unix style), if you are on Windows, to avoid Git converting from `LF` to `CRLF`, run the following commands:
