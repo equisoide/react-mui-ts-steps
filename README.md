@@ -47,6 +47,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Create **.editorconfig** file at the app's root level
   - Add the following configuration:
     ```d
+    # EditorConfig helps maintain consistent coding styles
+    # for multiple developers working on the same project.
+    # Learn more: https://editorconfig.org
     root = true
 
     [*]
