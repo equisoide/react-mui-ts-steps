@@ -217,11 +217,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
 ## 7. Add [.eslintignore](https://eslint.org/docs/user-guide/configuring/ignoring-code#the-eslintignore-file)
   - Create **.eslintignore** file at the app's root level
   - Add the following configuration:
-    ```
-    build/
-    coverage/
+    ```gitignore
+    # Tells ESLint to ignore specific files and directories.
+    # Learn more: https://eslint.org/docs/user-guide/configuring/ignoring-code
     node_modules/
-    storybook-static/
+    out/
     ```
   - Save
 
