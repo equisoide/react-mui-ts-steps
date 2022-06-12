@@ -154,6 +154,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Remove semicolon at the end of the file
   - Replace all **single quotes** by **double quotes**
   - Enclose all property names in **double quotes**
+  - Add the following comments before **env**:
+    ```js
+      // EsLint helps to check syntax, find problems, and enforce a code style.
+      // Learn more: https://stylelint.io/user-guide/configure
+    ```
   - Add `"jest": true` to the `"env"` object
   - Replace **extends** array with the following:
     ```json
