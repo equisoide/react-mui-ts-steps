@@ -130,6 +130,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 5. Configure [tsconfig.json](https://www.typescriptlang.org/tsconfig)
+  - Add the following comments before `compilerOptions`
+    ```js
+      // Specifies the root files and the compiler options required
+      // to compile the TypeScript project.
+      // Learn more: https://www.typescriptlang.org/tsconfig
+    ```
   - Enable [ES6](http://es6-features.org) features:
     > `"target": "es6",`
   - Disable **TypeScript** [incremental](https://www.typescriptlang.org/tsconfig#incremental) compilation (I had experienced cache issues with it):
