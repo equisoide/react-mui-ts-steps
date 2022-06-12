@@ -243,7 +243,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 ## 9. Add [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings)
   - Create **.vscode** folder at the app's root level
   - Inside **.vscode** folder, create **launch.json** file with the following configuration:
-    ```json
+    ```js
     {
       // Use IntelliSense to learn about possible attributes.
       // Hover to view descriptions of existing attributes.
@@ -262,7 +262,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
   - Inside **.vscode** folder, create **settings.json** file with the following configuration:
-    ```json
+    ```js
     {
       // Use IntelliSense to learn about possible attributes.
       // Hover to view descriptions of existing attributes.
@@ -284,29 +284,84 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 10. Configure [.gitignore](https://git-scm.com/docs/gitignore)
+  - Remove `/coverage`
   - Remove `.env.local`
   - Remove `.env.development.local`
   - Remove `.env.test.local`
   - Remove `.env.production.local`
-  - Add `/storybook-static` after `/build`
+  - Replace `/build` by `/out`
   - Add `# log` comment before `npm-debug.log*`
   - Save
 
 ## 11. Add [Environment Files](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
-  - Create **.env** folder at the app's root level
-  - Inside **.env** folder, create the following files:
+  - Create **.env** file at the app's root level
+  - Add the following configuration:
+    ```env
+    # This file defines the variables common to all environments.
+    # Variables in this file will be overridden by each specific environment.
+    # Shell variables never get overridden.
+    # Name variables beginning with "REACT_APP_".
+    # Access variables from the "process.env." object.
+    # Restart the development server every time you change a variable.
+    # Learn more: https://create-react-app.dev/docs/adding-custom-environment-variables
+    # Advanced config: https://create-react-app.dev/docs/advanced-configuration/
+    HTTPS=false
+    PORT=3000
+    REACT_APP_PACKAGE_NAME=${npm_package_name}
+    REACT_APP_PACKAGE_VERSION=${npm_package_version}
+    ```
+  - Save
+  - Create **.env-override** folder at the app's root level
+  - Inside **.env-override** folder, create the following files:
     - **.env.development**
-      - Initialize file with `REACT_APP_ENV=development`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "build:d" Builds the App to `out/build/development`
+      # - "sbook:d" Builds Storybook to `out/storybook/development`
+      BUILD_PATH='./out/build/development'
+      REACT_APP_ENV='development'
+      ```
     - **.env.local**
-      - Initialize file with `REACT_APP_ENV=local`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "start"   Runs the App in http://localhost:3000
+      # - "sbook"   Runs Storybook in http://localhost:3001
+      # - "build:l" Builds the App to `out/build/local`
+      # - "sbook:l" Builds Storybook to `out/storybook/local`
+      BUILD_PATH='./out/build/local'
+      REACT_APP_ENV='local'
+      ```
     - **.env.production**
-      - Initialize file with `REACT_APP_ENV=production`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "build"   Builds the App to `out/build/production`
+      # - "sbook:p" Builds Storybook to `out/storybook/production`
+      BUILD_PATH='./out/build/production'
+      REACT_APP_ENV='production'
+      ```
     - **.env.qa**
-      - Initialize file with `REACT_APP_ENV=qa`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "build:q" Builds the App to `out/build/qa`
+      # - "sbook:q" Builds Storybook to `out/storybook/qa`
+      BUILD_PATH='./out/build/qa'
+      REACT_APP_ENV='qa'
+      ```
     - **.env.staging**
-      - Initialize file with `REACT_APP_ENV=staging`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "build:s" Builds the App to `out/build/staging`
+      # - "sbook:s" Builds Storybook to `out/storybook/staging`
+      BUILD_PATH='./out/build/staging'
+      REACT_APP_ENV='staging'
+      ```
     - **.env.test**
-      - Initialize file with `REACT_APP_ENV=test`
+      ```env
+      # Variables in this file are injected by the following scripts:
+      # - "test" Executes Unit Tests outputting to `out/coverage`
+      BUILD_PATH='./out/build/test'
+      REACT_APP_ENV='test'
+      ```
 
 ## 12. Add [LICENSE](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
   - Create **LICENSE** file at the app's root level
