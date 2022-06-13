@@ -532,14 +532,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````
   - Save
 
-## 14. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
-  - Go to the **public/index.html** file and add the following reference before the `<title>`:
-    ```html
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    ```
-  - Save
-
-## 15. Delete unnecessary root files
+## 14. Delete unnecessary root files
   - Go to **src** folder and delete the following files:
     - **App.css**
     - **App.test.tsx**
@@ -547,7 +540,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **index.css**
     - **logo.svg**
 
-## 16. Customize [Web Vitals](https://web.dev/vitals)
+## 15. Customize [Web Vitals](https://web.dev/vitals)
   - Create **src/util** folder
   - Move **reportWebVitals.ts** file to that folder:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
@@ -568,7 +561,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 17. Create and initialize styles folder
+## 16. Create and initialize styles folder
   - Create **src/styles** folder
   - In that folder create **site.css** file with the following styles:
     ```css
@@ -577,6 +570,66 @@ The purpose of this tutorial is to document the step by step on how to create a 
       margin: 0;
       padding: 0;
     }
+    ```
+  - Save
+
+## 17. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
+  - Create **src/fonts** folder
+  - In that folder, copy file [material-icons-regular.ttf](https://to-be-defined.com)
+  - Go to **src/styles** folder
+  - In that folder, create **material-icons.css** file with the following styles:
+    ```css
+    /**
+     * Material icons to depict in simple and minimal forms the universal
+     * concepts used commonly throughout a UI.
+     * Learn more: https://developers.google.com/fonts/docs/material_icons
+     */
+    @font-face {
+      font-family: "Material Icons";
+      font-style: normal;
+      font-weight: 400;
+      src: url("../fonts/material-icons-regular.ttf") format("truetype");
+    }
+
+    .material-icons {
+      font-family: "Material Icons";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px; /* Preferred icon size */
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizelegibility;
+
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Support for IE. */
+      font-feature-settings: "liga";
+    }
+
+    /* Rules for sizing the icon. */
+    .material-icons.md-18 { font-size: 18px; }
+    .material-icons.md-24 { font-size: 24px; }
+    .material-icons.md-36 { font-size: 36px; }
+    .material-icons.md-48 { font-size: 48px; }
+
+    /* Rules for using icons as black on a light background. */
+    .material-icons.md-dark { color: rgb(0 0 0 / 54%); }
+    .material-icons.md-dark.md-inactive { color: rgb(0 0 0 / 26%); }
+
+    /* Rules for using icons as white on a dark background. */
+    .material-icons.md-light { color: rgb(255 255 255 / 100%); }
+    .material-icons.md-light.md-inactive { color: rgb(255 255 255 / 30%); }
     ```
   - Save
 
