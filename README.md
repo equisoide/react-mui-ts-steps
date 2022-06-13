@@ -268,17 +268,15 @@ The purpose of this tutorial is to document the step by step on how to create a 
       // Use IntelliSense to learn about possible attributes.
       // Hover to view descriptions of existing attributes.
       // Learn more: https://code.visualstudio.com/docs/getstarted/settings
+      "editor.codeActionsOnSave": {
+        "source.fixAll": true
+      },
       "explorer.sortOrder": "type",
       "files.eol": "\n",
       "search.exclude": {
-        "**/build": true,
-        "**/coverage": true,
         "**/node_modules": true,
-        "**/storybook-static": true,
+        "**/out": true,
         "package-lock.json": true
-      },
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
       }
     }
     ```
