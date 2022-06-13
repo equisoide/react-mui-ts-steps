@@ -6,7 +6,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
     - `npx create-react-app react-mui-ts-template --template typescript`
     - `cd react-mui-ts-template`
-    - Go to **package.json** file and rearrange dependencies as follow:
+    - Go to **package.json** file and rearrange `dependencies` as follow:
       ```json
       "dependencies": {
         "react": "^18.1.0",
