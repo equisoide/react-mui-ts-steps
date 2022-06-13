@@ -234,6 +234,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "rules": {
             "declaration-block-trailing-semicolon": "always",
             "declaration-no-important": true,
+            "font-family-no-missing-generic-family-keyword": null,
             "indentation": 2
         }
     }
