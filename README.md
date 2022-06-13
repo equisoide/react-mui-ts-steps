@@ -14,11 +14,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `npm i i18next react-i18next`
     - `npm i i18next-browser-languagedetector`
   - [env-cmd](https://github.com/toddbluhm/env-cmd):
-    - `npm i env-cmd`
+    - `npm i env-cmd --save-dev`
   - [Stylelint](https://stylelint.io/user-guide/get-started):
-    - `npm i stylelint stylelint-config-standard`
+    - `npm i stylelint stylelint-config-standard --save-dev`
   - [ESLint](https://eslint.org/docs/user-guide/getting-started):
-    - `npm i eslint`
+    - `npm i eslint --save-dev`
     - `npm init @eslint/config`
       - To check syntax, find problems, and enforce code style
       - JavaScript modules (import/export)
