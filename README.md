@@ -6,6 +6,28 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
     - `npx create-react-app react-mui-ts-template --template typescript`
     - `cd react-mui-ts-template`
+    - Go to **package.json** file and re-arrange dependencies as follow:
+      ```json
+      "dependencies": {
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+      "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.3.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.2",
+        "@types/node": "^16.11.39",
+        "@types/react": "^18.0.12",
+        "@types/react-dom": "^18.0.5",
+        "typescript": "^4.7.3"
+      },
+      ```
+    - Save
+    - Delete **node_modules** and **package-lock.json** file
+    - `npm install`
   - [MUI (Material UI)](https://mui.com/material-ui/getting-started/installation):
     - `npm i @mui/material @emotion/react @emotion/styled`
     - `npm i @fontsource/roboto`
