@@ -575,9 +575,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 17. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
   - Create **src/fonts** folder
-  - In that folder, copy file [material-icons-regular.ttf](https://to-be-defined.com)
+  - In that folder copy file [material-icons-regular.ttf](https://to-be-defined.com)
   - Go to **src/styles** folder
-  - In that folder, create **material-icons.css** file with the following styles:
+  - In that folder create **material-icons.css** file with the following styles:
     ```css
     /**
      * Material icons to depict in simple and minimal forms the universal
