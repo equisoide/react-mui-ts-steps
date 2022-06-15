@@ -708,11 +708,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
         .init({
           resources: {
             en: {
-              translations: { ...resourcesEn }
+              translations: { ...resourcesEn },
             },
             es: {
-              translations: { ...resourcesEs }
-            }
+              translations: { ...resourcesEs },
+            },
           },
           fallbackLng: 'en',
           debug: false,
@@ -720,8 +720,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
           defaultNS: 'translations',
           keySeparator: false,
           interpolation: {
-            escapeValue: false
-          }
+            escapeValue: false,
+          },
         });
     };
 
