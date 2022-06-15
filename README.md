@@ -581,7 +581,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       getFID,
       getFCP,
       getLCP,
-      getTTFB
+      getTTFB,
     }) => {
     ```
   - Save
