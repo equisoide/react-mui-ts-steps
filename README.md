@@ -144,6 +144,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "src/**/*.tsx",
         "!src/**/*.stories.tsx",
         "!src/index.tsx",
+        "!src/react-app-env.d.ts",
         "!src/util/report-web-vitals.ts"
       ]
     },
