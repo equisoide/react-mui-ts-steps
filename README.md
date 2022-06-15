@@ -6,6 +6,28 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
     - `npx create-react-app react-mui-ts-template --template typescript`
     - `cd react-mui-ts-template`
+    - Go to **package.json** file and rearrange `dependencies` as follow (Keep your current versions):
+      ```json
+      "dependencies": {
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+      "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.3.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.2",
+        "@types/node": "^16.11.39",
+        "@types/react": "^18.0.12",
+        "@types/react-dom": "^18.0.5",
+        "typescript": "^4.7.3"
+      },
+      ```
+    - Save
+    - Delete **node_modules** and **package-lock.json** file
+    - `npm install`
   - [MUI (Material UI)](https://mui.com/material-ui/getting-started/installation):
     - `npm i @mui/material @emotion/react @emotion/styled`
     - `npm i @fontsource/roboto`
@@ -14,11 +36,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `npm i i18next react-i18next`
     - `npm i i18next-browser-languagedetector`
   - [env-cmd](https://github.com/toddbluhm/env-cmd):
-    - `npm i env-cmd`
+    - `npm i env-cmd --save-dev`
   - [Stylelint](https://stylelint.io/user-guide/get-started):
-    - `npm i stylelint stylelint-config-standard`
+    - `npm i stylelint stylelint-config-standard --save-dev`
   - [ESLint](https://eslint.org/docs/user-guide/getting-started):
-    - `npm i eslint`
+    - `npm i eslint --save-dev`
     - `npm init @eslint/config`
       - To check syntax, find problems, and enforce code style
       - JavaScript modules (import/export)
@@ -90,7 +112,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "vscode"
     ],
     ```
-  - Move **devDependencies** after **dependencies**
   - Replace **scripts** object with the following:
     ```json
     "scripts": {
@@ -123,6 +144,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "src/**/*.tsx",
         "!src/**/*.stories.tsx",
         "!src/index.tsx",
+        "!src/react-app-env.d.ts",
         "!src/util/report-web-vitals.ts"
       ]
     },
@@ -183,7 +205,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```json
     "rules": {
       "@typescript-eslint/no-empty-function": "off",
-      "comma-dangle": ["error", "never"],
+      "comma-dangle": ["error", "always-multiline"],
       "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
       "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
       "jsx-a11y/alt-text": "off",
@@ -504,7 +526,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         export default MyComponent;
         ```
     - In general use [Trailing Commas](https://blog.logrocket.com/best-practices-using-trailing-commas-javascript), many coding styles now recommend using them all the time because they make it easier to add new parameters to your functions or copy/paste properties in arrays and objects and also helps with producing cleaner diff output
-    - Add your own environment variables to the `env/.env.local` file, this file should not be commited
+    - Add your own environment variables to the `.env-override/.env.local` file, this file should not be commited
     - Before running or building this application always run linters and unit tests
     - Linter is configured to accept valid ending of lines as `LF` (unix style), if you are on Windows, to avoid Git converting from `LF` to `CRLF`, run the following commands:
       ```shell
@@ -556,7 +578,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Refactor the file to fix linter issues:
     ```js
     import('web-vitals').then(({
-      getCLS, getFID, getFCP, getLCP, getTTFB
+      getCLS,
+      getFID,
+      getFCP,
+      getLCP,
+      getTTFB,
     }) => {
     ```
   - Save
@@ -570,12 +596,30 @@ The purpose of this tutorial is to document the step by step on how to create a 
       margin: 0;
       padding: 0;
     }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     ```
   - Save
 
 ## 17. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
   - Create **src/fonts** folder
-  - In that folder copy file [material-icons-regular.ttf](https://to-be-defined.com)
+  - In that folder copy file [material-icons-regular.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons-regular.ttf)
   - Go to **src/styles** folder
   - In that folder create **material-icons.css** file with the following styles:
     ```css
@@ -665,11 +709,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
         .init({
           resources: {
             en: {
-              translations: { ...resourcesEn }
+              translations: { ...resourcesEn },
             },
             es: {
-              translations: { ...resourcesEs }
-            }
+              translations: { ...resourcesEs },
+            },
           },
           fallbackLng: 'en',
           debug: false,
@@ -677,8 +721,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
           defaultNS: 'translations',
           keySeparator: false,
           interpolation: {
-            escapeValue: false
-          }
+            escapeValue: false,
+          },
         });
     };
 
@@ -697,8 +741,35 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
     ```js
     "core": {
+      // By default StoryBook collects telemetry data.
       "disableTelemetry": true
     }
+    ```
+  - Add **webpackFinal** after **core**:
+    ```js
+    webpackFinal: async (config) => {
+      // Manually inject environment variables.
+      // Note that otherwise, only `STORYBOOK_*` prefix env vars are supported.
+      // Ref: https://github.com/storybookjs/storybook/issues/12270
+      const findPlugin = (name) => config.plugins.find(
+        ({ constructor }) => constructor && constructor.name === name,
+      );
+
+      const definePlugin = findPlugin('DefinePlugin');
+      const interpolateHtmlPlugin = findPlugin('InterpolateHtmlPlugin');
+      const definitions = Object.keys(definePlugin.definitions);
+      const replacements = Object.keys(interpolateHtmlPlugin.replacements);
+      const isMissingKey = (key) => !definitions.includes(`process.env.${key}`);
+      const missingKeys = replacements.filter(isMissingKey);
+
+      missingKeys.forEach((key) => {
+        definePlugin.definitions[`process.env.${key}`] = JSON.stringify(
+          interpolateHtmlPlugin.replacements[key],
+        );
+      });
+
+      return config;
+    },
     ```
   - Save
   - Open **.storybook/preview.js** file:
@@ -707,11 +778,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
     // Use preview.js for global code that applies to all stories.
     // Learn more: https://storybook.js.org/docs/react/configure/overview
     import initI18n from '../src/lang';
+
     import '@fontsource/roboto/300.css';
     import '@fontsource/roboto/400.css';
     import '@fontsource/roboto/500.css';
     import '@fontsource/roboto/700.css';
+
     import '../src/styles/site.css';
+    import '../src/styles/material-icons.css';
 
     initI18n();
     ```
@@ -728,6 +802,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **Page.tsx**
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
   - Open **introduction.stories.mdx** file:
+    - Replace **# Welcome to Storybook** by the following:
+      ```html
+      <h1>{process.env.REACT_APP_PACKAGE_NAME}</h1>
+      <h2>{process.env.REACT_APP_PACKAGE_VERSION}</h2>
+      ```
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
@@ -741,3 +820,156 @@ The purpose of this tutorial is to document the step by step on how to create a 
     initI18n();
     ```
   - Save
+
+## 21. Update index.html Title
+  - Go to **public/index.html** file
+  - Replace the **title** by the following:
+    ```html
+    <title>%REACT_APP_PACKAGE_NAME%</title>
+    ```
+  - Save
+
+## 22. Create HelloWorld component
+  - Create **src/components/HelloWorld** folder
+  - Inside **src/components/HelloWorld** folder, create **index.tsx** file with the following code:
+    ```tsx
+    import Alert from '@mui/material/Alert';
+    import AlertTitle from '@mui/material/AlertTitle';
+    import { AlertProps, Box, BoxProps } from '@mui/material';
+    import { useTranslation } from 'react-i18next';
+
+    export interface HelloWorldProps {
+      alert?: AlertProps,
+      box?: BoxProps
+    }
+
+    function HelloWorld({ alert, box } : HelloWorldProps) {
+      const { t } = useTranslation();
+      const boxProps = { ...HelloWorld.defaultProps.box, ...box } as BoxProps;
+      const alertProps = { ...HelloWorld.defaultProps.alert, ...alert } as AlertProps;
+      return (
+        <Box {...boxProps}>
+          <Alert {...alertProps}>
+            <AlertTitle>{t('hello-world')}</AlertTitle>
+            <div>{process.env.REACT_APP_PACKAGE_NAME}</div>
+            <div>{process.env.REACT_APP_PACKAGE_VERSION}</div>
+            <div>{process.env.REACT_APP_ENV}</div>
+          </Alert>
+        </Box>
+      );
+    }
+
+    HelloWorld.defaultProps = {
+      alert: {
+        severity: 'success',
+        sx: { width: 300 },
+        variant: 'filled',
+      },
+      box: {},
+    };
+
+    export default HelloWorld;
+    ```
+  - Save
+  - Inside **src/components/HelloWorld** folder, create **index.test.tsx** file with the following code:
+    ```tsx
+    import { render, screen } from '@testing-library/react';
+    import HelloWorld from '.';
+
+    test('Render HelloWorld Component', () => {
+      render(<HelloWorld />);
+      const element = screen.getByText(/Hello World!/i);
+      expect(element).toBeInTheDocument();
+    });
+    ```
+  - Save
+  - Inside **src/components/HelloWorld** folder, create **index.stories.tsx** file with the following code:
+    ```tsx
+    import { ComponentMeta, ComponentStory } from '@storybook/react';
+    import HelloWorld from '.';
+
+    export default {
+      title: 'Example/HelloWorld',
+      component: HelloWorld,
+    } as ComponentMeta<typeof HelloWorld>;
+
+    const Template: ComponentStory<typeof HelloWorld> = (args) => <HelloWorld {...args} />;
+
+    export const Primary = Template.bind({});
+    Primary.args = {
+    };
+
+    export const Secondary = Template.bind({});
+    Secondary.args = {
+      alert: { severity: 'error' },
+    };
+    ```
+  - Save
+
+## 23. Update index.tsx file
+  - Open **src/index.tsx** file and replace all code with the following:
+    ```tsx
+    import ReactDOM from 'react-dom/client';
+    import { StrictMode } from 'react';
+
+    import HelloWorld from './components/HelloWorld';
+    import initI18n from './lang';
+    import reportWebVitals from './util/report-web-vitals';
+
+    import '@fontsource/roboto/300.css';
+    import '@fontsource/roboto/400.css';
+    import '@fontsource/roboto/500.css';
+    import '@fontsource/roboto/700.css';
+
+    import './styles/site.css';
+    import './styles/material-icons.css';
+
+    initI18n();
+
+    const htmlRoot = document.getElementById('root') as HTMLElement;
+    const reactRoot = ReactDOM.createRoot(htmlRoot);
+
+    reactRoot.render(
+      <StrictMode>
+        <HelloWorld
+          box={{
+            sx: {
+              background: 'rgb(0, 30, 60)',
+              height: '100vh',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            },
+          }}
+        />
+      </StrictMode>,
+    );
+
+    if (process.env.REACT_APP_ENV !== 'production') {
+      // If you want to start measuring performance in your app, pass a function
+      // to log results (for example: reportWebVitals(console.log))
+      // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+      // eslint-disable-next-line no-console
+      reportWebVitals(console.log);
+    }
+    ```
+  - Save
+
+## 24. Test everything is working fine
+   - Delete **node_modules** folder
+   - Installs all dependencies for the first time: `npm run init`
+   - Analyse **JavaSript/TypeScript** code: `npm run lint`
+   - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
+   - Analyses **CSS** files for potential errors: `npm run lint:s`
+   - Executes Unit Tests outputting to **out/coverage**: `npm test`
+   - Runs the App in http://localhost:3000: `npm start`
+   - Builds the App to **out/build/production**: `npm run build`
+   - Builds the App to **out/build/development**: `npm run build:d`
+   - Builds the App to **out/build/local**: `npm run build:l`
+   - Builds the App to **out/build/staging**: `npm run build:s`
+   - Runs Storybook in http://localhost:3001: `npm run sbook`
+   - Builds Storybook to **out/storybook/development**: `npm run sbook:d`
+   - Builds Storybook to **out/storybook/local**: `npm run sbook:l`
+   - Builds Storybook to **out/storybook/production**: `npm run sbook:p`
+   - Builds Storybook to **out/storybook/qa**: `npm run sbook:q`
+   - Builds Storybook to **out/storybook/staging**: `npm run sbook:s`
