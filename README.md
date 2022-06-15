@@ -828,3 +828,80 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
+## 22. Create HelloWorld component
+  - Create **src/components/HelloWorld** folder
+  - Inside **src/components/HelloWorld** folder, create **index.tsx** file with the following code:
+    ```tsx
+    import Alert from '@mui/material/Alert';
+    import AlertTitle from '@mui/material/AlertTitle';
+    import { AlertProps, Box, BoxProps } from '@mui/material';
+    import { useTranslation } from 'react-i18next';
+
+    export interface HelloWorldProps {
+      alert?: AlertProps,
+      box?: BoxProps
+    }
+
+    function HelloWorld({ alert, box } : HelloWorldProps) {
+      const { t } = useTranslation();
+      const boxProps = { ...HelloWorld.defaultProps.box, ...box } as BoxProps;
+      const alertProps = { ...HelloWorld.defaultProps.alert, ...alert } as AlertProps;
+      return (
+        <Box {...boxProps}>
+          <Alert {...alertProps}>
+            <AlertTitle>{t('hello-world')}</AlertTitle>
+            <div>{process.env.REACT_APP_PACKAGE_NAME}</div>
+            <div>{process.env.REACT_APP_PACKAGE_VERSION}</div>
+            <div>{process.env.REACT_APP_ENV}</div>
+          </Alert>
+        </Box>
+      );
+    }
+
+    HelloWorld.defaultProps = {
+      alert: {
+        severity: 'success',
+        sx: { width: 300 },
+        variant: 'filled',
+      },
+      box: {},
+    };
+
+    export default HelloWorld;
+    ```
+  - Save
+  - Inside **src/components/HelloWorld** folder, create **index.test.tsx** file with the following code:
+    ```tsx
+    import { render, screen } from '@testing-library/react';
+    import HelloWorld from '.';
+
+    test('Render HelloWorld Component', () => {
+      render(<HelloWorld />);
+      const element = screen.getByText(/Hello World!/i);
+      expect(element).toBeInTheDocument();
+    });
+    ```
+  - Save
+  - Inside **src/components/HelloWorld** folder, create **index.stories.tsx** file with the following code:
+    ```tsx
+    import { ComponentMeta, ComponentStory } from '@storybook/react';
+    import HelloWorld from '.';
+
+    export default {
+      title: 'Example/HelloWorld',
+      component: HelloWorld,
+    } as ComponentMeta<typeof HelloWorld>;
+
+    const Template: ComponentStory<typeof HelloWorld> = (args) => <HelloWorld {...args} />;
+
+    export const Primary = Template.bind({});
+    Primary.args = {
+    };
+
+    export const Secondary = Template.bind({});
+    Secondary.args = {
+      alert: { severity: 'error' },
+    };
+    ```
+  - Save
+
