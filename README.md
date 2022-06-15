@@ -103,7 +103,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "init": "npm ci --loglevel=error --no-audit --no-fund",
       "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
       "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
-      "lint:s": "./node_modules/.bin/stylelint \"src/**/*.css\"",
+      "lint:c": "./node_modules/.bin/stylelint \"src/**/*.css\"",
       "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
       "sbook:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
       "sbook:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
@@ -452,7 +452,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     | `npm run init`    | Installs all dependencies for the first time     | N/A              |
     | `npm run lint`    | Analyses `JavaSript`/`TypeScript` code           | N/A              |
     | `npm run lint:f`  | Try to fix `JavaSript`/`TypeScript` errors       | N/A              |
-    | `npm run lint:s`  | Analyses `CSS` files for potential errors        | N/A              |
+    | `npm run lint:c`  | Analyses `CSS` files for potential errors        | N/A              |
     | `npm test`        | Executes Unit Tests outputting to `out/coverage` | .env.test        |
     | `npm start`       | Runs the App in http://localhost:3000            | .env.local       |
     | `npm run build`   | Builds the App to `out/build/production`         | .env.production  |
