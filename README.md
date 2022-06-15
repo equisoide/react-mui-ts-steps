@@ -204,7 +204,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```json
     "rules": {
       "@typescript-eslint/no-empty-function": "off",
-      "comma-dangle": ["error", "never"],
+      "comma-dangle": ["error", "always-multiline"],
       "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
       "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
       "jsx-a11y/alt-text": "off",
