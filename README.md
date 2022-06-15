@@ -960,7 +960,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
    - Installs all dependencies for the first time: `npm run init`
    - Analyse **JavaSript/TypeScript** code: `npm run lint`
    - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
-   - Analyses **CSS** files for potential errors: `npm run lint:s`
+   - Analyses **CSS** files for potential errors: `npm run lint:c`
    - Executes Unit Tests outputting to **out/coverage**: `npm test`
    - Runs the App in http://localhost:3000: `npm start`
    - Builds the App to **out/build/production**: `npm run build`
