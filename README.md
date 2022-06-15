@@ -6,7 +6,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
     - `npx create-react-app react-mui-ts-template --template typescript`
     - `cd react-mui-ts-template`
-    - Go to **package.json** file and rearrange `dependencies` as follow:
+    - Go to **package.json** file and rearrange `dependencies` as follow (Keep your current versions):
       ```json
       "dependencies": {
         "react": "^18.1.0",
@@ -112,7 +112,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "vscode"
     ],
     ```
-  - Move **devDependencies** after **dependencies**
   - Replace **scripts** object with the following:
     ```json
     "scripts": {
@@ -526,7 +525,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         export default MyComponent;
         ```
     - In general use [Trailing Commas](https://blog.logrocket.com/best-practices-using-trailing-commas-javascript), many coding styles now recommend using them all the time because they make it easier to add new parameters to your functions or copy/paste properties in arrays and objects and also helps with producing cleaner diff output
-    - Add your own environment variables to the `env/.env.local` file, this file should not be commited
+    - Add your own environment variables to the `.env-override/.env.local` file, this file should not be commited
     - Before running or building this application always run linters and unit tests
     - Linter is configured to accept valid ending of lines as `LF` (unix style), if you are on Windows, to avoid Git converting from `LF` to `CRLF`, run the following commands:
       ```shell
@@ -578,7 +577,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Refactor the file to fix linter issues:
     ```js
     import('web-vitals').then(({
-      getCLS, getFID, getFCP, getLCP, getTTFB
+      getCLS,
+      getFID,
+      getFCP,
+      getLCP,
+      getTTFB
     }) => {
     ```
   - Save
@@ -592,6 +595,24 @@ The purpose of this tutorial is to document the step by step on how to create a 
       margin: 0;
       padding: 0;
     }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     ```
   - Save
 
@@ -719,8 +740,35 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
     ```js
     "core": {
+      // By default StoryBook collects telemetry data.
       "disableTelemetry": true
     }
+    ```
+  - Add **webpackFinal** after **core**:
+    ```js
+    webpackFinal: async (config) => {
+      // Manually inject environment variables.
+      // Note that otherwise, only `STORYBOOK_*` prefix env vars are supported.
+      // Ref: https://github.com/storybookjs/storybook/issues/12270
+      const findPlugin = (name) => config.plugins.find(
+        ({ constructor }) => constructor && constructor.name === name,
+      );
+
+      const definePlugin = findPlugin('DefinePlugin');
+      const interpolateHtmlPlugin = findPlugin('InterpolateHtmlPlugin');
+      const definitions = Object.keys(definePlugin.definitions);
+      const replacements = Object.keys(interpolateHtmlPlugin.replacements);
+      const isMissingKey = (key) => !definitions.includes(`process.env.${key}`);
+      const missingKeys = replacements.filter(isMissingKey);
+
+      missingKeys.forEach((key) => {
+        definePlugin.definitions[`process.env.${key}`] = JSON.stringify(
+          interpolateHtmlPlugin.replacements[key],
+        );
+      });
+
+      return config;
+    },
     ```
   - Save
   - Open **.storybook/preview.js** file:
@@ -729,11 +777,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
     // Use preview.js for global code that applies to all stories.
     // Learn more: https://storybook.js.org/docs/react/configure/overview
     import initI18n from '../src/lang';
+
     import '@fontsource/roboto/300.css';
     import '@fontsource/roboto/400.css';
     import '@fontsource/roboto/500.css';
     import '@fontsource/roboto/700.css';
+
     import '../src/styles/site.css';
+    import '../src/styles/material-icons.css';
 
     initI18n();
     ```
@@ -750,6 +801,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **Page.tsx**
   - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
   - Open **introduction.stories.mdx** file:
+    - Replace **# Welcome to Storybook** by the following:
+      ```html
+      <h1>{process.env.REACT_APP_PACKAGE_NAME}</h1>
+      <h2>{process.env.REACT_APP_PACKAGE_VERSION}</h2>
+      ```
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
@@ -763,3 +819,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
     initI18n();
     ```
   - Save
+
+## 21. Update index.html Title
+  - Go to **public/index.html** file
+  - Replace the **title** by the following:
+    ```html
+    <title>%REACT_APP_PACKAGE_NAME%</title>
+    ```
+  - Save
+
