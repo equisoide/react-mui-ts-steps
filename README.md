@@ -1025,3 +1025,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
    - Build Storybook to **out/storybook/production**: `npm run sbook:p`
    - Build Storybook to **out/storybook/qa**: `npm run sbook:q`
    - Build Storybook to **out/storybook/staging**: `npm run sbook:s`
+
+## Creator
+
+**Juan Cuartas** https://twitter.com/juancuartas
+
+## Copyright and license
+
+Code and documentation released under [the MIT license](https://github.com/equisoide/react-mui-ts-steps/blob/master/LICENSE)
