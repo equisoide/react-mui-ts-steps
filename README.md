@@ -789,6 +789,46 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     initI18n();
     ```
+  - Create **.storybook/favicon.svg** file with the following content:
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="16px" height="20px" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>storybook-icon/default</title>
+        <defs>
+            <path d="M0.620279251,18.4293378 L0.000720094879,1.92089246 C-0.0197415137,1.37568327 0.398305374,0.913624829 0.942835893,0.879591672 L14.984425,0.00199234997 C15.5386921,-0.0326493419 16.016097,0.388590257 16.0507387,0.942857327 C16.0520438,0.963739972 16.0526969,0.984658267 16.0526969,1.00558166 L16.0526969,18.9944525 C16.0526969,19.549801 15.6024979,20 15.0471494,20 C15.0321047,20 15.017062,19.9996624 15.0020325,19.9989873 L1.58000252,19.3961612 C1.05726753,19.3726835 0.639903368,18.9522316 0.620279251,18.4293378 Z" id="path-1"></path>
+        </defs>
+        <g id="storybook-icon/default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="path1_fill-path" fill="#FF4785" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <path d="M11.8537041,2.4583186 L11.9496157,0.15151183 L13.8779482,0 L13.9610222,2.37893005 C13.9639134,2.46172229 13.8991408,2.53118243 13.8163485,2.53407359 C13.780898,2.53531156 13.7461558,2.52394606 13.7182911,2.50199528 L12.9746642,1.91619251 L12.094228,2.584057 C12.0282261,2.63412351 11.934134,2.62120528 11.8840675,2.55520331 C11.862992,2.52741977 11.8522554,2.49316117 11.8537041,2.4583186 Z" id="path2_fill-path" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M9.38755179,7.53827354 C9.38755179,7.92949033 12.0227349,7.74199033 12.376485,7.4671875 C12.376485,4.80309448 10.9469952,3.40315552 8.32935804,3.40315552 C5.71172085,3.40315552 4.24510144,4.82487559 4.24510144,6.95745682 C4.24510144,10.6717025 9.25759817,10.7427885 9.25759817,12.7687407 C9.25759817,13.337429 8.97912613,13.6750877 8.36648764,13.6750877 C7.56820113,13.6750877 7.25259948,13.2673973 7.28972909,11.8812195 C7.28972909,11.5805064 4.24510144,11.4867564 4.15227743,11.8812195 C3.91590969,15.2404217 6.0087577,16.2093445 8.40361725,16.2093445 C10.7242176,16.2093445 12.5435683,14.9724079 12.5435683,12.7331976 C12.5435683,8.75237935 7.45681231,8.85900841 7.45681231,6.88637078 C7.45681231,6.08665282 8.050886,5.98002376 8.40361725,5.98002376 C8.7749133,5.98002376 9.4432462,6.04546668 9.38755179,7.53827354 Z" id="path9_fill-path" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+        </g>
+    </svg>
+    ```
+  - Save
+  - Create file **.storybook/manager.js** with the following code:
+    ```js
+    // This file allows you to customize how Storybook’s app UI renders.
+    // That is, everything outside of the Canvas (preview iframe).
+    // Learn more: https://storybook.js.org/blog/declarative-storybook-configuration/
+    import favicon from './favicon.svg';
+
+    // How to change Storybook Favicon
+    // Ref: https://github.com/storybookjs/storybook/issues/6155
+    const injectFavicon = () => {
+      const link = document.createElement('link');
+
+      link.setAttribute('rel', 'icon');
+      link.setAttribute('href', favicon);
+      link.setAttribute('type', 'image/svg+xml');
+
+      document.head.appendChild(link);
+    };
+
+    injectFavicon();
+    ```
   - Save
   - Go to **src/stories** folder and delete the following files:
     - **button.css**
@@ -895,12 +935,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     const Template: ComponentStory<typeof HelloWorld> = (args) => <HelloWorld {...args} />;
 
-    export const Primary = Template.bind({});
-    Primary.args = {
+    export const Green = Template.bind({});
+    Green.args = {
     };
 
-    export const Secondary = Template.bind({});
-    Secondary.args = {
+    export const Red = Template.bind({});
+    Red.args = {
       alert: { severity: 'error' },
     };
     ```
