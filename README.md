@@ -541,7 +541,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - [TypeScript](https://www.typescriptlang.org)
     - [ES6](http://es6-features.org/#Constants)
     - [MUI Crash Course](https://www.youtube.com/watch?v=o1chMISeTC0)
-    - [MUI From zero to hero](https://www.youtube.com/playlist?list=PLDxCaNaYIuUlG5ZqoQzFE27CUOoQvOqnQ)
+    - [MUI From Zero to Hero](https://www.youtube.com/playlist?list=PLDxCaNaYIuUlG5ZqoQzFE27CUOoQvOqnQ)
     - [MUI Components](https://mui.com/material-ui/react-autocomplete)
     - [MUI Templates](https://mui.com/material-ui/getting-started/templates)
 
