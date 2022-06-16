@@ -9,8 +9,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Go to **package.json** file and rearrange `dependencies` as follow (Keep your current versions):
       ```json
       "dependencies": {
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
       },
@@ -19,7 +19,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.5.2",
-        "@types/node": "^16.11.39",
+        "@types/node": "^16.11.41",
         "@types/react": "^18.0.12",
         "@types/react-dom": "^18.0.5",
         "typescript": "^4.7.3"
@@ -421,17 +421,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
     This template is intended to help you start a new `React SPA` project from scratch with a comprehensive folder structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information on how to perform common tasks.
 
     ## Core Libraries
-    - [React 18.1.0](https://reactjs.org) with `React Scripts 5.0.1`
-    - [MUI 5.8.2](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Google Font Icons`
-    - [TypeScript 4.7.2](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
-    - [I18next 21.8.5](https://react.i18next.com) for internationalization
+    - [React 18.2.0](https://reactjs.org) with `React Scripts 5.0.1`
+    - [MUI 5.8.4](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Google Font Icons`
+    - [TypeScript 4.7.3](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
+    - [I18next 21.8.9](https://react.i18next.com) for internationalization
 
     ## Documentation Tools
-    - [Storybook 6.5.6](https://storybook.js.org) to document pages and components
+    - [Storybook 6.5.9](https://storybook.js.org) to document pages and components
 
     ## Code Quality & Performance
-    - [ESLint 8.16.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
-    - [Stylelint 14.8.5](https://stylelint.io) to analyse `CSS` files
+    - [ESLint 8.17.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
+    - [Stylelint 14.9.1](https://stylelint.io) to analyse `CSS` files
     - [Jest 27.5.2](https://jestjs.io/docs/getting-started) to test `JavaScript`/`TypeScript` files
     - [React Testing Library 13.3.0](https://testing-library.com/docs/react-testing-library/intro) to test components
     - [Web Vitals 2.1.4](https://web.dev/vitals) to meassure performance
