@@ -463,10 +463,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
        > `git clone https://github.com/equisoide/react-mui-ts-template.git`
     2. Install all required packages (It will perform a [Clean install](https://docs.npmjs.com/cli/v8/commands/npm-ci)):
        > `npm run init`
-    3. Start the application:
+    3. Restart VS Code in order to refresh **TypeScript Intellisense**, otherwise you might see TypeScript errors in the editor
+    4. Start the application:
        > `npm start`
-    4. Start debugging in `VS Code` by pressing `F5` or by clicking on `Run and Debug` > `Green debug icon`
-    5. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+    5. Start debugging in `VS Code` by pressing `F5` or by clicking on `Run and Debug` > `Green debug icon`
+    6. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
     ## Available Scripts
     | Command           | Description                                      | Evironment File  |
@@ -699,6 +700,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     import LanguageDetector from 'i18next-browser-languagedetector';
     import i18n from 'i18next';
     import { initReactI18next } from 'react-i18next';
+    
     import resourcesEn from './resources.en.json';
     import resourcesEs from './resources.es.json';
 
@@ -815,7 +817,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     // Learn more: https://storybook.js.org/blog/declarative-storybook-configuration/
     import favicon from './favicon.svg';
 
-    // How to change Storybook Favicon
+    // Change Storybook Favicon.
     // Ref: https://github.com/storybookjs/storybook/issues/6155
     const injectFavicon = () => {
       const link = document.createElement('link');
@@ -997,19 +999,20 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 24. Test everything is working fine
    - Delete **node_modules** folder
-   - Installs all dependencies for the first time: `npm run init`
+   - Install all dependencies for the first time: `npm run init`
+   - Restart VS Code in order to refresh **TypeScript Intellisense**
    - Analyse **JavaSript/TypeScript** code: `npm run lint`
    - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
-   - Analyses **CSS** files for potential errors: `npm run lint:c`
-   - Executes Unit Tests outputting to **out/coverage**: `npm test`
-   - Runs the App in http://localhost:3000: `npm start`
-   - Builds the App to **out/build/production**: `npm run build`
-   - Builds the App to **out/build/development**: `npm run build:d`
-   - Builds the App to **out/build/local**: `npm run build:l`
-   - Builds the App to **out/build/staging**: `npm run build:s`
-   - Runs Storybook in http://localhost:3001: `npm run sbook`
-   - Builds Storybook to **out/storybook/development**: `npm run sbook:d`
-   - Builds Storybook to **out/storybook/local**: `npm run sbook:l`
-   - Builds Storybook to **out/storybook/production**: `npm run sbook:p`
-   - Builds Storybook to **out/storybook/qa**: `npm run sbook:q`
-   - Builds Storybook to **out/storybook/staging**: `npm run sbook:s`
+   - Analyse **CSS** files for potential errors: `npm run lint:c`
+   - Execute Unit Tests outputting to **out/coverage**: `npm test`
+   - Run the App in http://localhost:3000: `npm start`
+   - Build the App to **out/build/production**: `npm run build`
+   - Build the App to **out/build/development**: `npm run build:d`
+   - Build the App to **out/build/local**: `npm run build:l`
+   - Build the App to **out/build/staging**: `npm run build:s`
+   - Run Storybook in http://localhost:3001: `npm run sbook`
+   - Build Storybook to **out/storybook/development**: `npm run sbook:d`
+   - Build Storybook to **out/storybook/local**: `npm run sbook:l`
+   - Build Storybook to **out/storybook/production**: `npm run sbook:p`
+   - Build Storybook to **out/storybook/qa**: `npm run sbook:q`
+   - Build Storybook to **out/storybook/staging**: `npm run sbook:s`
