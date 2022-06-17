@@ -6,7 +6,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [React App with TypeScript template](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript):
     - `npx create-react-app react-mui-ts-template --template typescript`
     - `cd react-mui-ts-template`
-    - Go to **package.json** file and rearrange `dependencies` as follow (Keep your current versions):
+    - Go to **package.json** file and rearrange `dependencies` as follow (keep your current versions):
       ```json
       "dependencies": {
         "react": "^18.2.0",
@@ -265,6 +265,24 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 9. Add [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings)
   - Create **.vscode** folder at the app's root level
+  - Inside **.vscode** folder, create **extensions.json** file with the following configuration:
+    ```js
+    {
+      // See http://go.microsoft.com/fwlink/?LinkId=827846
+      // for the documentation about the extensions.json format
+      "recommendations": [
+        "EditorConfig.EditorConfig",
+        "Tyriar.sort-lines",
+        "christian-kohler.npm-intellisense",
+        "dbaeumer.vscode-eslint",
+        "mikestead.dotenv",
+        "silvenon.mdx",
+        "stylelint.vscode-stylelint",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+    ```
+  - Save
   - Inside **.vscode** folder, create **launch.json** file with the following configuration:
     ```js
     {
