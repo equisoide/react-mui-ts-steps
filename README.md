@@ -55,7 +55,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `npx storybook init`
       - Do you want to run the eslintPlugin migration on your project? › **y**
 
-## 2. Install VS Code useful extensions
+## 2. Install VS Code recomented extensions for this project
   - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
@@ -343,7 +343,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     # Access variables from the "process.env." object.
     # Restart the development server every time you change a variable.
     # Learn more: https://create-react-app.dev/docs/adding-custom-environment-variables
-    # Advanced config: https://create-react-app.dev/docs/advanced-configuration/
+    # Advanced config: https://create-react-app.dev/docs/advanced-configuration
     HTTPS=false
     PORT=3000
     REACT_APP_PACKAGE_NAME=${npm_package_name}
@@ -470,10 +470,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     ## Environment Quick Setup
 
-    1. Install [NodeJs](https://nodejs.org/es/download/)
+    1. Install [NodeJs](https://nodejs.org/es/download)
     2. Install [Git](https://git-scm.com/downloads)
     3. Install [VS Code](https://code.visualstudio.com/download)
-    4. Install VS Code useful extensions:
+    4. Install VS Code recomented extensions for this project:
        * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
        * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
        * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
@@ -526,7 +526,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
           - index.test.tsx            // Jest testing file
           - index.tsx                 // Component definition
       ```
-    - Prefer [Function Components](https://www.robinwieruch.de/react-function-component/) over `Class components` they offer almost the same: `state` and `lifecycle methods`, with the plus they are more lightway, have a sophisticated `API` and require less code. With the introduction of `React Hooks` it's possible to write your entire application with just functions as `React components`:
+    - Prefer [Function Components](https://www.robinwieruch.de/react-function-component) over `Class components` they offer almost the same: `state` and `lifecycle methods`, with the plus they are more lightway, have a sophisticated `API` and require less code. With the introduction of `React Hooks` it's possible to write your entire application with just functions as `React components`:
         ```js
         import { Box, BoxProps } from '@mui/material';
         import { useTranslation } from 'react-i18next';
@@ -841,7 +841,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```js
     // This file allows you to customize how Storybook’s app UI renders.
     // That is, everything outside of the Canvas (preview iframe).
-    // Learn more: https://storybook.js.org/blog/declarative-storybook-configuration/
+    // Learn more: https://storybook.js.org/blog/declarative-storybook-configuration
     import favicon from './favicon.svg';
 
     // Change Storybook Favicon.
