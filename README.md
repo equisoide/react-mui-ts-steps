@@ -344,8 +344,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
     # Restart the development server every time you change a variable.
     # Learn more: https://create-react-app.dev/docs/adding-custom-environment-variables
     # Advanced config: https://create-react-app.dev/docs/advanced-configuration
-    HTTPS=false
-    PORT=3000
     REACT_APP_PACKAGE_NAME=${npm_package_name}
     REACT_APP_PACKAGE_VERSION=${npm_package_version}
     ```
@@ -357,8 +355,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # Variables in this file are injected by the following scripts:
       # - "build:d" Builds the App to `out/build/development`
       # - "sbook:d" Builds Storybook to `out/storybook/development`
-      BUILD_PATH='./out/build/development'
+
+      # Don't touch
+      BUILD_PATH='./out/build/development' # Only applies to "build:d" script
       REACT_APP_ENV='development'
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL='http://development.com/api/v1'
       ```
     - **.env.local**
       ```env
@@ -367,39 +370,71 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook"   Runs Storybook in http://localhost:3001
       # - "build:l" Builds the App to `out/build/local`
       # - "sbook:l" Builds Storybook to `out/storybook/local`
-      BUILD_PATH='./out/build/local'
+
+      # Don't touch
+      BUILD_PATH='./out/build/local' # Only applies to "build:l" script
       REACT_APP_ENV='local'
+
+      # Using HTTPS in Local Development
+      # Only applies to "start" script
+      # Ref: https://create-react-app.dev/docs/using-https-in-development
+      HTTPS=false
+      PORT=3000
+      SSL_CRT_FILE=cert.crt
+      SSL_KEY_FILE=cert.key
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL='http://localhost:5000/api/v1'
       ```
     - **.env.production**
       ```env
       # Variables in this file are injected by the following scripts:
       # - "build"   Builds the App to `out/build/production`
       # - "sbook:p" Builds Storybook to `out/storybook/production`
-      BUILD_PATH='./out/build/production'
+
+      # Don't touch
+      BUILD_PATH='./out/build/production' # Only applies to "build" script
       REACT_APP_ENV='production'
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL='http://production.com/api/v1'
       ```
     - **.env.qa**
       ```env
       # Variables in this file are injected by the following scripts:
       # - "build:q" Builds the App to `out/build/qa`
       # - "sbook:q" Builds Storybook to `out/storybook/qa`
-      BUILD_PATH='./out/build/qa'
+
+      # Don't touch
+      BUILD_PATH='./out/build/qa' # Only applies to "build:q" script
       REACT_APP_ENV='qa'
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL='http://qa.com/api/v1'
       ```
     - **.env.staging**
       ```env
       # Variables in this file are injected by the following scripts:
       # - "build:s" Builds the App to `out/build/staging`
       # - "sbook:s" Builds Storybook to `out/storybook/staging`
-      BUILD_PATH='./out/build/staging'
+
+      # Don't touch
+      BUILD_PATH='./out/build/staging' # Only applies to "build:s" script
       REACT_APP_ENV='staging'
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL='https://staging.com/api/v1'
       ```
     - **.env.test**
       ```env
       # Variables in this file are injected by the following scripts:
       # - "test" Executes Unit Tests outputting to `out/coverage`
-      BUILD_PATH='./out/build/test'
+
+      # Don't touch
       REACT_APP_ENV='test'
+
+      # Add your own variables below, starting with REACT_APP_
+      REACT_APP_API_URL=='https://test.com/api/v1'
       ```
 
 ## 12. Add [LICENSE](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
@@ -516,6 +551,15 @@ The purpose of this tutorial is to document the step by step on how to create a 
     | `npm run sbook:p` | Builds Storybook to `out/storybook/production`   | .env.production  |
     | `npm run sbook:q` | Builds Storybook to `out/storybook/qa`           | .env.qa          |
     | `npm run sbook:s` | Builds Storybook to `out/storybook/staging`      | .env.staging     |
+
+    ## Using HTTPS in Development
+    You may require the dev server to serve pages over [HTTPS](https://create-react-app.dev/docs/using-https-in-development). One particular case where this could be useful is when making requests to an API server when that API server is itself serving **HTTPS**.
+
+    To do this, set the `HTTPS` environment variable to `true` in the **.env-override/.env.local** file, then start the dev server as usual with `npm start`.
+
+    Note that the server will use a self-signed certificate, so your web browser will almost definitely display a warning upon accessing the page.
+
+    To set a custom certificate, set the `SSL_CRT_FILE` and `SSL_KEY_FILE` environment variables to the path of the certificate and key files.
 
     ## Working guidelines
     - Never delete and re-generate the `package-lock.json` file from scratch, it will break the App and Storybook! Let `npm` update that file every time you install a new dependency
