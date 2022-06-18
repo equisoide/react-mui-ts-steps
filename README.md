@@ -1037,7 +1037,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 23. Update index.tsx file
+## 23. Update index.tsx
   - Open **src/index.tsx** file and replace all code with the following:
     ```tsx
     import ReactDOM from 'react-dom/client';
