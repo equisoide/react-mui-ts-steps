@@ -323,13 +323,29 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 10. Configure [.gitignore](https://git-scm.com/docs/gitignore)
-  - Remove `/coverage`
-  - Remove `.env.local`
-  - Remove `.env.development.local`
-  - Remove `.env.test.local`
-  - Remove `.env.production.local`
-  - Replace `/build` by `/out`
-  - Add `# log` comment before `npm-debug.log*`
+  - Replace **.gitignore** with the following content:
+    ```
+    # See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+    # dependencies
+    /node_modules
+    /.pnp
+    .pnp.js
+
+    # production
+    /out
+
+    # misc
+    .DS_Store
+
+    # certificates
+    *.pem
+
+    # log
+    npm-debug.log*
+    yarn-debug.log*
+    yarn-error.log*
+    ```
   - Save
 
 ## 11. Add [Environment Files](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
