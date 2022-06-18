@@ -268,8 +268,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Inside **.vscode** folder, create **extensions.json** file with the following configuration:
     ```js
     {
-      // See http://go.microsoft.com/fwlink/?LinkId=827846
-      // for the documentation about the extensions.json format
+      // Workspace recommended extensions.
+      // Learn more:  http://go.microsoft.com/fwlink/?LinkId=827846
       "recommendations": [
         "EditorConfig.EditorConfig",
         "Tyriar.sort-lines",
