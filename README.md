@@ -941,7 +941,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Replace `stories/Introduction.stories.mdx` by `stories/introduction.stories.mdx`
   - Save
 
-## 20. Configure [setupTests.ts](https://github.com/testing-library/jest-dom)
+## 20. Update [setupTests.ts](https://github.com/testing-library/jest-dom)
   - Open **src/setupTests.ts** file
   - Add the following initialization
     ```js
