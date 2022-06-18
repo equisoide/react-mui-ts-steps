@@ -676,7 +676,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 16. Create and initialize styles folder
+## 16. Create styles
   - Create **src/styles** folder
   - In that folder create **site.css** file with the following styles:
     ```css
