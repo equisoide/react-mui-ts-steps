@@ -84,7 +84,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save twice (the 2nd save is to apply coding style to the **.editorconfig** file)
 
-## 4. Configure [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
+## 4. Update [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
   - Add **description** after **version**:
     > `"description": "React, MUI and TypeScript template",`
   - Set the package as [public](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#private):
