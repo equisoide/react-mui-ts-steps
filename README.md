@@ -170,7 +170,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     > `"include": ["src/**/*"]`
   - Save
 
-## 6. Configure [.eslintrc](https://eslint.org/docs/user-guide/configuring)
+## 6. Update [.eslintrc](https://eslint.org/docs/user-guide/configuring)
   - Rename **.eslintrc.js** to **.eslintrc**
   - Remove `module.exports = ` (The file is now a **JSON** document)
   - Remove semicolon at the end of the file
