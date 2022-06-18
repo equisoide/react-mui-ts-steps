@@ -766,7 +766,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 18. Add [i18next](https://react.i18next.com)
+## 18. Configure [i18next](https://react.i18next.com)
   - Create **src/lang** folder
   - Inside **src/lang** folder, create **resources.en.json** file with the following content:
     ```json
