@@ -55,7 +55,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - `npx storybook init`
       - Do you want to run the eslintPlugin migration on your project? › **y**
 
-## 2. Install VS Code recomented extensions for this project
+## 2. Install VS Code recomented extensions
   - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
@@ -525,7 +525,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     1. Install [NodeJs](https://nodejs.org/es/download)
     2. Install [Git](https://git-scm.com/downloads)
     3. Install [VS Code](https://code.visualstudio.com/download)
-    4. Install VS Code recomented extensions for this project:
+    4. Install VS Code recomented extensions:
        * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
        * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
        * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
