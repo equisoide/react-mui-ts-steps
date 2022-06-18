@@ -708,7 +708,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 17. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
   - Create **src/fonts** folder
-  - In that folder add file [material-icons-regular.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons-regular.ttf)
+  - In that folder add [material-icons-regular.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons-regular.ttf) file
   - Go to **src/styles** folder
   - In that folder create **material-icons.css** file with the following styles:
     ```css
