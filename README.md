@@ -651,7 +651,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - **index.css**
     - **logo.svg**
 
-## 15. Customize [Web Vitals](https://web.dev/vitals)
+## 15. Update [reportWebVitals.ts](https://web.dev/vitals)
   - Create **src/util** folder
   - Move **reportWebVitals.ts** file to that folder:
     > Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
