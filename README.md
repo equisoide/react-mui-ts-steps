@@ -324,7 +324,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 10. Update [.gitignore](https://git-scm.com/docs/gitignore)
   - Replace **.gitignore** with the following content:
-    ```
+    ```gitignore
     # See https://help.github.com/articles/ignoring-files for more about ignoring files.
 
     # dependencies
