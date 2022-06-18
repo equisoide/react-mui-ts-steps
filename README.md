@@ -952,7 +952,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 21. Update index.html Title
+## 21. Update index.html
   - Go to **public/index.html** file
   - Replace the **title** by the following:
     ```html
