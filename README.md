@@ -322,7 +322,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 10. Configure [.gitignore](https://git-scm.com/docs/gitignore)
+## 10. Update [.gitignore](https://git-scm.com/docs/gitignore)
   - Replace **.gitignore** with the following content:
     ```
     # See https://help.github.com/articles/ignoring-files for more about ignoring files.
