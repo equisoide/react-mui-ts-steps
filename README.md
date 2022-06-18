@@ -706,7 +706,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 17. Add [Material Font Icons](https://developers.google.com/fonts/docs/material_icons)
+## 17. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
   - Create **src/fonts** folder
   - In that folder copy file [material-icons-regular.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons-regular.ttf)
   - Go to **src/styles** folder
