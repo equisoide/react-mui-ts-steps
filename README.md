@@ -643,7 +643,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````
   - Save
 
-## 14. Delete unnecessary root files
+## 14. Delete unnecessary files
   - Go to **src** folder and delete the following files:
     - **App.css**
     - **App.test.tsx**
