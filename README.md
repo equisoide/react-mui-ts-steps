@@ -271,13 +271,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
       // Workspace recommended extensions.
       // Learn more:  http://go.microsoft.com/fwlink/?LinkId=827846
       "recommendations": [
-        "EditorConfig.EditorConfig",
-        "Tyriar.sort-lines",
         "christian-kohler.npm-intellisense",
         "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
         "mikestead.dotenv",
         "silvenon.mdx",
         "stylelint.vscode-stylelint",
+        "tyriar.sort-lines",
         "vscode-icons-team.vscode-icons"
       ]
     }
