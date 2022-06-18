@@ -378,10 +378,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # Using HTTPS in Local Development
       # Only applies to "start" script
       # Ref: https://create-react-app.dev/docs/using-https-in-development
-      HTTPS=false
+      # Ref: https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react
+      HTTPS=true
       PORT=3000
-      SSL_CRT_FILE=cert.crt
-      SSL_KEY_FILE=cert.key
+      SSL_CRT_FILE=localhost.pem
+      SSL_KEY_FILE=localhost-key.pem
 
       # Add your own variables below, starting with REACT_APP_
       REACT_APP_API_URL='http://localhost:5000/api/v1'
