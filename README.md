@@ -879,6 +879,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     initI18n();
     ```
+  - Save
   - Create **.storybook/favicon.svg** file with the following content:
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
