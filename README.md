@@ -373,7 +373,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook:d" Builds Storybook to `out/storybook/development`
 
       # Don't touch
-      BUILD_PATH='./out/build/development' # Only applies to "build:d" script
+      BUILD_PATH='./out/build/development'
       REACT_APP_ENV='development'
 
       # Add your own variables below, starting with REACT_APP_
@@ -388,7 +388,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook:l" Builds Storybook to `out/storybook/local`
 
       # Don't touch
-      BUILD_PATH='./out/build/local' # Only applies to "build:l" script
+      BUILD_PATH='./out/build/local'
       REACT_APP_ENV='local'
 
       # Using HTTPS in Local Development
@@ -410,7 +410,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook:p" Builds Storybook to `out/storybook/production`
 
       # Don't touch
-      BUILD_PATH='./out/build/production' # Only applies to "build" script
+      BUILD_PATH='./out/build/production'
       REACT_APP_ENV='production'
 
       # Add your own variables below, starting with REACT_APP_
@@ -423,7 +423,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook:q" Builds Storybook to `out/storybook/qa`
 
       # Don't touch
-      BUILD_PATH='./out/build/qa' # Only applies to "build:q" script
+      BUILD_PATH='./out/build/qa'
       REACT_APP_ENV='qa'
 
       # Add your own variables below, starting with REACT_APP_
@@ -436,7 +436,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # - "sbook:s" Builds Storybook to `out/storybook/staging`
 
       # Don't touch
-      BUILD_PATH='./out/build/staging' # Only applies to "build:s" script
+      BUILD_PATH='./out/build/staging'
       REACT_APP_ENV='staging'
 
       # Add your own variables below, starting with REACT_APP_
