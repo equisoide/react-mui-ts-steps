@@ -1143,7 +1143,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 24. Test everything is working fine
    - Delete **node_modules** folder
-   - Install all dependencies for the first time: `npm run init`
+   - Install project dependencies for the first time: `npm run init`
    - Restart VS Code in order to refresh **TypeScript Intellisense**
    - Analyse **JavaSript/TypeScript** code: `npm run lint`
    - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
