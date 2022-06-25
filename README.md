@@ -488,16 +488,16 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ````markdown
     # React, MUI and TypeScript Template
 
-    This template is intended to help you start a new `React SPA` project from scratch with a comprehensive folder structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information about features on this template and how to perform common tasks.
+    This template is intended to help you start a new `React SPA` project from scratch with a comprehensive file structure, required dependencies, built-in configurations, example components and good practices for `React Web Development`. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information about features on this template and how to perform common tasks.
 
     ## Supported Language Features
-       This project supports a superset of the latest **JavaScript** standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
-       - [Exponentiation Operator](https://github.com/tc39/proposal-exponentiation-operator) (ES2016)
-       - [Async/await](https://github.com/tc39/proposal-async-await) (ES2017)
-       - [Object Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread) (ES2018)
-       - [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 4 proposal)
-       - [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal)
-       - [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) and [TypeScript](https://www.typescriptlang.org)
+      This project supports a superset of the latest **JavaScript** standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
+      - [Exponentiation Operator](https://github.com/tc39/proposal-exponentiation-operator) (ES2016)
+      - [Async/await](https://github.com/tc39/proposal-async-await) (ES2017)
+      - [Object Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread) (ES2018)
+      - [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 4 proposal)
+      - [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal)
+      - [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) and [TypeScript](https://www.typescriptlang.org)
 
     ## Core Libraries
     - [React 18.2.0](https://reactjs.org) with `React Scripts 5.0.1`
@@ -506,7 +506,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - [I18next 21.8.9](https://react.i18next.com) for internationalization
 
     ## Documentation Tools
-    - [Storybook 6.5.9](https://storybook.js.org) to document pages and components
+    - [Storybook 6.5.9](https://storybook.js.org) to document components
 
     ## Code Quality & Performance
     - [ESLint 8.17.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
@@ -525,33 +525,42 @@ The purpose of this tutorial is to document the step by step on how to create a 
     1. Install [NodeJs](https://nodejs.org/es/download)
     2. Install [Git](https://git-scm.com/downloads)
     3. Install [VS Code](https://code.visualstudio.com/download)
-    4. Install VS Code recomented extensions:
-       * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
-       * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-       * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-       * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
-       * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
-       * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-       * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
-       * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+    4. Install **VS Code** recomented extensions:
+      * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+      * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+      * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+      * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+      * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
+      * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+      * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
+      * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
     5. Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome
 
     ## Running & Debugging the application for the first time
-
-    1. Clone repo:
-       > `git clone https://github.com/equisoide/react-mui-ts-template.git`
-    2. Install all required packages (It will perform a [Clean install](https://docs.npmjs.com/cli/v8/commands/npm-ci)):
-       > `npm run init`
-    3. Restart VS Code in order to refresh **TypeScript Intellisense**, otherwise you might see TypeScript errors in the editor
-    4. Start the application:
-       > `npm start`
-    5. Start debugging in `VS Code` by pressing `F5` or by clicking on `Run and Debug` > `Green debug icon`
-    6. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+    1. Open a new [VS Code](https://code.visualstudio.com/download) window
+    2. Open a parent folder that will host this project (e.g. `~/Projects`):
+      > `File` > `Open Folder`
+    3. Open a new terminal:
+      > `Terminal` > `New Terminal`
+    4. Clone repo:
+      > `git clone https://github.com/equisoide/react-mui-ts-template.git`
+    5. Install project dependencies (It will perform a [Clean install](https://docs.npmjs.com/cli/v8/commands/npm-ci)):
+      - `cd react-mui-ts-template`
+      - `npm run init`
+    6. Restart **VS Code** to refresh **TypeScript Intellisense**, otherwise you might see errors in the editor:
+      - Close VS Code
+      - Open a new VS Code window
+      - Open the folder where the project was cloned
+    7. Start the application:
+      - Open a new terminal
+      - `npm start`
+    8. Start debugging in **VS Code** by pressing `F5` or by clicking on `Run and Debug` > `Green debug icon`
+    9. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
     ## Available Scripts
     | Command           | Description                                      | Evironment File  |
     | :---              | :---                                             | :---             |
-    | `npm run init`    | Installs all dependencies for the first time     | N/A              |
+    | `npm run init`    | Installs project dependencies for the first time | N/A              |
     | `npm run lint`    | Analyses `JavaSript`/`TypeScript` code           | N/A              |
     | `npm run lint:f`  | Try to fix `JavaSript`/`TypeScript` errors       | N/A              |
     | `npm run lint:c`  | Analyses `CSS` files for potential errors        | N/A              |
@@ -568,6 +577,47 @@ The purpose of this tutorial is to document the step by step on how to create a 
     | `npm run sbook:p` | Builds Storybook to `out/storybook/production`   | .env.production  |
     | `npm run sbook:q` | Builds Storybook to `out/storybook/qa`           | .env.qa          |
     | `npm run sbook:s` | Builds Storybook to `out/storybook/staging`      | .env.staging     |
+
+    ## Project Structure
+    ```js
+    📦 my-app
+    ├── 📜 .env           // Global variables common to all environments
+    ├── 📜 .eslintrc      // ESLint configuration
+    ├── 📜 .gitignore     // Folders and files ignored by Git
+    ├── 📜 .stylelintrc   // Stylelint configuration
+    ├── 📜 package.json   // Project dependencies, scripts and more
+    ├── 📜 tsconfig.json  // TypeScript configuration
+    ├── 📜 README.md      // Project documentation
+    ├── 📂 .env-override
+    │   ├── 📜 .env.development // Environment variables for Development
+    │   ├── 📜 .env.local       // Environment variables for Local
+    │   ├── 📜 .env.production  // Environment variables for Production
+    │   ├── 📜 .env.qa          // Environment variables for QA
+    │   ├── 📜 .env.staging     // Environment variables for Staging
+    │   └── 📜 .env.test        // Environment variables for Unit Test
+    ├── 📂 public
+    │   ├── 📜 index.html       // HTML where the React App is rendered
+    │   ├── 📜 favicon.ico      // The icon found in the URL address bar
+    │   ├── 📜 manifest.json    // Metadata used to install the PWA
+    │   ├── 📜 logo192.png      // PWA icon (192x192)
+    │   ├── 📜 logo512.png      // PWA icon (512x512)
+    │   └── 📜 robots.txt       // Instructions for search crawlers
+    └── 📂 src
+        ├── 📜 index.tsx
+        ├── 📂 components
+        │   └── HelloWorld
+        │       ├── 📜 index.stories.tsx
+        │       ├── 📜 index.test.tsx
+        │       └── 📜 index.tsx
+        ├── 📂 lang
+        │   ├── 📜 resources.en.json
+        │   └── 📜 resources.es.json
+        ├── 📂 styles
+        │   ├── 📜 material-icons.css
+        │   └── 📜 site.css
+        └── 📂 util
+            └── 📜 report-web-vitals.ts
+    ```
 
     ## Using HTTPS in Development
     You may require the dev server to serve pages over [HTTPS](https://create-react-app.dev/docs/using-https-in-development). To do this, set the `HTTPS` environment variable to `true` in the **.env.local** file, then start the dev server as usual with `npm start`.
