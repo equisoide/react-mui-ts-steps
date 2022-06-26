@@ -122,15 +122,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "eject": "react-scripts eject",
     "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
-    "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
     "lint:c": "./node_modules/.bin/stylelint \"src/**/*.css\"",
+    "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
+    "sb-build:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
+    "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
+    "sb-build:p": "env-cmd --no-override -f ./.env-override/.env.production build-storybook -s public -o ./out/storybook/production",
+    "sb-build:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
+    "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
     "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
-    "sbook:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
-    "sbook:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
-    "sbook:p": "env-cmd --no-override -f ./.env-override/.env.production build-storybook -s public -o ./out/storybook/production",
-    "sbook:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
-    "sbook:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
+    "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "start": "env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+    "start-https": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
   },
   ```
@@ -368,7 +370,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "build:d" Builds the App to `out/build/development`
-    # - "sbook:d" Builds Storybook to `out/storybook/development`
+    # - "sb-build:d" Builds Storybook to `out/storybook/development`
 
     # Don't touch
     BUILD_PATH='./out/build/development'
@@ -380,23 +382,20 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.local**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "start"   Runs the App in http://localhost:3000
-    # - "sbook"   Runs Storybook in http://localhost:3001
-    # - "build:l" Builds the App to `out/build/local`
-    # - "sbook:l" Builds Storybook to `out/storybook/local`
+    # - "start"       Runs the App in http://localhost:3000
+    # - "start-https" Runs the App in https://localhost:3000
+    # - "sbook"       Runs Storybook in http://localhost:3001
+    # - "sbook-https" Runs Storybook in https://localhost:3001
+    # - "build:l"     Builds the App to `out/build/local`
+    # - "sb-build:l"  Builds Storybook to `out/storybook/local`
 
     # Don't touch
     BUILD_PATH='./out/build/local'
     REACT_APP_ENV='local'
 
-    # Using HTTPS in Local Development
-    # Only applies to "start" script
-    # Ref: https://create-react-app.dev/docs/using-https-in-development
-    # Ref: https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react
-    HTTPS=false
+    # You can adjust various development settings
+    # Ref: https://create-react-app.dev/docs/advanced-configuration
     PORT=3000
-    SSL_CRT_FILE=localhost.pem
-    SSL_KEY_FILE=localhost-key.pem
 
     # Add your own variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://localhost:5000/api/v1'
@@ -405,7 +404,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "build"   Builds the App to `out/build/production`
-    # - "sbook:p" Builds Storybook to `out/storybook/production`
+    # - "sb-build:p" Builds Storybook to `out/storybook/production`
 
     # Don't touch
     BUILD_PATH='./out/build/production'
@@ -418,7 +417,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "build:q" Builds the App to `out/build/qa`
-    # - "sbook:q" Builds Storybook to `out/storybook/qa`
+    # - "sb-build:q" Builds Storybook to `out/storybook/qa`
 
     # Don't touch
     BUILD_PATH='./out/build/qa'
@@ -431,7 +430,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "build:s" Builds the App to `out/build/staging`
-    # - "sbook:s" Builds Storybook to `out/storybook/staging`
+    # - "sb-build:s" Builds Storybook to `out/storybook/staging`
 
     # Don't touch
     BUILD_PATH='./out/build/staging'
@@ -616,37 +615,40 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 
   ## Available Scripts
-  | Command           | Description                                        | Evironment File  |
-  | :---              | :---                                               | :---             |
-  | `npm run init`    | Installs project dependencies for the first time   | N/A              |
-  | `npm run lint`    | Analyses **JavaSript**/**TypeScript** code         | N/A              |
-  | `npm run lint:f`  | Try to fix **JavaSript**/**TypeScript** errors     | N/A              |
-  | `npm run lint:c`  | Analyses **CSS** files for potential errors        | N/A              |
-  | `npm test`        | Executes Unit Tests outputting to **out/coverage** | .env.test        |
-  | `npm start`       | Runs the App in http://localhost:3000              | .env.local       |
-  | `npm run build`   | Builds the App to **out/build/production**         | .env.production  |
-  | `npm run build:d` | Builds the App to **out/build/development**        | .env.development |
-  | `npm run build:l` | Builds the App to **out/build/local**              | .env.local       |
-  | `npm run build:q` | Builds the App to **out/build/qa**                 | .env.qa          |
-  | `npm run build:s` | Builds the App to **out/build/staging**            | .env.staging     |
-  | `npm run sbook`   | Runs Storybook in http://localhost:3001            | .env.local       |
-  | `npm run sbook:d` | Builds Storybook to **out/storybook/development**  | .env.development |
-  | `npm run sbook:l` | Builds Storybook to **out/storybook/local**        | .env.local       |
-  | `npm run sbook:p` | Builds Storybook to **out/storybook/production**   | .env.production  |
-  | `npm run sbook:q` | Builds Storybook to **out/storybook/qa**           | .env.qa          |
-  | `npm run sbook:s` | Builds Storybook to **out/storybook/staging**      | .env.staging     |
+  | Command               | Description                                        | Evironment File  |
+  | :---                  | :---                                               | :---             |
+  | `npm run init`        | Installs project dependencies for the first time   | N/A              |
+  | `npm run lint`        | Analyses **JavaSript**/**TypeScript** code         | N/A              |
+  | `npm run lint:f`      | Try to fix **JavaSript**/**TypeScript** errors     | N/A              |
+  | `npm run lint:c`      | Analyses **CSS** files for potential errors        | N/A              |
+  | `npm test`            | Executes Unit Tests outputting to **out/coverage** | .env.test        |
+  | `npm start`           | Runs the App in http://localhost:3000              | .env.local       |
+  | `npm run start-https` | Runs the App in https://localhost:3000             | .env.local       |
+  | `npm run build`       | Builds the App to **out/build/production**         | .env.production  |
+  | `npm run build:d`     | Builds the App to **out/build/development**        | .env.development |
+  | `npm run build:l`     | Builds the App to **out/build/local**              | .env.local       |
+  | `npm run build:q`     | Builds the App to **out/build/qa**                 | .env.qa          |
+  | `npm run build:s`     | Builds the App to **out/build/staging**            | .env.staging     |
+  | `npm run sbook`       | Runs Storybook in http://localhost:3001            | .env.local       |
+  | `npm run sbook-https` | Runs Storybook in https://localhost:3001           | .env.local       |
+  | `npm run sb-build:d`  | Builds Storybook to **out/storybook/development**  | .env.development |
+  | `npm run sb-build:l`  | Builds Storybook to **out/storybook/local**        | .env.local       |
+  | `npm run sb-build:p`  | Builds Storybook to **out/storybook/production**   | .env.production  |
+  | `npm run sb-build:q`  | Builds Storybook to **out/storybook/qa**           | .env.qa          |
+  | `npm run sb-build:s`  | Builds Storybook to **out/storybook/staging**      | .env.staging     |
 
-  ## Using HTTPS in Development
-  You may require the dev server to serve pages over [HTTPS](https://create-react-app.dev/docs/using-https-in-development). To do this, set the `HTTPS` environment variable to `true` in the **.env.local** file, then start the dev server as usual with `npm start`.
+  ## Using HTTPS in Local Environment
+  You may require the local server to run the App or Storybook over [HTTPS](https://create-react-app.dev/docs/using-https-in-development). To do this, use `npm run start-https` or `npm run sbook-https` respectively.
 
-  Note that the server will use a self-signed certificate, so your web browser will display a warning upon accessing the page. To avoid this, you should create a local **Certificate Authority** and an **SSL certificate**, then set the `SSL_CERT_FILE` and `SSL_KEY_FILE` variables defined in **.env.local** to point to those files.
+  Note that you might get an error in the console telling that the **localhost.pem** or the **localhost-key.pem** files can't be found. This is because when running the App over HTTPS a valid **Certificate Authority** and an **SSL certificate** are needed.
 
-  A simple way to generate the **SSL Certificate** is by using [mkcert](https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react):
+  To generate those files use [mkcert](https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react):
   - You need a package manager to install **mkcert**:
     - **MacOS**: Use Homebrew (`brew install mkcert`)
     - **Linux**: Use Certutil
     - **Windows**: Use Chocolatey
   - Once installed **mkcert**:
+    - Open a terminal at the root of the project
     - Create a locally trusted CA with `mkcert -install`
     - Generate an SSL certificate with `mkcert localhost`
 
@@ -1170,11 +1172,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Build the App to **out/build/local**: `npm run build:l`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Run Storybook in http://localhost:3001: `npm run sbook`
-- Build Storybook to **out/storybook/development**: `npm run sbook:d`
-- Build Storybook to **out/storybook/local**: `npm run sbook:l`
-- Build Storybook to **out/storybook/production**: `npm run sbook:p`
-- Build Storybook to **out/storybook/qa**: `npm run sbook:q`
-- Build Storybook to **out/storybook/staging**: `npm run sbook:s`
+- Build Storybook to **out/storybook/development**: `npm run sb-build:d`
+- Build Storybook to **out/storybook/local**: `npm run sb-build:l`
+- Build Storybook to **out/storybook/production**: `npm run sb-build:p`
+- Build Storybook to **out/storybook/qa**: `npm run sb-build:q`
+- Build Storybook to **out/storybook/staging**: `npm run sb-build:s`
 
 ## Creator
 **Juan Cuartas** https://github.com/equisoide
