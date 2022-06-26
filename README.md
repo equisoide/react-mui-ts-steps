@@ -252,13 +252,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Add the following configuration:
     ```json
     {
-        "extends": "stylelint-config-standard",
-        "rules": {
-            "declaration-block-trailing-semicolon": "always",
-            "declaration-no-important": true,
-            "font-family-no-missing-generic-family-keyword": null,
-            "indentation": 2
-        }
+      "extends": "stylelint-config-standard",
+      "rules": {
+        "declaration-block-trailing-semicolon": "always",
+        "declaration-no-important": true,
+        "font-family-no-missing-generic-family-keyword": null,
+        "indentation": 2
+      }
     }
     ```
   - Save
