@@ -20,9 +20,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.5.2",
         "@types/node": "^16.11.41",
-        "@types/react": "^18.0.12",
+        "@types/react": "^18.0.14",
         "@types/react-dom": "^18.0.5",
-        "typescript": "^4.7.3"
+        "typescript": "^4.7.4"
       },
       ```
     - Save
