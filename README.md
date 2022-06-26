@@ -20,9 +20,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.5.2",
         "@types/node": "^16.11.41",
-        "@types/react": "^18.0.12",
+        "@types/react": "^18.0.14",
         "@types/react-dom": "^18.0.5",
-        "typescript": "^4.7.3"
+        "typescript": "^4.7.4"
       },
       ```
     - Save
@@ -252,13 +252,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Add the following configuration:
     ```json
     {
-        "extends": "stylelint-config-standard",
-        "rules": {
-            "declaration-block-trailing-semicolon": "always",
-            "declaration-no-important": true,
-            "font-family-no-missing-generic-family-keyword": null,
-            "indentation": 2
-        }
+      "extends": "stylelint-config-standard",
+      "rules": {
+        "declaration-block-trailing-semicolon": "always",
+        "declaration-no-important": true,
+        "font-family-no-missing-generic-family-keyword": null,
+        "indentation": 2
+      }
     }
     ```
   - Save
@@ -394,7 +394,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # Only applies to "start" script
       # Ref: https://create-react-app.dev/docs/using-https-in-development
       # Ref: https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react
-      HTTPS=true
+      HTTPS=false
       PORT=3000
       SSL_CRT_FILE=localhost.pem
       SSL_KEY_FILE=localhost-key.pem
