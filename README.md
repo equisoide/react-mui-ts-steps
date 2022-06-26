@@ -314,8 +314,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "explorer.sortOrder": "type",
       "files.eol": "\n",
       "search.exclude": {
-        "**/node_modules": true,
-        "**/out": true,
+        "node_modules": true,
+        "out": true,
         "package-lock.json": true
       }
     }
