@@ -1,0 +1,35 @@
+- StoryBook in HTTPS
+- CSS initialization
+
+- public
+    - index.html
+        - Clean file
+    - Delete unnecessary files
+- package.json
+    - redux-devtools
+    - @date-io/moment
+    - axios
+    - axios-mock-adapter
+    - classnames
+    - deepmerge
+    - lodash
+    - moment
+    - numeral
+    - react-helmet
+    - react-redux
+    - react-router
+    - react-router-dom
+    - redux": "4.0.1",
+    - redux-logger
+    - redux-mock-store
+    - redux-thunk
+- Components:
+    - AppSettings
+    - Loading Page
+    - LogViewer
+    - Main Menu
+    - MasterData
+    - Modal Dialog
+    - Security
+    - Toast Notifications
+    - Profile Menu
