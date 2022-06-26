@@ -1157,24 +1157,24 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 
 ## 24. Test everything is working fine
-   - Delete **node_modules** folder
-   - Install project dependencies for the first time: `npm run init`
-   - Restart VS Code in order to refresh **TypeScript Intellisense**
-   - Analyse **JavaSript/TypeScript** code: `npm run lint`
-   - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
-   - Analyse **CSS** files for potential errors: `npm run lint:c`
-   - Execute Unit Tests outputting to **out/coverage**: `npm test`
-   - Run the App in http://localhost:3000: `npm start`
-   - Build the App to **out/build/production**: `npm run build`
-   - Build the App to **out/build/development**: `npm run build:d`
-   - Build the App to **out/build/local**: `npm run build:l`
-   - Build the App to **out/build/staging**: `npm run build:s`
-   - Run Storybook in http://localhost:3001: `npm run sbook`
-   - Build Storybook to **out/storybook/development**: `npm run sbook:d`
-   - Build Storybook to **out/storybook/local**: `npm run sbook:l`
-   - Build Storybook to **out/storybook/production**: `npm run sbook:p`
-   - Build Storybook to **out/storybook/qa**: `npm run sbook:q`
-   - Build Storybook to **out/storybook/staging**: `npm run sbook:s`
+- Delete **node_modules** folder
+- Install project dependencies for the first time: `npm run init`
+- Restart VS Code in order to refresh **TypeScript Intellisense**
+- Analyse **JavaSript/TypeScript** code: `npm run lint`
+- Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
+- Analyse **CSS** files for potential errors: `npm run lint:c`
+- Execute Unit Tests outputting to **out/coverage**: `npm test`
+- Run the App in http://localhost:3000: `npm start`
+- Build the App to **out/build/production**: `npm run build`
+- Build the App to **out/build/development**: `npm run build:d`
+- Build the App to **out/build/local**: `npm run build:l`
+- Build the App to **out/build/staging**: `npm run build:s`
+- Run Storybook in http://localhost:3001: `npm run sbook`
+- Build Storybook to **out/storybook/development**: `npm run sbook:d`
+- Build Storybook to **out/storybook/local**: `npm run sbook:l`
+- Build Storybook to **out/storybook/production**: `npm run sbook:p`
+- Build Storybook to **out/storybook/qa**: `npm run sbook:q`
+- Build Storybook to **out/storybook/staging**: `npm run sbook:s`
 
 ## Creator
 **Juan Cuartas** https://github.com/equisoide
