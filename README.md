@@ -490,13 +490,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
     This template is intended to help you start a new `React SPA` project from scratch with a comprehensive file structure, required dependencies, built-in configurations, example components and good practices for `React Web Development`. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information about features on this template and how to perform common tasks.
 
     ## Supported Language Features
-      This project supports a superset of the latest **JavaScript** standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
-      - [Exponentiation Operator](https://github.com/tc39/proposal-exponentiation-operator) (ES2016)
-      - [Async/await](https://github.com/tc39/proposal-async-await) (ES2017)
-      - [Object Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread) (ES2018)
-      - [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 4 proposal)
-      - [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal)
-      - [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) and [TypeScript](https://www.typescriptlang.org)
+       This project supports a superset of the latest **JavaScript** standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
+       - [Exponentiation Operator](https://github.com/tc39/proposal-exponentiation-operator) (ES2016)
+       - [Async/await](https://github.com/tc39/proposal-async-await) (ES2017)
+       - [Object Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread) (ES2018)
+       - [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 4 proposal)
+       - [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal)
+       - [TSX](https://www.typescriptlang.org/docs/handbook/jsx.html) and [TypeScript](https://www.typescriptlang.org)
 
     ## Core Libraries
     - [React 18.2.0](https://reactjs.org) with `React Scripts 5.0.1`
@@ -525,34 +525,34 @@ The purpose of this tutorial is to document the step by step on how to create a 
     2. Install [Git](https://git-scm.com/downloads)
     3. Install [VS Code](https://code.visualstudio.com/download)
     4. Install **VS Code** recomented extensions:
-      * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
-      * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-      * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-      * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
-      * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
-      * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-      * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
-      * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+       * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+       * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+       * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+       * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+       * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
+       * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+       * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
+       * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
     5. Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome
 
     ## Running & Debugging the application for the first time
     1. Open a new [VS Code](https://code.visualstudio.com/download) window
     2. Open a parent folder that will host this project (e.g. `~/Projects`):
-      > `File` > `Open Folder`
+       > `File` > `Open Folder`
     3. Open a new terminal:
-      > `Terminal` > `New Terminal`
+       > `Terminal` > `New Terminal`
     4. Clone repo:
-      > `git clone https://github.com/equisoide/react-mui-ts-template.git`
+       > `git clone https://github.com/equisoide/react-mui-ts-template.git`
     5. Install project dependencies (It will perform a [Clean install](https://docs.npmjs.com/cli/v8/commands/npm-ci)):
-      - `cd react-mui-ts-template`
-      - `npm run init`
+       - `cd react-mui-ts-template`
+       - `npm run init`
     6. Restart **VS Code** to refresh **TypeScript Intellisense**, otherwise you might see errors in the editor:
-      - Close VS Code
-      - Open a new VS Code window
-      - Open the folder where the project was cloned
+       - Close VS Code
+       - Open a new VS Code window
+       - Open the folder where the project was cloned
     7. Start the application:
-      - Open a new terminal
-      - `npm start`
+       - Open a new terminal
+       - `npm start`
     8. Start debugging in **VS Code** by pressing `F5` or by clicking on `Run and Debug` > `Green debug icon`
     9. You can now set breakpoints, debug and inspect the React component hierarchies into the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
