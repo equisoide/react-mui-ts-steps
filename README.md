@@ -394,7 +394,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       # Only applies to "start" script
       # Ref: https://create-react-app.dev/docs/using-https-in-development
       # Ref: https://www.mariokandut.com/how-to-setup-https-ssl-in-localhost-react
-      HTTPS=true
+      HTTPS=false
       PORT=3000
       SSL_CRT_FILE=localhost.pem
       SSL_KEY_FILE=localhost-key.pem
