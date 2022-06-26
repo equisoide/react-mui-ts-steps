@@ -523,38 +523,38 @@ The purpose of this tutorial is to document the step by step on how to create a 
     2. Install [Git](https://git-scm.com/downloads)
     3. Install [VS Code](https://code.visualstudio.com/download)
     4. Install VS Code recomented extensions:
-      * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
-      * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-      * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-      * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
-      * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
-      * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-      * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
-      * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+       * [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+       * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+       * [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+       * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+       * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
+       * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+       * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
+       * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
     5. Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome
 
     ## Running & Debugging the application for the first time
     1. Open a new [VS Code](https://code.visualstudio.com/download) window:
-      - **File** > **New Window**
+       - **File** > **New Window**
     3. Open a parent folder that will host this project (e.g. ~/Projects):
-      - **File** > **Open Folder**
+       - **File** > **Open Folder**
     4. Open a new terminal:
-      - **Terminal** > **New Terminal**
+       - **Terminal** > **New Terminal**
     5. Clone repo:
-      - `git clone https://github.com/equisoide/react-mui-ts-template.git`
+       - `git clone https://github.com/equisoide/react-mui-ts-template.git`
     6. Install project dependencies:
-      - `cd react-mui-ts-template`
-      - `npm run init` (performs a [Clean Install](https://docs.npmjs.com/cli/v8/commands/npm-ci))
+       - `cd react-mui-ts-template`
+       - `npm run init` (performs a [Clean Install](https://docs.npmjs.com/cli/v8/commands/npm-ci))
     7. Restart VS Code to refresh TypeScript Intellisense, otherwise you might see errors in the editor:
-      - Close VS Code
-      - Open a new VS Code window
-      - Open the folder where the project was cloned
+       - Close VS Code
+       - Open a new VS Code window
+       - Open the folder where the project was cloned
     8. Start the application:
-      - Open a new terminal
-      - `npm start`
+       - Open a new terminal
+       - `npm start`
     9. Start debugging in VS Code:
-      - Press `F5` or click on **Run and Debug** > **Green Debug Icon**
-      - You can set breakpoints and inspect components in the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+       - Press `F5` or click on **Run and Debug** > **Green Debug Icon**
+       - You can set breakpoints and inspect components in the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
     ## Project Structure
     ```
