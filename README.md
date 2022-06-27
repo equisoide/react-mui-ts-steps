@@ -755,29 +755,27 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Create **src/styles** folder
 - In that folder create **site.css** file with the following styles:
   ```css
-  * {
-    box-sizing: border-box;
+  /**
+   * A simple CSS reset
+   */
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
   }
 
   body {
-    font-family:
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      sans-serif;
+    font-size: 1.6rem; /* 16px */
+    font-family: Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
   ```
 - Save
 
