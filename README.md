@@ -1062,6 +1062,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 22. Create HelloWorld component
 - Create **src/components/HelloWorld** folder
+- Inside **src/components/HelloWorld** folder, create **index.module.css** file with the following code:
+  ```cs
+  .info {
+    font-size: 0.875rem; /* 14px */
+  }
+  ```
+- Save
 - Inside **src/components/HelloWorld** folder, create **index.tsx** file with the following code:
   ```tsx
   // External imports
