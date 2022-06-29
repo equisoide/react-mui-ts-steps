@@ -1043,6 +1043,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import '@testing-library/jest-dom';
   import initI18n from './lang';
 
+  // Global initialization
   initI18n();
   ```
 - Save
