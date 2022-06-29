@@ -1028,6 +1028,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **Page.tsx**
 - Rename **Introduction.stories.mdx** to **introduction.stories.mdx**
 - Open **introduction.stories.mdx** file:
+  - Replace `Example/Introduction` by `Introduction`
   - Replace **# Welcome to Storybook** by the following:
     ```html
     <h1>{process.env.REACT_APP_PACKAGE_NAME}</h1>
