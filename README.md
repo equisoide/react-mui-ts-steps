@@ -559,61 +559,61 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   ```
   📦 react-mui-ts-template
-  ├── 📜 .editorconfig              EditorConfig settings
-  ├── 📜 .env                       Variables common to all environments
-  ├── 📜 .eslintignore              Folders and files ignored by ESLint
-  ├── 📜 .eslintrc                  ESLint configuration
-  ├── 📜 .gitignore                 Folders and files ignored by Git
-  ├── 📜 .stylelintrc               Stylelint configuration
-  ├── 📜 LICENSE                    License information
-  ├── 📜 package-lock.json          Npm dependency tree to recreate node_modules
-  ├── 📜 package.json               Project dependencies, scripts and more
-  ├── 📜 README.md                  Project documentation
-  ├── 📜 tsconfig.json              TypeScript configuration
+  ├── 📜 .editorconfig                EditorConfig settings
+  ├── 📜 .env                         Variables common to all environments
+  ├── 📜 .eslintignore                Folders and files ignored by ESLint
+  ├── 📜 .eslintrc                    ESLint configuration
+  ├── 📜 .gitignore                   Folders and files ignored by Git
+  ├── 📜 .stylelintrc                 Stylelint configuration
+  ├── 📜 LICENSE                      License information
+  ├── 📜 package-lock.json            Npm dependency tree to recreate node_modules
+  ├── 📜 package.json                 Project dependencies, scripts and more
+  ├── 📜 README.md                    Project documentation
+  ├── 📜 tsconfig.json                TypeScript configuration
   ├── 📂 .env-override
-  │   ├── 📜 .env.development       Environment variables for Development
-  │   ├── 📜 .env.local             Environment variables for Local
-  │   ├── 📜 .env.production        Environment variables for Production
-  │   ├── 📜 .env.qa                Environment variables for QA
-  │   ├── 📜 .env.staging           Environment variables for Staging
-  │   └── 📜 .env.test              Environment variables for Unit Test
+  │   ├── 📜 .env.development         Environment variables for Development
+  │   ├── 📜 .env.local               Environment variables for Local
+  │   ├── 📜 .env.production          Environment variables for Production
+  │   ├── 📜 .env.qa                  Environment variables for QA
+  │   ├── 📜 .env.staging             Environment variables for Staging
+  │   └── 📜 .env.test                Environment variables for Unit Test
   ├── 📂 .storybook
-  │   ├── 📜 favicon.svg            Favicon for Storybook
-  │   ├── 📜 main.js                Storybook server behavior
-  │   ├── 📜 manager.js             Customize how Storybook App renders
-  │   └── 📜 preview.js             Global code that applies to all stories
+  │   ├── 📜 favicon.svg              Favicon for Storybook
+  │   ├── 📜 main.js                  Storybook server behavior
+  │   ├── 📜 manager.js               Customize how Storybook App renders
+  │   └── 📜 preview.js               Global code that applies to all stories
   ├── 📂 .vscode
-  │   ├── 📜 extensions.json        Recomended extensions to load in VS Code
-  │   ├── 📜 launch.json            Launch Chrome against localhost
-  │   └── 📜 settings.json          Settings for VS Code
+  │   ├── 📜 extensions.json          Recomended extensions to load in VS Code
+  │   ├── 📜 launch.json              Launch Chrome against localhost
+  │   └── 📜 settings.json            Settings for VS Code
   ├── 📂 public
-  │   ├── 📜 favicon.ico            The icon found in the URL address bar
-  │   ├── 📜 index.html             HTML where the React App is rendered
-  │   ├── 📜 logo192.png            PWA icon (192x192)
-  │   ├── 📜 logo512.png            PWA icon (512x512)
-  │   ├── 📜 manifest.json          Metadata to install the App as a PWA
-  │   └── 📜 robots.txt             Instructions for search crawlers
+  │   ├── 📜 favicon.ico              The icon found in the URL address bar
+  │   ├── 📜 index.html               HTML where the React App is rendered
+  │   ├── 📜 logo192.png              PWA icon (192x192)
+  │   ├── 📜 logo512.png              PWA icon (512x512)
+  │   ├── 📜 manifest.json            Metadata to install the App as a PWA
+  │   └── 📜 robots.txt               Instructions for search crawlers
   └── 📂 src
-      ├── 📜 index.tsx              The application entry point
-      ├── 📜 react-app-env.d.ts     TypeScript declarations for React App
-      ├── 📜 setupTests.ts          Global setup before running tests
+      ├── 📜 index.tsx                The application entry point
+      ├── 📜 react-app-env.d.ts       TypeScript declarations for React App
+      ├── 📜 setupTests.ts            Global setup before running tests
       ├── 📂 components/HelloWorld
-      │   ├── 📜 index.stories.tsx  Storybook component documentation
-      │   ├── 📜 index.test.tsx     Component testing file
-      │   └── 📜 index.tsx          Example component definition
+      │   ├── 📜 index.stories.tsx    Storybook component documentation
+      │   ├── 📜 index.test.tsx       Component testing file
+      │   └── 📜 index.tsx            Example component definition
       ├── 📂 fonts
-      │   └── 📜 material-icons.ttf Font file for Material Icons
+      │   └── 📜 material-icons.ttf   Font file for Material Icons
       ├── 📂 lang
-      │   ├── 📜 index.ts           i18next configuration
-      │   ├── 📜 resources.en.json  Application texts in English
-      │   └── 📜 resources.es.json  Application texts in Spanish
+      │   ├── 📜 index.ts             i18next configuration
+      │   ├── 📜 resources.en.json    Application texts in English
+      │   └── 📜 resources.es.json    Application texts in Spanish
       ├── 📂 stories
-      │   └── ...                   Files for the Storybook intro page
+      │   └── ...                     Files for the Storybook intro page
       ├── 📂 styles
-      │   ├── 📜 material-icons.css CSS file for Material Icons
-      │   └── 📜 site.css           CSS file for the application
+      │   ├── 📜 material-icons.scss  SASS file for Material Icons
+      │   └── 📜 site.scss            SASS file for the application
       └── 📂 util
-          └── 📜 web-vitals.ts      Web Vitals reporting
+          └── 📜 web-vitals.ts        Web Vitals reporting
   ```
   For the project to build, these files must exist with exact filenames:
    - `public/index.html` is the page template
@@ -763,7 +763,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 16. Create styles
 - Create **src/styles** folder
-- In that folder create **site.css** file with the following styles:
+- In that folder create **site.scss** file with the following styles:
   ```css
   /**
    * A simple CSS reset
@@ -793,7 +793,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Create **src/fonts** folder
 - In that folder add [material-icons.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons.ttf) file
 - Go to **src/styles** folder
-- In that folder create **material-icons.css** file with the following styles:
+- In that folder create **material-icons.scss** file with the following styles:
   ```css
   /**
     * Material icons to depict in simple and minimal forms the universal
@@ -965,8 +965,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   // Local imports
   import initI18n from '../src/lang';
 
-  import '../src/styles/site.css';
-  import '../src/styles/material-icons.css';
+  import '../src/styles/site.scss';
+  import '../src/styles/material-icons.scss';
 
   // Global initialization
   initI18n();
@@ -1062,7 +1062,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
 ## 22. Create HelloWorld component
 - Create **src/components/HelloWorld** folder
-- Inside **src/components/HelloWorld** folder, create **index.module.css** file with the following code:
+- Inside **src/components/HelloWorld** folder, create **index.module.scss** file with the following code:
   ```cs
   .info {
     font-size: 0.875rem; /* 14px */
@@ -1079,7 +1079,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import { useTranslation } from 'react-i18next';
 
   // Local imports
-  import styles from './index.module.css';
+  import styles from './index.module.scss';
 
   // Component props
   export interface HelloWorldProps {
@@ -1195,8 +1195,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import initI18n from './lang';
   import reportWebVitals from './util/web-vitals';
 
-  import './styles/site.css';
-  import './styles/material-icons.css';
+  import './styles/site.scss';
+  import './styles/material-icons.scss';
 
   // Global initialization
   initI18n();
