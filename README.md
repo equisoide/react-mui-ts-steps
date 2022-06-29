@@ -1128,7 +1128,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Inside **src/components/HelloWorld** folder, create **index.test.tsx** file with the following code:
   ```tsx
+  // External imports
   import { render, screen } from '@testing-library/react';
+
+  // Local imports
   import HelloWorld from '.';
 
   test('Render HelloWorld Component', () => {
