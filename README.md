@@ -27,6 +27,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
   - Delete **node_modules** and **package-lock.json** file
   - `npm install`
+- [SASS](https://sass-lang.com/install):
+  - `npm i sass --save-dev`
 - [MUI (Material UI)](https://mui.com/material-ui/getting-started/installation):
   - `npm i @mui/material @emotion/react @emotion/styled`
   - `npm i @fontsource/roboto`
@@ -37,7 +39,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [env-cmd](https://github.com/toddbluhm/env-cmd):
   - `npm i env-cmd --save-dev`
 - [Stylelint](https://stylelint.io/user-guide/get-started):
-  - `npm i stylelint stylelint-config-standard --save-dev`
+  - `npm i stylelint stylelint-config-standard-scss --save-dev`
 - [ESLint](https://eslint.org/docs/user-guide/getting-started):
   - `npm i eslint --save-dev`
   - `npm init @eslint/config`
@@ -104,9 +106,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "react",
     "roboto",
     "spa",
+    "sass",
     "storybook",
     "stylelint",
-    "template", 
+    "template",
     "typescript",
     "vscode"
   ],
@@ -122,7 +125,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "eject": "react-scripts eject",
     "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
-    "lint:c": "./node_modules/.bin/stylelint \"src/**/*.css\"",
+    "lint:c": "./node_modules/.bin/stylelint \"src/**/*.{css,scss}\"",
     "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
     "sb-build:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
     "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
@@ -253,11 +256,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Add the following configuration:
   ```json
   {
-    "extends": "stylelint-config-standard",
+    "extends": "stylelint-config-standard-scss",
     "rules": {
       "declaration-block-trailing-semicolon": "always",
       "declaration-no-important": true,
-      "font-family-no-missing-generic-family-keyword": null,
       "indentation": 2
     }
   }
@@ -317,7 +319,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "node_modules": true,
       "out": true,
       "package-lock.json": true
-    }
+    },
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "stylelint.validate": ["css", "scss"]
   }
   ```
 - Save
@@ -808,7 +814,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   }
 
   .material-icons {
-    font-family: "Material Icons";
+    font-family: "Material Icons", sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 24px; /* Preferred icon size */
