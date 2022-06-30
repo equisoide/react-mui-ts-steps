@@ -494,7 +494,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   This template is intended to help you start a new `React SPA` project from scratch with a comprehensive file structure, required dependencies, built-in configurations, example components and good practices for React Web Development. The project was bootstrapped with [Create React App](https://create-react-app.dev) following this [Tutorial](https://github.com/equisoide/react-mui-ts-steps). Below you will find some information about features on this template and how to perform common tasks.
 
   ## Supported Language Features
-  This project supports a superset of the latest `JavaScript` standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
+  This project supports a superset of the latest `JavaScript`/`TypeScript` standard. In addition to [ES6](http://es6-features.org) syntax features, it also supports:
   - [Exponentiation Operator](https://github.com/tc39/proposal-exponentiation-operator) (ES2016)
   - [Async/await](https://github.com/tc39/proposal-async-await) (ES2017)
   - [Object Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread) (ES2018)
@@ -504,6 +504,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   ## Core Libraries
   - [React 18.2.0](https://reactjs.org) with `React Scripts 5.0.1`
+  - [SASS 1.53.0](https://sass-lang.com) with [CSS Modules](https://github.com/css-modules/css-modules)
   - [MUI 5.8.5](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Material Icons`
   - [TypeScript 4.7.4](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
   - [I18next 21.8.10](https://react.i18next.com) for internationalization
@@ -605,8 +606,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
       ├── 📜 react-app-env.d.ts       TypeScript declarations for React App
       ├── 📜 setupTests.ts            Global setup before running tests
       ├── 📂 components/HelloWorld
-      │   ├── 📜 index.stories.tsx    Storybook component documentation
-      │   ├── 📜 index.test.tsx       Component testing file
+      │   ├── 📜 index.module.scss    Component styles
+      │   ├── 📜 index.stories.tsx    Storybook documentation
+      │   ├── 📜 index.test.tsx       Jest testing file
       │   └── 📜 index.tsx            Example component definition
       ├── 📂 fonts
       │   └── 📜 material-icons.ttf   Font file for Material Icons
@@ -623,8 +625,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
           └── 📜 web-vitals.ts        Web Vitals reporting
   ```
   For the project to build, these files must exist with exact filenames:
-   - `public/index.html` is the page template
-   - `src/index.tsx` is the TypeScript entry point
+  - `public/index.html` is the page template
+  - `src/index.tsx` is the TypeScript entry point
 
   You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by webpack. You need to put any TypeScript and SCSS files inside `src`, otherwise webpack won’t see them.
 
@@ -654,10 +656,24 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run sb-build:q`  | Builds Storybook to `out/storybook/qa`           | .env.qa          |
   | `npm run sb-build:s`  | Builds Storybook to `out/storybook/staging`      | .env.staging     |
 
+  ## Adding a Stylesheet
+  This project supports [CSS Modules](https://github.com/css-modules/css-modules) alongside regular stylesheets using the [name].module.css file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format [filename]\_[classname]\_\_[hash].
+
+  This project setup uses [webpack](https://webpack.js.org) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express a dependency to a CSS file, you need to import it:
+  ```tsx
+  import './button.css';
+
+  const Button = () => (
+    <button className="button">Click me</button>
+  );
+  ```
+
+  In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
+
   ## Using HTTPS in Local Environment
   You may require the local server to run the App or Storybook over [HTTPS](https://create-react-app.dev/docs/using-https-in-development):
-    - Use `npm run start-https` to run the APP over HTTPS
-    - Use `npm run sbook-https` to run Storybook over HTTPS
+  - Use `npm run start-https` to run the APP over HTTPS
+  - Use `npm run sbook-https` to run Storybook over HTTPS
 
   Note that you might get an error in the console telling that `localhost.pem` or `localhost-key.pem` files can't be found. This is because when running the App over HTTPS a valid **Certificate Authority** and an **SSL certificate** are needed.
 
@@ -678,6 +694,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Create reusable components inside the `src/components` folder. Define each component in its own folder with the following structure:
     ```
     ├── 📂 src/components/MyComponent   Component name in PascalCase
+        ├── 📜 index.module.cs          Component styles
         ├── 📜 index.stories.tsx        Storybook documentation
         ├── 📜 index.test.tsx           Jest testing file
         └── 📜 index.tsx                Component definition
@@ -717,6 +734,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
     git config --global core.autocrlf false
     git config --global core.eol lf
     ```
+
+  ## More Topics
+  - [Configuring Supported Browsers](https://create-react-app.dev/docs/supported-browsers-features#configuring-supported-browsers)
+  - [Updating to New Releases](https://create-react-app.dev/docs/updating-to-new-releases)
 
   ## Documentation & Training
   - [Official React Documentation](https://es.reactjs.org)
