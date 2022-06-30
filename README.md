@@ -125,7 +125,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "eject": "react-scripts eject",
     "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
-    "lint:c": "./node_modules/.bin/stylelint \"src/**/*.{css,scss}\"",
     "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
     "sb-build:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
     "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
@@ -134,6 +133,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
     "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
     "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "slint": "./node_modules/.bin/stylelint \"src/**/*.{css,scss}\"",
+    "slint:f": "./node_modules/.bin/stylelint --fix \"src/**/*.{css,scss}\"",
     "start": "env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "start-https": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
@@ -635,7 +636,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run init`        | Installs project dependencies for the first time | N/A              |
   | `npm run lint`        | Analyses **JavaSript**/**TypeScript** code       | N/A              |
   | `npm run lint:f`      | Try to fix **JavaSript**/**TypeScript** errors   | N/A              |
-  | `npm run lint:c`      | Analyses **CSS** files for potential errors      | N/A              |
+  | `npm run slint`       | Analyses **CSS**/**SCSS** styles                 | N/A              |
+  | `npm run slint:f`     | Try to fix **CSS**/**SCSS** errors               | N/A              |
   | `npm test`            | Executes Unit Tests outputting to `out/coverage` | .env.test        |
   | `npm start`           | Runs the App in http://localhost:3000            | .env.local       |
   | `npm run start-https` | Runs the App in https://localhost:3000           | .env.local       |
@@ -1242,14 +1244,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Restart VS Code in order to refresh **TypeScript Intellisense**
 - Analyse **JavaSript/TypeScript** code: `npm run lint`
 - Try to fix **JavaSript/TypeScript** errors: `npm run lint:f`
-- Analyse **CSS** files for potential errors: `npm run lint:c`
+- Analyses **CSS**/**SCSS** styles: `npm run slint`
+- Try to fix **CSS**/**SCSS** errors: `npm run slint:f`
 - Execute Unit Tests outputting to **out/coverage**: `npm test`
 - Run the App in http://localhost:3000: `npm start`
+- Create a locally trusted CA: `mkcert -install`
+- Generate an SSL certificate: `mkcert localhost`
+- Run the App in https://localhost:3000: `npm run start-https`
 - Build the App to **out/build/production**: `npm run build`
 - Build the App to **out/build/development**: `npm run build:d`
 - Build the App to **out/build/local**: `npm run build:l`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Run Storybook in http://localhost:3001: `npm run sbook`
+- Run Storybook in https://localhost:3001: `npm run sbook-https`
 - Build Storybook to **out/storybook/development**: `npm run sb-build:d`
 - Build Storybook to **out/storybook/local**: `npm run sb-build:l`
 - Build Storybook to **out/storybook/production**: `npm run sb-build:p`
