@@ -513,7 +513,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   ## Code Quality & Performance
   - [ESLint 8.18.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
-  - [Stylelint 14.9.1](https://stylelint.io) to analyse `CSS` files
+  - [Stylelint 14.9.1](https://stylelint.io) to analyse `CSS`/`SCSS` files
   - [Jest 27.5.2](https://jestjs.io/docs/getting-started) to test `JavaScript`/`TypeScript` files
   - [React Testing Library 13.3.0](https://testing-library.com/docs/react-testing-library/intro) to test components
   - [Web Vitals 2.1.4](https://web.dev/vitals) to meassure performance
@@ -626,7 +626,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
    - `public/index.html` is the page template
    - `src/index.tsx` is the TypeScript entry point
 
-  You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by webpack. You need to put any TypeScript and CSS files inside `src`, otherwise webpack won’t see them.
+  You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by webpack. You need to put any TypeScript and SCSS files inside `src`, otherwise webpack won’t see them.
 
   Only files inside public can be used from `public/index.html`.
 
