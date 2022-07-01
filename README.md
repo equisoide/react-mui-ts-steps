@@ -367,6 +367,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
   # Restart the development server every time you change a variable.
   # Learn more: https://create-react-app.dev/docs/adding-custom-environment-variables
   # Advanced config: https://create-react-app.dev/docs/advanced-configuration
+
+  # Variable to resolve SASS imports.
+  # Ref: https://create-react-app.dev/docs/adding-a-sass-stylesheet
+  SASS_PATH="./src/styles"
+
+  # Add your own variables below, starting with REACT_APP_
   REACT_APP_PACKAGE_NAME=${npm_package_name}
   REACT_APP_PACKAGE_VERSION=${npm_package_version}
   ```
@@ -619,8 +625,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
       ├── 📂 stories
       │   └── ...                     Files for the Storybook intro page
       ├── 📂 styles
-      │   ├── 📜 material-icons.scss  SASS file for Material Icons
-      │   └── 📜 site.scss            SASS file for the application
+      │   ├── 📜 _material-icons.scss Material Icons Font
+      │   ├── 📜 _reset.css           Simple CSS reset for consistent styles
+      │   └── 📜 main.scss            Main SASS file
       └── 📂 util
           └── 📜 web-vitals.ts        Web Vitals reporting
   ```
@@ -657,18 +664,42 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run sb-build:s`  | Builds Storybook to `out/storybook/staging`      | .env.staging     |
 
   ## Adding a Stylesheet
-  This project supports [CSS Modules](https://github.com/css-modules/css-modules) alongside regular stylesheets using the [name].module.css file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format [filename]\_[classname]\_\_[hash].
+  This project supports [Sass](https://sass-lang.com/guide) alongside [CSS Modules](https://github.com/css-modules/css-modules) for handling styles:
+  - `Sass` is CSS with superpowers
+  - `CSS Modules` scopes CSS by automatically creating a unique **className**
 
-  This project setup uses [webpack](https://webpack.js.org) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express a dependency to a CSS file, you need to import it:
-  ```tsx
-  import './button.css';
+  `Sass` supports two syntaxes:
+  - `.scss`: Is an extension of CSS, every valid CSS is a valid **.scss** as well
+  - `.sass`: Is an older indented syntax not recommended for use in new **Sass** files
 
-  const Button = () => (
-    <button className="button">Click me</button>
-  );
+  In this project we use the `.scss` syntax.
+
+  To express that a component depends on a **.scss module**, you should use the `[name].module.scss` convention:
+  ```jsx
+  import styles from './index.module.scss';
+
+  function MyComponent() {
+    return <div className={styles.myClass}>My Component</div>;
+  }
   ```
 
-  In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
+  In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all `.scss` files will be concatenated into a single minified `.css` file in the build output.
+
+  To share variables between **Sass** files, you can use Sass's [@use](https://sass-lang.com/documentation/at-rules/use) rule:
+  ```scss
+  // There is a SASS_PATH variable in the ".env" file.
+  // SASS_PATH is used to resolve SASS imports.
+  // Supposing that SASS_PATH="./src/styles" and that
+  // file './src/styles/_colors.scss' exists, then
+  // you can use it like this:
+  @use 'colors';
+
+  .info {
+    color: colors.$primary;
+  }
+  ```
+
+  So far, the SCSS codebase included in this template is pretty simple. If you are interested in structuring the Sass codebase using the **7-1 Pattern** you can read this [article](https://remote.com/blog/how-to-structure-your-sass-project) or take a look to the following [boilerplate](https://github.com/KittyGiraudel/sass-boilerplate).
 
   ## Using HTTPS in Local Environment
   You may require the local server to run the App or Storybook over [HTTPS](https://create-react-app.dev/docs/using-https-in-development):
@@ -807,45 +838,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 16. Create styles
-- Create **src/styles** folder
-- In that folder create **site.scss** file with the following styles:
-  ```css
-  /**
-   * A simple CSS reset
-   */
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    font-size: 100%; /* 1rem = 16px */
-  }
-
-  body {
-    font-size: 1rem; /* 16px */
-    font-family: Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  ```
-- Save
-
-## 17. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
+## 16. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
 - Create **src/fonts** folder
 - In that folder add [material-icons.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons.ttf) file
-- Go to **src/styles** folder
-- In that folder create **material-icons.scss** file with the following styles:
-  ```css
+
+## 17. Create styles
+- Create **src/styles** folder
+- Inside **src/styles** folder, create **_material-icons.scss** file with the following styles:
+  ```scss
   /**
-    * Material icons to depict in simple and minimal forms the universal
-    * concepts used commonly throughout a UI.
-    * Learn more: https://developers.google.com/fonts/docs/material_icons
-    */
+   * Material icons to depict in simple and minimal forms the universal
+   * concepts used commonly throughout a UI.
+   * Learn more: https://developers.google.com/fonts/docs/material_icons
+   */
   @font-face {
     font-family: "Material Icons";
     font-style: normal;
@@ -892,6 +897,45 @@ The purpose of this tutorial is to document the step by step on how to create a 
   /* Rules for using icons as white on a dark background. */
   .material-icons.md-light { color: rgb(255 255 255 / 100%); }
   .material-icons.md-light.md-inactive { color: rgb(255 255 255 / 30%); }
+  ```
+- Save
+- Inside **src/styles** folder, create **_reset.scss** file with the following styles:
+  ```scss
+  /**
+   * A simple set of CSS rules that resets the styling
+   * of all HTML elements to a consistent baseline.
+   */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%; /* 1rem = 16px */
+  }
+
+  body {
+    font-size: 1rem; /* 16px */
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ```
+- Save
+- Inside **src/styles** folder, create **main.scss** file with the following styles:
+  ```scss
+  // External imports
+  @import "@fontsource/roboto/300.css";
+  @import "@fontsource/roboto/400.css";
+  @import "@fontsource/roboto/500.css";
+  @import "@fontsource/roboto/700.css";
+
+  // Local imports
+  @import "reset";
+  @import "material-icons";
   ```
 - Save
 
@@ -952,7 +996,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 19. Configure [StoryBook](https://storybook.js.org)
+## 19. Configure [Storybook](https://storybook.js.org)
 - Open **.storybook/main.js** file:
 - Add the following comments at the top of the file:
   ```js
@@ -963,7 +1007,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
   ```js
   "core": {
-    // By default StoryBook collects telemetry data.
+    // By default Storybook collects telemetry data.
     "disableTelemetry": true
   }
   ```
@@ -1003,16 +1047,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   // External imports
   import { addParameters } from '@storybook/client-api';
 
-  import '@fontsource/roboto/300.css';
-  import '@fontsource/roboto/400.css';
-  import '@fontsource/roboto/500.css';
-  import '@fontsource/roboto/700.css';
-
   // Local imports
   import initI18n from '../src/lang';
-
-  import '../src/styles/site.scss';
-  import '../src/styles/material-icons.scss';
+  import '../src/styles/main.scss';
 
   // Global initialization
   initI18n();
@@ -1231,18 +1268,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import ReactDOM from 'react-dom/client';
   import { StrictMode } from 'react';
 
-  import '@fontsource/roboto/300.css';
-  import '@fontsource/roboto/400.css';
-  import '@fontsource/roboto/500.css';
-  import '@fontsource/roboto/700.css';
-
   // Local imports
   import HelloWorld from './components/HelloWorld';
   import initI18n from './lang';
   import reportWebVitals from './util/web-vitals';
-
-  import './styles/site.scss';
-  import './styles/material-icons.scss';
+  import './styles/main.scss';
 
   // Global initialization
   initI18n();
