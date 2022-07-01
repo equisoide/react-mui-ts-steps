@@ -109,7 +109,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "sass",
     "storybook",
     "stylelint",
-    "template",
     "typescript",
     "vscode"
   ],
