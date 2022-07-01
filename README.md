@@ -1165,14 +1165,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
   // Component props
   export interface HelloWorldProps {
     /**
-    * The alert message styles.
-    * See: https://mui.com/material-ui/api/alert
-    */
+     * The alert message styles.
+     * See: https://mui.com/material-ui/api/alert
+     */
     alert?: AlertProps,
     /**
-    * The box container styles.
-    * See: https://mui.com/material-ui/api/box
-    */
+     * The box container styles.
+     * See: https://mui.com/material-ui/api/box
+     */
     box?: BoxProps,
   }
 
