@@ -665,7 +665,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run sb-build:s`  | Builds Storybook to `out/storybook/staging`      | .env.staging     |
 
   ## Adding a Stylesheet
-  This project supports [Sass](https://sass-lang.com/guide) alongside [CSS Modules](https://github.com/css-modules/css-modules) for handling styles:
+  This project supports [Sass](https://sass-lang.com/guide) alongside [CSS Modules](https://github.com/css-modules/css-modules):
   - `Sass` is CSS with superpowers
   - `CSS Modules` scopes CSS by automatically creating a unique **className**
 
