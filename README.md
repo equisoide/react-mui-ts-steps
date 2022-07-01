@@ -627,7 +627,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       │   └── ...                     Files for the Storybook intro page
       ├── 📂 styles
       │   ├── 📜 _material-icons.scss Material Icons Font
-      │   ├── 📜 _reset.css           Simple CSS reset for consistent styles
+      │   ├── 📜 _reset.scss          Simple CSS reset for consistent styles
       │   └── 📜 main.scss            Main SASS file
       └── 📂 util
           └── 📜 web-vitals.ts        Web Vitals reporting
