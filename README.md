@@ -781,6 +781,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```shell
     git config --global core.autocrlf false
     git config --global core.eol lf
+    git rm --cached -r .
+    git reset --hard
     ```
 
   ## More Topics
