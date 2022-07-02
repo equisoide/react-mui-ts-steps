@@ -55,6 +55,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [Storybook](https://storybook.js.org/docs/react/get-started/install):
   - `npx storybook init`
     - Do you want to run the eslintPlugin migration on your project? › **y**
+- [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation)
+  - `npm i react-router-dom@6`
 
 ## 2. Install VS Code recomented extensions
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
@@ -519,6 +521,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [MUI 5.8.6](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Material Icons`
   - [TypeScript 4.7.4](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
   - [I18next 21.8.11](https://react.i18next.com) for internationalization
+  - [React Router 6.3.0](https://reactrouter.com/) for the routing system
 
   ## Documentation Tools
   - [Storybook 6.5.9](https://storybook.js.org) to document components
