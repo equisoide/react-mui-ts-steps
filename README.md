@@ -1300,7 +1300,36 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 23. Update index.tsx
+## 23. Create App component
+- Create **src/app** folder
+- Inside **src/app** folder, create **index.tsx** file with the following code:
+  ```tsx
+  // Exernal imports
+  import HelloWorld from '../components/HelloWorld';
+
+  // Component definition
+  function App() {
+    return (
+      <HelloWorld
+        box={{
+          sx: {
+            background: 'rgb(0, 30, 60)',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+        }}
+      />
+    );
+  }
+
+  // Component export
+  export default App;
+  ```
+- Save
+
+## 24. Update index.tsx
 - Open **src/index.tsx** file and replace all code with the following:
   ```tsx
   // External imports
@@ -1308,7 +1337,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import { StrictMode } from 'react';
 
   // Local imports
-  import HelloWorld from './components/HelloWorld';
+  import App from './app';
   import initI18n from './lang';
   import reportWebVitals from './util/web-vitals';
   import './styles/main.scss';
@@ -1321,17 +1350,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   reactRoot.render(
     <StrictMode>
-      <HelloWorld
-        box={{
-          sx: {
-            background: 'rgb(0, 30, 60)',
-            height: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          },
-        }}
-      />
+      <App />
     </StrictMode>,
   );
 
@@ -1345,7 +1364,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 24. Test everything is working fine
+## 25. Test everything is working fine
 - Delete **node_modules** folder
 - Install project dependencies for the first time: `npm run init`
 - Restart VS Code in order to refresh **TypeScript Intellisense**
