@@ -795,7 +795,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       );
     }
 
-    // Component default props
+    // Default props
     MyComponent.defaultProps = {
       box: {
         sx: { background: 'blue' },
@@ -1244,7 +1244,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     );
   }
 
-  // Component default props
+  // Default props
   HelloWorld.defaultProps = {
     alert: {
       severity: 'success',
