@@ -818,7 +818,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       git reset --hard
       ```
   - **On VS Code you get this errors: "JSX element implicitly has type 'any'..."**
-    - This is happening because your Typescript IntelliSense is not working properly
+    - This happens because your Typescript IntelliSense is not working properly
     - To fix it reload your code editor: `Ctrl + p` > `Developer: Reload Window`
 
   ## More Topics
