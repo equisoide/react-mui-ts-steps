@@ -816,7 +816,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ## Documentation & Training
   - [Official React Documentation](https://es.reactjs.org)
   - [React Function Components](https://www.robinwieruch.de/react-function-component)
-  - [TypeScript](https://www.typescriptlang.org)
+  - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
   - [ES6](http://es6-features.org/#Constants)
   - [Sass Basics](https://sass-lang.com/guide)
   - [MUI Crash Course](https://www.youtube.com/watch?v=o1chMISeTC0)
