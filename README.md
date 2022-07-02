@@ -1307,7 +1307,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Create **src/app** folder
 - Inside **src/app** folder, create **index.tsx** file with the following code:
   ```tsx
-  // Exernal imports
+  // External imports
   import HelloWorld from '../components/HelloWorld';
 
   // Component definition
