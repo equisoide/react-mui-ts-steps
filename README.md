@@ -644,6 +644,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       ├── 📜 index.tsx                The application entry point
       ├── 📜 react-app-env.d.ts       TypeScript declarations for React App
       ├── 📜 setupTests.ts            Global setup before running tests
+      ├── 📂 components/App
+      │   └── 📜 index.tsx            The main App component with routes
       ├── 📂 components/HelloWorld
       │   ├── 📜 index.module.scss    Component styles
       │   ├── 📜 index.stories.tsx    Storybook documentation
