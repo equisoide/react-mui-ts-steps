@@ -126,9 +126,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
+    "sb-build": "env-cmd --no-override -f ./.env-override/.env.production build-storybook -s public -o ./out/storybook/production",
     "sb-build:d": "env-cmd --no-override -f ./.env-override/.env.development build-storybook -s public -o ./out/storybook/development",
     "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
-    "sb-build:p": "env-cmd --no-override -f ./.env-override/.env.production build-storybook -s public -o ./out/storybook/production",
     "sb-build:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
     "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
     "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
@@ -383,8 +383,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.development**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "build:d" Builds the App to `out/build/development`
-    # - "sb-build:d" Builds Storybook to `out/storybook/development`
+    # - "build:d"     Builds the App to `out/build/development`
+    # - "sb-build:d"  Builds Storybook to `out/storybook/development`
 
     # Don't touch
     BUILD_PATH='./out/build/development'
@@ -417,8 +417,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.production**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "build"   Builds the App to `out/build/production`
-    # - "sb-build:p" Builds Storybook to `out/storybook/production`
+    # - "build"     Builds the App to `out/build/production`
+    # - "sb-build"  Builds Storybook to `out/storybook/production`
 
     # Don't touch
     BUILD_PATH='./out/build/production'
@@ -430,8 +430,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.qa**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "build:q" Builds the App to `out/build/qa`
-    # - "sb-build:q" Builds Storybook to `out/storybook/qa`
+    # - "build:q"     Builds the App to `out/build/qa`
+    # - "sb-build:q"  Builds Storybook to `out/storybook/qa`
 
     # Don't touch
     BUILD_PATH='./out/build/qa'
@@ -443,8 +443,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.staging**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "build:s" Builds the App to `out/build/staging`
-    # - "sb-build:s" Builds Storybook to `out/storybook/staging`
+    # - "build:s"     Builds the App to `out/build/staging`
+    # - "sb-build:s"  Builds Storybook to `out/storybook/staging`
 
     # Don't touch
     BUILD_PATH='./out/build/staging'
@@ -673,9 +673,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run build:s`     | Builds the App to `out/build/staging`            | .env.staging     |
   | `npm run sbook`       | Runs Storybook in http://localhost:3001          | .env.local       |
   | `npm run sbook-https` | Runs Storybook in https://localhost:3001         | .env.local       |
+  | `npm run sb-build`    | Builds Storybook to `out/storybook/production`   | .env.production  |
   | `npm run sb-build:d`  | Builds Storybook to `out/storybook/development`  | .env.development |
   | `npm run sb-build:l`  | Builds Storybook to `out/storybook/local`        | .env.local       |
-  | `npm run sb-build:p`  | Builds Storybook to `out/storybook/production`   | .env.production  |
   | `npm run sb-build:q`  | Builds Storybook to `out/storybook/qa`           | .env.qa          |
   | `npm run sb-build:s`  | Builds Storybook to `out/storybook/staging`      | .env.staging     |
 
@@ -1349,12 +1349,13 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Build the App to **out/build/production**: `npm run build`
 - Build the App to **out/build/development**: `npm run build:d`
 - Build the App to **out/build/local**: `npm run build:l`
+- Build the App to **out/build/qa**: `npm run build:q`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Run Storybook in http://localhost:3001: `npm run sbook`
 - Run Storybook in https://localhost:3001: `npm run sbook-https`
+- Build Storybook to **out/storybook/production**: `npm run sb-build`
 - Build Storybook to **out/storybook/development**: `npm run sb-build:d`
 - Build Storybook to **out/storybook/local**: `npm run sb-build:l`
-- Build Storybook to **out/storybook/production**: `npm run sb-build:p`
 - Build Storybook to **out/storybook/qa**: `npm run sb-build:q`
 - Build Storybook to **out/storybook/staging**: `npm run sb-build:s`
 
