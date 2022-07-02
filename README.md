@@ -802,7 +802,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       },
     };
 
-    // Component export
+    // Default export
     export default MyComponent;
     ```
   - Use default `imports` and `exports` when a module only exports a single thing (for example, a component). Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
@@ -1254,7 +1254,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     box: {},
   };
 
-  // Component export
+  // Default export
   export default HelloWorld;
   ```
 - Save
@@ -1327,7 +1327,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     );
   }
 
-  // Component export
+  // Default export
   export default App;
   ```
 - Save
