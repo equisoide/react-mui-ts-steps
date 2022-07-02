@@ -63,6 +63,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
 - [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
 - [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+- [SCSS Formatter](https://marketplace.visualstudio.com/items?itemName=sibiraj-s.vscode-scss-formatter)
 - [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
@@ -278,6 +279,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "dbaeumer.vscode-eslint",
       "editorconfig.editorconfig",
       "mikestead.dotenv",
+      "sibiraj-s.vscode-scss-formatter",
       "silvenon.mdx",
       "stylelint.vscode-stylelint",
       "tyriar.sort-lines",
@@ -542,6 +544,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
      * [Icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
      * [MDX](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
      * [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+     * [SCSS Formatter](https://marketplace.visualstudio.com/items?itemName=sibiraj-s.vscode-scss-formatter)
      * [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
      * [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
   5. Install [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome
