@@ -1336,6 +1336,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```tsx
   // External imports
   import ReactDOM from 'react-dom/client';
+  import { BrowserRouter } from 'react-router-dom';
   import { StrictMode } from 'react';
 
   // Local imports
@@ -1352,7 +1353,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   reactRoot.render(
     <StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </StrictMode>,
   );
 
