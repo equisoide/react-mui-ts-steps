@@ -578,7 +578,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
      - Press `F5` or click on `Run and Debug` > `Green Debug Icon`
      - You can set breakpoints and inspect components in the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
-    ## Available Scripts
+  ## Available Scripts
   | Command               | Description                                      | Evironment File  |
   | :---                  | :---                                             | :---             |
   | `npm run init`        | Installs project dependencies for the first time | N/A              |
