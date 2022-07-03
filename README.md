@@ -699,7 +699,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   In this project we use the `.scss` syntax.
 
   To express that a component depends on a **.scss module**, you should use the `[name].module.scss` convention:
-  ```jsx
+  ```tsx
   import styles from './index.module.scss';
 
   function MyComponent() {
@@ -763,7 +763,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         └── 📜 index.tsx                Component definition
     ```
   - Prefer [Function Components](https://www.robinwieruch.de/react-function-component) over **Class Components**, they offer almost the same: state and lifecycle methods, with the plus they are more lightway, have a sophisticated API and require less code. With the introduction of [React Hooks](https://reactjs.org/docs/hooks-intro.html) it's possible to write your entire application with just functions as React Components:
-    ```js
+    ```tsx
     // External imports
     import Box from '@mui/material/Box';
     import { BoxProps } from '@mui/material';
@@ -862,14 +862,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Rename **reportWebVitals.ts** to **web-vitals.ts**:
     - Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
   - Add the following comments at the top of the file:
-    ```js
+    ```ts
     // Web Vitals is an initiative by Google to provide unified guidance
     // for quality signals that are essential to delivering a great user
     // experience on the web.
     // Learn more: https://web.dev/vitals
     ```
   - Refactor the file to fix linter issues:
-    ```js
+    ```ts
     import('web-vitals').then(({
       getCLS,
       getFID,
@@ -996,7 +996,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   }
 - Save
 - Inside **src/lang** folder, create **index.ts** file with the following code:
-  ```js
+  ```ts
   // react-i18next is a powerful internationalization framework for
   // React / React Native which is based on i18next.
   // Learn more: https://react.i18next.com
@@ -1170,7 +1170,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 ## 20. Update [setupTests.ts](https://github.com/testing-library/jest-dom)
 - Open **src/setupTests.ts** file
 - Add the following initialization
-  ```js
+  ```ts
   import '@testing-library/jest-dom';
   import initI18n from './lang';
 
