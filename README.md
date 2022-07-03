@@ -685,7 +685,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Test of components. e.g. `HelloWorld/index.test.tsx`
     - Storybook stories. e.g. `HelloWorld/index.stories.tsx`
   - `.scss`: Superset of CSS (Don't use `.css`). Use it for:
-    - All stylesheets
+    - Global styles. e.g. `main.css`
+    - Component styles. e.g. `HelloWorld/index.module.scss`
 
   ## Adding a Stylesheet
   This project supports [Sass](https://sass-lang.com/guide) alongside [CSS Modules](https://github.com/css-modules/css-modules):
