@@ -1319,7 +1319,72 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 23. Create App component
+## 23. Create Home page
+- Create **src/pages/Home** folder
+- Inside **src/pages/Home** folder, create **index.tsx** file with the following code:
+  ```tsx
+  // Local imports
+  import HelloWorld from '../../components/HelloWorld';
+
+  // Component definition
+  function Home() {
+    return (
+      <HelloWorld
+        box={{
+          sx: {
+            background: 'rgb(0, 30, 60)',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+        }}
+      />
+    );
+  }
+
+  // Default export
+  export default Home;
+  ```
+- Save
+- Inside **src/pages/Home** folder, create **index.test.tsx** file with the following code:
+  ```tsx
+  // External imports
+  import { render, screen } from '@testing-library/react';
+
+  // Local imports
+  import Home from '.';
+
+  test('Render Home Page', () => {
+    render(<Home />);
+    const element = screen.getByText(/Hello World!/i);
+    expect(element).toBeInTheDocument();
+  });
+  ```
+- Save
+- Inside **src/pages/Home** folder, create **index.stories.tsx** file with the following code:
+  ```tsx
+  // External imports
+  import { ComponentMeta } from '@storybook/react';
+
+  // Local imports
+  import Home from '.';
+
+  // Story placement in the story list
+  export default {
+    title: 'Pages/Home',
+    component: Home,
+    parameters: {
+      layout: 'fullscreen',
+    },
+  } as ComponentMeta<typeof Home>;
+
+  // Default export
+  export const Default = () => <Home />;
+  ```
+- Save
+
+## 24. Create App component
 - Create **src/app** folder
 - Inside **src/app** folder, create **index.tsx** file with the following code:
   ```tsx
@@ -1348,7 +1413,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 24. Update index.tsx
+## 25. Update index.tsx
 - Open **src/index.tsx** file and replace all code with the following:
   ```tsx
   // External imports
@@ -1386,7 +1451,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 25. Test everything is working fine
+## 26. Test everything is working fine
 - Delete **node_modules** folder
 - Install project dependencies for the first time: `npm run init`
 - Restart VS Code in order to refresh **TypeScript Intellisense**
