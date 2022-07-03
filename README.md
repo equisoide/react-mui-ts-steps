@@ -400,9 +400,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "start"       Runs the App in http://localhost:3000
-    # - "start-https" Runs the App in https://localhost:3000
+    # - "start-https" Runs the App in https://localhost:3000 (HTTPS)
     # - "sbook"       Runs Storybook in http://localhost:3001
-    # - "sbook-https" Runs Storybook in https://localhost:3001
+    # - "sbook-https" Runs Storybook in https://localhost:3001 (HTTPS)
     # - "build:l"     Builds the App to `out/build/local`
     # - "sb-build:l"  Builds Storybook to `out/storybook/local`
 
@@ -588,14 +588,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run slint:f`     | Try to fix **CSS**/**SCSS** errors               | N/A              |
   | `npm test`            | Executes Unit Tests outputting to `out/coverage` | .env.test        |
   | `npm start`           | Runs the App in http://localhost:3000            | .env.local       |
-  | `npm run start-https` | Runs the App in https://localhost:3000           | .env.local       |
+  | `npm run start-https` | Runs the App in https://localhost:3000 (HTTPS)   | .env.local       |
   | `npm run build`       | Builds the App to `out/build/production`         | .env.production  |
   | `npm run build:d`     | Builds the App to `out/build/development`        | .env.development |
   | `npm run build:l`     | Builds the App to `out/build/local`              | .env.local       |
   | `npm run build:q`     | Builds the App to `out/build/qa`                 | .env.qa          |
   | `npm run build:s`     | Builds the App to `out/build/staging`            | .env.staging     |
   | `npm run sbook`       | Runs Storybook in http://localhost:3001          | .env.local       |
-  | `npm run sbook-https` | Runs Storybook in https://localhost:3001         | .env.local       |
+  | `npm run sbook-https` | Runs Storybook in https://localhost:3001 (HTTPS) | .env.local       |
   | `npm run sb-build`    | Builds Storybook to `out/storybook/production`   | .env.production  |
   | `npm run sb-build:d`  | Builds Storybook to `out/storybook/development`  | .env.development |
   | `npm run sb-build:l`  | Builds Storybook to `out/storybook/local`        | .env.local       |
@@ -1398,14 +1398,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Run the App in http://localhost:3000: `npm start`
 - Create a locally trusted CA: `mkcert -install`
 - Generate an SSL certificate: `mkcert localhost`
-- Run the App in https://localhost:3000: `npm run start-https`
+- Run the App in https://localhost:3000: `npm run start-https` (HTTPS)
 - Build the App to **out/build/production**: `npm run build`
 - Build the App to **out/build/development**: `npm run build:d`
 - Build the App to **out/build/local**: `npm run build:l`
 - Build the App to **out/build/qa**: `npm run build:q`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Run Storybook in http://localhost:3001: `npm run sbook`
-- Run Storybook in https://localhost:3001: `npm run sbook-https`
+- Run Storybook in https://localhost:3001: `npm run sbook-https` (HTTPS)
 - Build Storybook to **out/storybook/production**: `npm run sb-build`
 - Build Storybook to **out/storybook/development**: `npm run sb-build:d`
 - Build Storybook to **out/storybook/local**: `npm run sb-build:l`
