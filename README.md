@@ -1327,7 +1327,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import HelloWorld from '../../components/HelloWorld';
 
   // Component definition
-  function Home() {
+  function HomePage() {
     return (
       <HelloWorld
         box={{
@@ -1344,7 +1344,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   }
 
   // Default export
-  export default Home;
+  export default HomePage;
   ```
 - Save
 - Inside **src/pages/Home** folder, create **index.test.tsx** file with the following code:
@@ -1353,10 +1353,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import { render, screen } from '@testing-library/react';
 
   // Local imports
-  import Home from '.';
+  import HomePage from '.';
 
-  test('Render Home Page', () => {
-    render(<Home />);
+  test('Render HomePage', () => {
+    render(<HomePage />);
     const element = screen.getByText(/Hello World!/i);
     expect(element).toBeInTheDocument();
   });
@@ -1368,19 +1368,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
   import { ComponentMeta } from '@storybook/react';
 
   // Local imports
-  import Home from '.';
+  import HomePage from '.';
 
   // Story placement in the story list
   export default {
     title: 'Pages/Home',
-    component: Home,
+    component: HomePage,
     parameters: {
       layout: 'fullscreen',
     },
-  } as ComponentMeta<typeof Home>;
+  } as ComponentMeta<typeof HomePage>;
 
   // Default export
-  export const Default = () => <Home />;
+  export const Default = () => <HomePage />;
   ```
 - Save
 
