@@ -676,7 +676,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   Only files inside public can be used from `public/index.html`.
 
   ## File extensions
-  Most of the files you will create in the `src` folder will be of type **TypeScript**, **TypeScript with React** or **SASS**.
+  Most of the files you will create in the `src` folder will be **TypeScript**, **TypeScript with React** or **SASS**.
   - `.ts`: TypeScript files (Don't use `.js`). Use it for:
     - Utilities. e.g. `arrays.ts`
     - Test of utilities. e.g. `arrays.test.ts`
