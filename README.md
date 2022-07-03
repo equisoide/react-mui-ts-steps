@@ -758,7 +758,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Create reusable components inside the `src/components` folder. Define each component in its own folder with the following structure:
     ```
     ├── 📂 src/components/MyComponent   Component name in PascalCase
-        ├── 📜 index.module.cs          Component styles
+        ├── 📜 index.module.cs          Component styles (optional)
         ├── 📜 index.stories.tsx        Storybook documentation
         ├── 📜 index.test.tsx           Jest testing file
         └── 📜 index.tsx                Component definition
