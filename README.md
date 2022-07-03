@@ -861,22 +861,35 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
   - Rename **reportWebVitals.ts** to **web-vitals.ts**:
     - Update imports for 'reportWebVitals.ts'? > **Yes** (VS Code)
-  - Add the following comments at the top of the file:
+  - Replace **web-vitals.ts** with the following code:
     ```ts
     // Web Vitals is an initiative by Google to provide unified guidance
     // for quality signals that are essential to delivering a great user
     // experience on the web.
     // Learn more: https://web.dev/vitals
-    ```
-  - Refactor the file to fix linter issues:
-    ```ts
-    import('web-vitals').then(({
-      getCLS,
-      getFID,
-      getFCP,
-      getLCP,
-      getTTFB,
-    }) => {
+    import { ReportHandler } from 'web-vitals';
+
+    // Initializes Web Vitals with a custom reporter
+    const reportWebVitals = (onPerfEntry?: ReportHandler) => {
+      if (onPerfEntry && onPerfEntry instanceof Function) {
+        import('web-vitals').then(({
+          getCLS,
+          getFID,
+          getFCP,
+          getLCP,
+          getTTFB,
+        }) => {
+          getCLS(onPerfEntry);
+          getFID(onPerfEntry);
+          getFCP(onPerfEntry);
+          getLCP(onPerfEntry);
+          getTTFB(onPerfEntry);
+        });
+      }
+    };
+
+    // Default export
+    export default reportWebVitals;
     ```
   - Save
 
