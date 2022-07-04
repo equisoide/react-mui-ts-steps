@@ -376,7 +376,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   # Variable to resolve SASS imports.
   # Ref: https://create-react-app.dev/docs/adding-a-sass-stylesheet
-  SASS_PATH="./src/styles"
+  SASS_PATH='./src/styles'
 
   # Add your own variables below, starting with REACT_APP_
   REACT_APP_PACKAGE_NAME=${npm_package_name}
@@ -712,7 +712,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all `.scss` files will be concatenated into a single minified `.css` file in the build output.
 
-  To share variables between **Sass** files, you can use Sass's [@use](https://sass-lang.com/documentation/at-rules/use) rule. There is a `SASS_PATH` variable in the `.env` file that is used to locate `.scss` files. Supposing that `SASS_PATH="./src/styles"` and that you have `_colors.scss` in that directory, then you can use it like this:
+  To share variables between **Sass** files, you can use Sass's [@use](https://sass-lang.com/documentation/at-rules/use) rule. There is a `SASS_PATH` variable in the `.env` file that is used to locate `.scss` files. Supposing that `SASS_PATH='./src/styles'` and that you have `_colors.scss` in that directory, then you can use it like this:
   ```scss
   @use 'colors';
 
