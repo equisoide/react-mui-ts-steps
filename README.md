@@ -1065,7 +1065,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
   ```js
   "core": {
-    // By default Storybook collects telemetry data.
     "disableTelemetry": true
   }
   ```
