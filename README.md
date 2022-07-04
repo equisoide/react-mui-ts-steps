@@ -365,7 +365,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Create **.env** file at the app's root level
 - Add the following configuration:
   ```env
-  # This file defines the variables common to all environments.
+  # This file defines variables common to all environments.
   # Variables in this file will be overridden by each specific environment.
   # Shell variables never get overridden.
   # Name variables beginning with "REACT_APP_".
