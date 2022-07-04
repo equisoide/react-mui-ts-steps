@@ -294,7 +294,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Inside **.vscode** folder, create **launch.json** file with the following configuration:
   ```js
   {
-    // Launch Chrome against localhost.
+    // Launch Chrome when debugging from VS Code.
     // Learn more: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
