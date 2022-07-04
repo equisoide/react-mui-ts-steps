@@ -312,8 +312,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Inside **.vscode** folder, create **settings.json** file with the following configuration:
   ```js
   {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
+    // VS Code workspace settings.
     // Learn more: https://code.visualstudio.com/docs/getstarted/settings
     "editor.codeActionsOnSave": {
       "source.fixAll": true
