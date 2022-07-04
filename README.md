@@ -318,15 +318,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "source.fixAll": true
     },
     "files.eol": "\n",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
     "search.exclude": {
       "node_modules": true,
       "out": true,
       "package-lock.json": true
     },
     "css.validate": false,
-    "less.validate": false,
     "scss.validate": false,
-    "stylelint.validate": ["css", "scss"]
+    "stylelint.validate": ["css", "scss"],
+    "[scss]": {
+      "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    }
   }
   ```
 - Save
