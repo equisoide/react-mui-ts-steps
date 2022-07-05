@@ -374,7 +374,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   # Learn more: https://create-react-app.dev/docs/adding-custom-environment-variables
   # Advanced config: https://create-react-app.dev/docs/advanced-configuration
 
-  # Variable to resolve SASS imports.
+  # Path to resolve SASS imports.
   # Ref: https://create-react-app.dev/docs/adding-a-sass-stylesheet
   SASS_PATH='./src/styles'
 
