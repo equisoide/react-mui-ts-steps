@@ -1056,22 +1056,32 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Open **.storybook/main.js** file:
 - Add the following comments at the top of the file:
   ```js
-  // This file controls the Storybook server's behavior.
-  // You must restart Storybook’s process when you change it.
-  // Learn more: https://storybook.js.org/docs/react/configure/overview
+  /**
+   * This file controls the Storybook server's behavior.
+   * You must restart Storybook’s process when you change it.
+   * Learn more: https://storybook.js.org/docs/react/configure/overview
+   */
   ```
 - [Disable Telemetry](https://storybook.js.org/docs/react/configure/telemetry):
   ```js
   "core": {
-    "disableTelemetry": true
+    ...
+    "disableTelemetry": true,
   }
   ```
 - Add **webpackFinal** after **core**:
   ```js
   webpackFinal: async (config) => {
-    // Manually inject environment variables.
-    // Note that otherwise, only `STORYBOOK_*` prefix env vars are supported.
-    // Ref: https://github.com/storybookjs/storybook/issues/12270
+    injectEnvVariables(config);
+    return config;
+  },
+  ```
+- Add **injectEnvVariables** after **module.exports**:
+  ```js
+  // Manually inject environment variables into the webpack config object.
+  // Note that otherwise, only `STORYBOOK_*` prefix env vars are supported.
+  // Ref: https://github.com/storybookjs/storybook/issues/12270
+  function injectEnvVariables(config) {
     const findPlugin = (name) => config.plugins.find(
       ({ constructor }) => constructor && constructor.name === name,
     );
@@ -1088,16 +1098,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
         interpolateHtmlPlugin.replacements[key],
       );
     });
-
-    return config;
-  },
+  };
   ```
+- Add trailing commas where missing
 - Save
 - Open **.storybook/preview.js** file:
 - Add the following code at the top of the file:
   ```js
-  // Use preview.js for global code that applies to all stories.
-  // Learn more: https://storybook.js.org/docs/react/configure/overview
+  /**
+   * Use preview.js for global code that applies to all stories.
+   * Learn more: https://storybook.js.org/docs/react/configure/overview
+   */
   import { addParameters } from '@storybook/client-api';
   import initI18n from '../src/lang';
   import '../src/styles/main.scss';
@@ -1133,9 +1144,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Create file **.storybook/manager.js** with the following code:
   ```js
-  // This file allows you to customize how Storybook’s app UI renders.
-  // That is, everything outside of the Canvas (preview iframe).
-  // Learn more: https://storybook.js.org/blog/declarative-storybook-configuration
+  /**
+   * This file allows you to customize how Storybook’s app UI renders.
+   * That is, everything outside of the Canvas (preview iframe).
+   * Learn more: https://storybook.js.org/blog/declarative-storybook-configuration
+   */
   import favicon from './favicon.svg';
 
   // Change Storybook Favicon.
