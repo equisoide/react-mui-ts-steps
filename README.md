@@ -134,12 +134,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
     "sb-build:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
     "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
-    "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public",
-    "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3001 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3002 -s public",
+    "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3003 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "slint": "./node_modules/.bin/stylelint \"src/**/*.{css,scss}\"",
     "slint:f": "./node_modules/.bin/stylelint --fix \"src/**/*.{css,scss}\"",
-    "start": "env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
-    "start-https": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+    "start": "PORT=3000 env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+    "start-https": "PORT=3001 HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
   },
   ```
@@ -402,19 +402,15 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```env
     # Variables in this file are injected by the following scripts:
     # - "start"       Runs the App in http://localhost:3000
-    # - "start-https" Runs the App in https://localhost:3000 (HTTPS)
-    # - "sbook"       Runs Storybook in http://localhost:3001
-    # - "sbook-https" Runs Storybook in https://localhost:3001 (HTTPS)
+    # - "start-https" Runs the App in https://localhost:3001 (HTTPS)
+    # - "sbook"       Runs Storybook in http://localhost:3002
+    # - "sbook-https" Runs Storybook in https://localhost:3003 (HTTPS)
     # - "build:l"     Builds the App to `out/build/local`
     # - "sb-build:l"  Builds Storybook to `out/storybook/local`
 
     # Don't touch
     BUILD_PATH='./out/build/local'
     REACT_APP_ENV='local'
-
-    # You can adjust various development settings
-    # Ref: https://create-react-app.dev/docs/advanced-configuration
-    PORT=3000
 
     # Add your own variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://localhost:5000/api/v1'
@@ -590,14 +586,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run slint:f`     | Try to fix **CSS**/**SCSS** errors               | N/A              |
   | `npm test`            | Executes Unit Tests outputting to `out/coverage` | .env.test        |
   | `npm start`           | Runs the App in http://localhost:3000            | .env.local       |
-  | `npm run start-https` | Runs the App in https://localhost:3000 (HTTPS)   | .env.local       |
+  | `npm run start-https` | Runs the App in https://localhost:3001 (HTTPS)   | .env.local       |
   | `npm run build:l`     | Builds the App to `out/build/local`              | .env.local       |
   | `npm run build:d`     | Builds the App to `out/build/development`        | .env.development |
   | `npm run build:q`     | Builds the App to `out/build/qa`                 | .env.qa          |
   | `npm run build:s`     | Builds the App to `out/build/staging`            | .env.staging     |
   | `npm run build`       | Builds the App to `out/build/production`         | .env.production  |
-  | `npm run sbook`       | Runs Storybook in http://localhost:3001          | .env.local       |
-  | `npm run sbook-https` | Runs Storybook in https://localhost:3001 (HTTPS) | .env.local       |
+  | `npm run sbook`       | Runs Storybook in http://localhost:3002          | .env.local       |
+  | `npm run sbook-https` | Runs Storybook in https://localhost:3003 (HTTPS) | .env.local       |
   | `npm run sb-build:l`  | Builds Storybook to `out/storybook/local`        | .env.local       |
   | `npm run sb-build:d`  | Builds Storybook to `out/storybook/development`  | .env.development |
   | `npm run sb-build:q`  | Builds Storybook to `out/storybook/qa`           | .env.qa          |
@@ -1456,14 +1452,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Run the App in http://localhost:3000: `npm start`
 - Create a locally trusted CA: `mkcert -install`
 - Generate an SSL certificate: `mkcert localhost`
-- Run the App in https://localhost:3000: `npm run start-https` (HTTPS)
+- Run the App in https://localhost:3001: `npm run start-https` (HTTPS)
 - Build the App to **out/build/local**: `npm run build:l`
 - Build the App to **out/build/development**: `npm run build:d`
 - Build the App to **out/build/qa**: `npm run build:q`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Build the App to **out/build/production**: `npm run build`
-- Run Storybook in http://localhost:3001: `npm run sbook`
-- Run Storybook in https://localhost:3001: `npm run sbook-https` (HTTPS)
+- Run Storybook in http://localhost:3002: `npm run sbook`
+- Run Storybook in https://localhost:3003: `npm run sbook-https` (HTTPS)
 - Build Storybook to **out/storybook/local**: `npm run sb-build:l`
 - Build Storybook to **out/storybook/development**: `npm run sb-build:d`
 - Build Storybook to **out/storybook/qa**: `npm run sb-build:q`
