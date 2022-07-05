@@ -378,7 +378,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   # Ref: https://create-react-app.dev/docs/adding-a-sass-stylesheet
   SASS_PATH='./src/styles'
 
-  # Add your own variables below, starting with REACT_APP_
+  # Add variables below, starting with REACT_APP_
   REACT_APP_PACKAGE_NAME=${npm_package_name}
   REACT_APP_PACKAGE_VERSION=${npm_package_version}
   ```
@@ -395,7 +395,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     BUILD_PATH='./out/build/development'
     REACT_APP_ENV='development'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://development.com/api/v1'
     ```
   - **.env.local**
@@ -412,7 +412,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     BUILD_PATH='./out/build/local'
     REACT_APP_ENV='local'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://localhost:5000/api/v1'
     ```
   - **.env.production**
@@ -425,7 +425,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     BUILD_PATH='./out/build/production'
     REACT_APP_ENV='production'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://production.com/api/v1'
     ```
   - **.env.qa**
@@ -438,7 +438,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     BUILD_PATH='./out/build/qa'
     REACT_APP_ENV='qa'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://qa.com/api/v1'
     ```
   - **.env.staging**
@@ -451,7 +451,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     BUILD_PATH='./out/build/staging'
     REACT_APP_ENV='staging'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='https://staging.com/api/v1'
     ```
   - **.env.test**
@@ -462,7 +462,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     # Don't touch
     REACT_APP_ENV='test'
 
-    # Add your own variables below, starting with REACT_APP_
+    # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL=='https://test.com/api/v1'
     ```
 
