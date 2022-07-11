@@ -1188,9 +1188,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 
 ## 20. Update [setupTests.ts](https://github.com/testing-library/jest-dom)
-- Open **src/setupTests.ts** file
-- Add the following initialization
+- Open **src/setupTests.ts** file and replace with the following code:
   ```ts
+  /**
+   * jest-dom adds custom jest matchers for asserting on DOM nodes.
+   * It allows you to do things like:
+   * expect(element).toHaveTextContent(/react/i)
+   * Learn more: https://github.com/testing-library/jest-dom
+   */
   import '@testing-library/jest-dom';
   import initI18n from './lang';
 
