@@ -1009,9 +1009,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Inside **src/lang** folder, create **index.ts** file with the following code:
   ```ts
-  // react-i18next is a powerful internationalization framework for
-  // React / React Native which is based on i18next.
-  // Learn more: https://react.i18next.com
+  /**
+   * react-i18next is a powerful internationalization framework for
+   * React/ReactNative which is based on i18next.
+   * Learn more: https://react.i18next.com
+   */
 
   // External imports
   import LanguageDetector from 'i18next-browser-languagedetector';
