@@ -1218,6 +1218,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Create **src/components/HelloWorld** folder
 - Inside **src/components/HelloWorld** folder, create **index.module.scss** file with the following code:
   ```scss
+  /**
+   * Style file for the HelloWorld component.
+   */
   .info {
     font-size: 0.875rem; /* 14px */
   }
@@ -1225,6 +1228,11 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Inside **src/components/HelloWorld** folder, create **index.tsx** file with the following code:
   ```tsx
+  /**
+   * The HelloWorld component renders an alert with
+   * the package name, version and environment.
+   */
+
   // External imports
   import Alert from '@mui/material/Alert';
   import AlertTitle from '@mui/material/AlertTitle';
@@ -1289,10 +1297,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Inside **src/components/HelloWorld** folder, create **index.test.tsx** file with the following code:
   ```tsx
-  // External imports
+  /**
+   * Testing file for the HelloWorld component.
+   */
   import { render, screen } from '@testing-library/react';
-
-  // Local imports
   import HelloWorld from '.';
 
   test('Render HelloWorld Component', () => {
@@ -1304,10 +1312,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Save
 - Inside **src/components/HelloWorld** folder, create **index.stories.tsx** file with the following code:
   ```tsx
-  // External imports
+  /**
+   * Storybook file for the HelloWorld component.
+   */
   import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-  // Local imports
   import HelloWorld from '.';
 
   // Story placement in the story list
@@ -1316,7 +1324,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
     component: HelloWorld,
   } as ComponentMeta<typeof HelloWorld>;
 
-  // Template of how args map to rendering
   const Template: ComponentStory<typeof HelloWorld> = (args) => <HelloWorld {...args} />;
 
   // Story #1
