@@ -697,6 +697,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       │   ├── 📜 index.ts             i18next configuration
       │   ├── 📜 resources.en.json    Application texts in English
       │   └── 📜 resources.es.json    Application texts in Spanish
+      ├── 📂 pages
+      │   └── ...                     React components for each page  
       ├── 📂 stories
       │   └── ...                     Files for the Storybook intro page
       ├── 📂 styles
