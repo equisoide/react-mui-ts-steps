@@ -947,7 +947,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     ```
   - Save
 
-## 16. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
+## 16. Update index.html
 - Open **pubic/index.html** file
 - After the `apple-touch-icon` link reference, add the following:
   ```html
@@ -956,6 +956,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
         See: https://developers.google.com/fonts/docs/material_icons
       -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  ```
+- Replace the **title** by the following:
+  ```html
+  <title>%REACT_APP_PACKAGE_NAME%</title>
   ```
 - Save
 
@@ -1211,15 +1215,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 21. Update index.html
-- Go to **public/index.html** file
-- Replace the **title** by the following:
-  ```html
-  <title>%REACT_APP_PACKAGE_NAME%</title>
-  ```
-- Save
-
-## 22. Create HelloWorld component
+## 21. Create HelloWorld component
 - Create **src/components/HelloWorld** folder
 - Inside **src/components/HelloWorld** folder, create **index.module.scss** file with the following code:
   ```scss
@@ -1344,7 +1340,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 23. Create Home page
+## 22. Create Home page
 - Create **src/pages/Home** folder
 - Inside **src/pages/Home** folder, create **index.tsx** file with the following code:
   ```tsx
@@ -1409,7 +1405,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 24. Create App component
+## 23. Create App component
 - Create **src/app** folder
 - Inside **src/app** folder, create **index.tsx** file with the following code:
   ```tsx
@@ -1434,7 +1430,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 25. Update index.tsx
+## 24. Update index.tsx
 - Open **src/index.tsx** file and replace all code with the following:
   ```tsx
   // External imports
@@ -1478,7 +1474,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Save
 
-## 26. Test everything is working fine
+## 25. Test everything is working fine
 - Delete **node_modules** folder
 - Install project dependencies for the first time: `npm run init`
 - Restart VS Code in order to refresh **TypeScript Intellisense**
