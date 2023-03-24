@@ -244,6 +244,18 @@ The purpose of this tutorial is to document the step by step on how to create a 
     }
   }
   ```
+- Add **parser** after **overrides**,
+  ```json
+  "parser": "@typescript-eslint/parser",
+  ```
+- Add **ecmaFeatures** inside **parserOptions**,
+  ```json
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+  },
+  ```
 - Save
 
 ## 7. Add [.eslintignore](https://eslint.org/docs/user-guide/configuring/ignoring-code#the-eslintignore-file)
