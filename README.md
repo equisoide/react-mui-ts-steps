@@ -48,7 +48,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - React
     - Does your project use TypeScript? › **Yes**
     - Where does your code run? › **Browser**
-    - Use a popular style guide › **Airbnb**
+    - Use a popular style guide › **Standard: https://github.com/standard/eslint-config-standard-with-typescript**
     - What format do you want your config file to be in? › **JavaScript**
     - Would you like to install them now? › **Yes**
     - Which package manager do you want to use? › **npm**
