@@ -932,6 +932,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```html
       <!--
         The easiest way to set up icon fonts for use in any web page is through Google Fonts
+        See: https://developers.google.com/fonts/docs/material_icons
       -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   ```
