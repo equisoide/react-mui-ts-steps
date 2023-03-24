@@ -790,6 +790,19 @@ The purpose of this tutorial is to document the step by step on how to create a 
     - Generate an SSL certificate with `mkcert localhost`
     - `localhost.pem` and `localhost-key.pem` will be generated
     - Note that these files are included in the `.gitignore`
+  
+  ## Working in StrictMode
+  `<StrictMode>` lets you find common bugs in your components early during development. It also helps you to prepare your app for the future. You can read more about it [here](https://react.dev/reference/react/StrictMode).
+
+  Strict Mode enables the following development-only behaviors:
+  - Your components will re-render an extra time to find bugs caused by impure rendering
+  - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup
+  - Your components will be checked for usage of deprecated APIs.
+
+  To enabble/disable StrictMode you can use the `REACT_APP_STRICT_MODE` environment variable. By default it's set to `true` in the following files:
+  - `.env.development`
+  - `.env.https.local`
+  - `.env.local`
 
   ## Working Guidelines
   - Never delete and re-generate the `package-lock.json` file from scratch, it will break the App and Storybook! Let `npm` update that file every time you install a new dependency
