@@ -620,14 +620,14 @@ The purpose of this tutorial is to document the step by step on how to create a 
   | `npm run slint:f`     | Try to fix **CSS**/**SCSS** errors               | N/A              |
   | `npm test`            | Executes Unit Tests outputting to `out/coverage` | .env.test        |
   | `npm start`           | Runs the App in http://localhost:4000            | .env.local       |
-  | `npm run start-https` | Runs the App in https://localhost:4001 (HTTPS)   | .env.local       |
+  | `npm run start-https` | Runs the App in https://localhost:4001 (HTTPS)   | .env.https.local |
   | `npm run build:l`     | Builds the App to `out/build/local`              | .env.local       |
   | `npm run build:d`     | Builds the App to `out/build/development`        | .env.development |
   | `npm run build:q`     | Builds the App to `out/build/qa`                 | .env.qa          |
   | `npm run build:s`     | Builds the App to `out/build/staging`            | .env.staging     |
   | `npm run build`       | Builds the App to `out/build/production`         | .env.production  |
   | `npm run sbook`       | Runs Storybook in http://localhost:4002          | .env.local       |
-  | `npm run sbook-https` | Runs Storybook in https://localhost:4003 (HTTPS) | .env.local       |
+  | `npm run sbook-https` | Runs Storybook in https://localhost:4003 (HTTPS) | .env.https.local |
   | `npm run sb-build:l`  | Builds Storybook to `out/storybook/local`        | .env.local       |
   | `npm run sb-build:d`  | Builds Storybook to `out/storybook/development`  | .env.development |
   | `npm run sb-build:q`  | Builds Storybook to `out/storybook/qa`           | .env.qa          |
