@@ -643,6 +643,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ├── 📜 .eslintignore                Folders and files ignored by ESLint
   ├── 📜 .eslintrc                    ESLint configuration
   ├── 📜 .gitignore                   Folders and files ignored by Git
+  ├── 📜 .npmrc                       Npm settings
   ├── 📜 .stylelintrc                 Stylelint configuration
   ├── 📜 LICENSE                      License information
   ├── 📜 package-lock.json            Npm dependency tree to recreate node_modules
