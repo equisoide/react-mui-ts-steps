@@ -210,11 +210,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```
 - Replace **rules** object with the following:
   ```json
-  "rules": {
+   "rules": {
     "@typescript-eslint/no-empty-function": "off",
     "comma-dangle": ["error", "always-multiline"],
-    "import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "jsx-a11y/alt-text": "off",
     "max-len": ["error", { "code": 120, "tabWidth": 2, "ignoreComments": true, "ignoreTrailingComments": true, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }],
     "no-duplicate-imports": "error",
