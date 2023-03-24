@@ -33,6 +33,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - `npm i @mui/material @emotion/react @emotion/styled`
   - `npm i @fontsource/roboto`
   - `npm i @mui/icons-material`
+  -  `npm i @mui/x-date-pickers`
 - [react-i18next](https://react.i18next.com/guides/quick-start):
   - `npm i i18next react-i18next`
   - `npm i i18next-browser-languagedetector`
