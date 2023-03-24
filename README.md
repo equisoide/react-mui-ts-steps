@@ -99,7 +99,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Add **keywords** after **homepage**:
   ```json
   "keywords": [
-    "airbnb",
     "emotion",
     "es6",
     "eslint",
@@ -195,7 +194,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ```json
   "extends": [
     "eslint:recommended",
-    "airbnb",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
@@ -539,7 +537,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - [Storybook 6.5.9](https://storybook.js.org) to document components
 
   ## Code Quality & Performance
-  - [ESLint 8.18.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
+  - [ESLint 8.18.0](https://eslint.org) with `TypeScript`, `React`, `React Hooks` and `Jest` configuration
   - [Stylelint 14.9.1](https://stylelint.io) to analyse `CSS`/`SCSS` files
   - [Jest 27.5.2](https://jestjs.io/docs/getting-started) to test `JavaScript`/`TypeScript` files
   - [React Testing Library 13.3.0](https://testing-library.com/docs/react-testing-library/intro) to test components
@@ -906,66 +904,18 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - Save
 
 ## 16. Add [Material Icons](https://developers.google.com/fonts/docs/material_icons)
-- Create **src/fonts** folder
-- In that folder add [material-icons.ttf](https://github.com/equisoide/react-mui-ts-steps/raw/main/material-icons.ttf) file
+- Open **pubic/index.html** file
+- After the `apple-touch-icon` link reference, add the following:
+  ```html
+      <!--
+        The easiest way to set up icon fonts for use in any web page is through Google Fonts
+      -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  ```
+- Save
 
 ## 17. Create styles
 - Create **src/styles** folder
-- Inside **src/styles** folder, create **_material-icons.scss** file with the following styles:
-  ```scss
-  /**
-   * Material icons to depict in simple and minimal forms the universal
-   * concepts used commonly throughout a UI.
-   * Learn more: https://developers.google.com/fonts/docs/material_icons
-   */
-  @font-face {
-    font-family: "Material Icons";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/material-icons.ttf") format("truetype");
-  }
-
-  .material-icons {
-    font-family: "Material Icons", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizelegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: "liga";
-  }
-
-  /* Rules for sizing the icon. */
-  .material-icons.md-18 { font-size: 18px; }
-  .material-icons.md-24 { font-size: 24px; }
-  .material-icons.md-36 { font-size: 36px; }
-  .material-icons.md-48 { font-size: 48px; }
-
-  /* Rules for using icons as black on a light background. */
-  .material-icons.md-dark { color: rgb(0 0 0 / 54%); }
-  .material-icons.md-dark.md-inactive { color: rgb(0 0 0 / 26%); }
-
-  /* Rules for using icons as white on a dark background. */
-  .material-icons.md-light { color: rgb(255 255 255 / 100%); }
-  .material-icons.md-light.md-inactive { color: rgb(255 255 255 / 30%); }
-  ```
-- Save
 - Inside **src/styles** folder, create **_reset.scss** file with the following styles:
   ```scss
   /**
