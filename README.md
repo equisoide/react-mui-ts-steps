@@ -274,9 +274,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   {
     "extends": "stylelint-config-standard-scss",
     "rules": {
-      "declaration-block-trailing-semicolon": "always",
       "declaration-no-important": true,
-      "indentation": 2
     }
   }
   ```
