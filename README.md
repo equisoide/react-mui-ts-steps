@@ -653,6 +653,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   ├── 📜 tsconfig.json                TypeScript configuration
   ├── 📂 .env-override
   │   ├── 📜 .env.development         Environment variables for Development
+  │   ├── 📜 .env.https.local         Environment variables for Local (HTTPS)
   │   ├── 📜 .env.local               Environment variables for Local
   │   ├── 📜 .env.production          Environment variables for Production
   │   ├── 📜 .env.qa                  Environment variables for QA
@@ -685,8 +686,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
       │   ├── 📜 index.stories.tsx    Storybook documentation
       │   ├── 📜 index.test.tsx       Jest testing file
       │   └── 📜 index.tsx            Example component definition
-      ├── 📂 fonts
-      │   └── 📜 material-icons.ttf   Font file for Material Icons
       ├── 📂 lang
       │   ├── 📜 index.ts             i18next configuration
       │   ├── 📜 resources.en.json    Application texts in English
@@ -694,7 +693,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
       ├── 📂 stories
       │   └── ...                     Files for the Storybook intro page
       ├── 📂 styles
-      │   ├── 📜 _material-icons.scss Material Icons Font
       │   ├── 📜 _reset.scss          Simple CSS reset for consistent styles
       │   └── 📜 main.scss            Main SASS file
       └── 📂 util
