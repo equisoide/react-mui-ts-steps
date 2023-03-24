@@ -399,6 +399,10 @@ The purpose of this tutorial is to document the step by step on how to create a 
   # in the Storybook intro page, or in the App <title>.
   REACT_APP_PACKAGE_NAME=${npm_package_name}
   REACT_APP_PACKAGE_VERSION=${npm_package_version}
+  
+  # Lets you find common bugs in your components early during development.
+  # Learn more: https://react.dev/reference/react/StrictMode
+  REACT_APP_SCRICT_MODE=false
   ```
 - Save
 - Create **.env-override** folder at the app's root level
@@ -415,6 +419,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='https://development.com/api/v1'
+    REACT_APP_SCRICT_MODE=true
     ```
   - **.env.https.local**
     ```env
@@ -431,6 +436,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='https://localhost:5000/api/v1'
+    REACT_APP_SCRICT_MODE=true
     ```
   - **.env.local**
     ```env
@@ -448,6 +454,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
     # Add variables below, starting with REACT_APP_
     REACT_APP_API_URL='http://localhost:5001/api/v1'
+    REACT_APP_SCRICT_MODE=true
     ```
   - **.env.production**
     ```env
@@ -1433,11 +1440,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
   const reactRoot = ReactDOM.createRoot(htmlRoot);
 
   reactRoot.render(
-    <StrictMode>
+    process.env.REACT_APP_SCRICT_MODE === 'true' ? (
+      <StrictMode>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </StrictMode>
+    ) : (
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </StrictMode>,
+    ),
   );
 
   if (process.env.REACT_APP_ENV !== 'production') {
