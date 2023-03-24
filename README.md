@@ -56,6 +56,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - `npx storybook init`
     - Do you want to run the 'eslintPlugin' migration on your project? › **y**
     - Do you want to run the 'npm7' migration on your project? » (Y/n) › **y**
+  - `npm i --save-dev react-docgen-typescript-plugin`
 - [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation)
   - `npm i react-router-dom@6`
 
@@ -134,12 +135,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "sb-build:l": "env-cmd --no-override -f ./.env-override/.env.local build-storybook -s public -o ./out/storybook/local",
     "sb-build:q": "env-cmd --no-override -f ./.env-override/.env.qa build-storybook -s public -o ./out/storybook/qa",
     "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
-    "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3002 -s public",
-    "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3003 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 4002 -s public",
+    "sbook-https": "env-cmd --no-override -f ./.env-override/.env.https.local start-storybook -p 4003 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "slint": "stylelint \"src/**/*.{css,scss}\"",
     "slint:f": "stylelint --fix \"src/**/*.{css,scss}\"",
-    "start": "PORT=3000 env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
-    "start-https": "PORT=3001 HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+    "start": "env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
+    "start-https": "env-cmd --no-override -f ./.env-override/.env.https.local react-scripts start",
     "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
   },
   ```
@@ -341,6 +342,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "stylelint.validate": ["css", "scss"],
     "[scss]": {
       "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "files.associations": {
+      ".env.https.local": "env"
     }
   }
   ```
@@ -389,7 +393,9 @@ The purpose of this tutorial is to document the step by step on how to create a 
   # Ref: https://create-react-app.dev/docs/adding-a-sass-stylesheet
   SASS_PATH='./src/styles'
 
-  # Add variables below, starting with REACT_APP_
+  # Package Name and Version come from the package.json file.
+  # They are used to render App Info in some places, for example
+  # in the Storybook intro page, or in the App <title>.
   REACT_APP_PACKAGE_NAME=${npm_package_name}
   REACT_APP_PACKAGE_VERSION=${npm_package_version}
   ```
@@ -407,24 +413,40 @@ The purpose of this tutorial is to document the step by step on how to create a 
     REACT_APP_ENV='development'
 
     # Add variables below, starting with REACT_APP_
-    REACT_APP_API_URL='http://development.com/api/v1'
+    REACT_APP_API_URL='https://development.com/api/v1'
+    ```
+  - **.env.https.local**
+    ```env
+    # Variables in this file are injected by the following scripts:
+    # - "start-https" Runs the App in https://localhost:3001 (HTTPS)
+    # - "sbook-https" Runs Storybook in https://localhost:3003 (HTTPS)
+
+    # Don't touch
+    PORT=4001
+    HTTPS=true
+    SSL_CRT_FILE=localhost.pem
+    SSL_KEY_FILE=localhost-key.pem
+    REACT_APP_ENV='local'
+
+    # Add variables below, starting with REACT_APP_
+    REACT_APP_API_URL='https://localhost:5000/api/v1'
     ```
   - **.env.local**
     ```env
     # Variables in this file are injected by the following scripts:
     # - "start"       Runs the App in http://localhost:3000
-    # - "start-https" Runs the App in https://localhost:3001 (HTTPS)
     # - "sbook"       Runs Storybook in http://localhost:3002
-    # - "sbook-https" Runs Storybook in https://localhost:3003 (HTTPS)
     # - "build:l"     Builds the App to `out/build/local`
     # - "sb-build:l"  Builds Storybook to `out/storybook/local`
 
     # Don't touch
+    PORT=4000
+    HTTPS=false
     BUILD_PATH='./out/build/local'
     REACT_APP_ENV='local'
 
     # Add variables below, starting with REACT_APP_
-    REACT_APP_API_URL='http://localhost:5000/api/v1'
+    REACT_APP_API_URL='http://localhost:5001/api/v1'
     ```
   - **.env.production**
     ```env
@@ -437,7 +459,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     REACT_APP_ENV='production'
 
     # Add variables below, starting with REACT_APP_
-    REACT_APP_API_URL='http://production.com/api/v1'
+    REACT_APP_API_URL='https://production.com/api/v1'
     ```
   - **.env.qa**
     ```env
@@ -450,7 +472,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     REACT_APP_ENV='qa'
 
     # Add variables below, starting with REACT_APP_
-    REACT_APP_API_URL='http://qa.com/api/v1'
+    REACT_APP_API_URL='https://qa.com/api/v1'
     ```
   - **.env.staging**
     ```env
@@ -1034,9 +1056,12 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "disableTelemetry": true,
   }
   ```
-- Add **webpackFinal** after **core**:
+- Add **typescript** and **webpackFinal** after **core**:
   ```js
-  webpackFinal: async (config) => {
+  "typescript": {
+    "reactDocgen": 'react-docgen-typescript-plugin'
+  },
+  "webpackFinal": async (config) => {
     injectEnvVariables(config);
     return config;
   },
