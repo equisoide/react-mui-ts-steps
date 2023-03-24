@@ -418,8 +418,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.https.local**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "start-https" Runs the App in https://localhost:3001 (HTTPS)
-    # - "sbook-https" Runs Storybook in https://localhost:3003 (HTTPS)
+    # - "start-https" Runs the App in https://localhost:4001 (HTTPS)
+    # - "sbook-https" Runs Storybook in https://localhost:4003 (HTTPS)
 
     # Don't touch
     PORT=4001
@@ -434,8 +434,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
   - **.env.local**
     ```env
     # Variables in this file are injected by the following scripts:
-    # - "start"       Runs the App in http://localhost:3000
-    # - "sbook"       Runs Storybook in http://localhost:3002
+    # - "start"       Runs the App in http://localhost:4000
+    # - "sbook"       Runs Storybook in http://localhost:4002
     # - "build:l"     Builds the App to `out/build/local`
     # - "sb-build:l"  Builds Storybook to `out/storybook/local`
 
