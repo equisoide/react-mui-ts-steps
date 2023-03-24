@@ -153,7 +153,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "!src/**/*.stories.tsx",
       "!src/index.tsx",
       "!src/react-app-env.d.ts",
-      "!src/util/web-vitals.ts"
+      "!src/util/web-vitals.ts",
+      "!src/app/index.tsx"
     ]
   },
   ```
