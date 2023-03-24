@@ -313,7 +313,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "version": "0.2.0",
     "configurations": [
       {
-        "type": "pwa-chrome",
+        "type": "chrome",
         "request": "launch",
         "name": "Launch Chrome against localhost",
         "url": "http://localhost:3000",
