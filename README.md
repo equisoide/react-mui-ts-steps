@@ -58,6 +58,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation)
   - `npm i react-router-dom@6`
     - Do you want to run the 'eslintPlugin' migration on your project? › **y**
+    - Do you want to run the 'npm7' migration on your project? » (Y/n) › **y**
 
 ## 2. Install VS Code recomented extensions
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
