@@ -344,7 +344,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
       "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
     },
     "files.associations": {
-      ".env.https.local": "env"
+      ".env.https.local": "dotenv"
     }
   }
   ```
