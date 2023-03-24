@@ -136,8 +136,8 @@ The purpose of this tutorial is to document the step by step on how to create a 
     "sb-build:s": "env-cmd --no-override -f ./.env-override/.env.staging build-storybook -s public -o ./out/storybook/staging",
     "sbook": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3002 -s public",
     "sbook-https": "env-cmd --no-override -f ./.env-override/.env.local start-storybook -p 3003 -s public --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "slint": "./node_modules/.bin/stylelint \"src/**/*.{css,scss}\"",
-    "slint:f": "./node_modules/.bin/stylelint --fix \"src/**/*.{css,scss}\"",
+    "slint": "stylelint \"src/**/*.{css,scss}\"",
+    "slint:f": "stylelint --fix \"src/**/*.{css,scss}\"",
     "start": "PORT=3000 env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "start-https": "PORT=3001 HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local react-scripts start",
     "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
