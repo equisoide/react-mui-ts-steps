@@ -1458,17 +1458,17 @@ The purpose of this tutorial is to document the step by step on how to create a 
 - Analyses **CSS**/**SCSS** styles: `npm run slint`
 - Try to fix **CSS**/**SCSS** errors: `npm run slint:f`
 - Execute Unit Tests outputting to **out/coverage**: `npm test`
-- Run the App in http://localhost:3000: `npm start`
+- Run the App in http://localhost:4000: `npm start`
 - Create a locally trusted CA: `mkcert -install`
 - Generate an SSL certificate: `mkcert localhost`
-- Run the App in https://localhost:3001: `npm run start-https` (HTTPS)
+- Run the App in https://localhost:4001: `npm run start-https` (HTTPS)
 - Build the App to **out/build/local**: `npm run build:l`
 - Build the App to **out/build/development**: `npm run build:d`
 - Build the App to **out/build/qa**: `npm run build:q`
 - Build the App to **out/build/staging**: `npm run build:s`
 - Build the App to **out/build/production**: `npm run build`
-- Run Storybook in http://localhost:3002: `npm run sbook`
-- Run Storybook in https://localhost:3003: `npm run sbook-https` (HTTPS)
+- Run Storybook in http://localhost:4002: `npm run sbook`
+- Run Storybook in https://localhost:4003: `npm run sbook-https` (HTTPS)
 - Build Storybook to **out/storybook/local**: `npm run sb-build:l`
 - Build Storybook to **out/storybook/development**: `npm run sb-build:d`
 - Build Storybook to **out/storybook/qa**: `npm run sb-build:q`
