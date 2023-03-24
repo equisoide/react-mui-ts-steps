@@ -1001,7 +1001,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   // Local imports
   @import "reset";
-  @import "material-icons";
   ```
 - Save
 
