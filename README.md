@@ -314,7 +314,7 @@ The purpose of this tutorial is to document the step by step on how to create a 
         "type": "chrome",
         "request": "launch",
         "name": "Launch Chrome against localhost",
-        "url": "http://localhost:3000",
+        "url": "http://localhost:4000",
         "webRoot": "${workspaceFolder}"
       }
     ]
