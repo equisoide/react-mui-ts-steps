@@ -1105,12 +1105,6 @@ The purpose of this tutorial is to document the step by step on how to create a 
 
   // Global initialization
   initI18n();
-
-  // Set the "Docs" tab as the default tab.
-  // Ref: https://github.com/storybookjs/storybook/issues/12111
-  addParameters({
-    viewMode: 'docs',
-  });
   ```
 - Save
 - Create **.storybook/favicon.svg** file with the following content:
